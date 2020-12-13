@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>The Traveling Salesperson Problem</title>
+
+
+
+
+<meta name="description" content="The Traveling Salesperson Problem">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node8_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html123" href="http://mat.gsia.cmu.edu/classes/dynamic/node9.html"><img alt="next" src="node8_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html121" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node8_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html115" href="http://mat.gsia.cmu.edu/classes/dynamic/node7.html"><img alt="previous" src="node8_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html125" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node8_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html124" href="http://mat.gsia.cmu.edu/classes/dynamic/node9.html">Nonadditive Recursions</a>
+<b>Up:</b> <a name="tex2html122" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html116" href="http://mat.gsia.cmu.edu/classes/dynamic/node7.html">Equipment Replacement</a>
+<br> <p>
+</p><h1><a name="SECTION00080000000000000000">The Traveling Salesperson Problem</a></h1>
+<p>
+We have seen that we can solve one type of integer programming (the
+knapsack problem) with dynamic programming.  Let's try another.
+</p><p>
+The traveling salesperson problem is to visit a number of cities in the
+minimum distance.  For instance, a politician begins in New York and
+has to visit Miami, Dallas, and Chicago before returning to New York.
+How can she minimize the distance traveled?  The distances are as
+in Table&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html#tbltsp">5</a>.
+</p><p>
+</p><p><a name="519">&nbsp;</a><a name="tbltsp">&nbsp;</a> <img alt="table515" src="node8_arquivos/img72.gif" align="bottom" height="120" width="454"> <br>
+<strong>Table 5:</strong> TSP example problem.<br>
+</p><p>
+</p><p>
+The real problem in solving this is to define the stages, states,
+and decisions.  One natural choice is to let stage <i>t</i> represent
+visiting <i>t</i> cities, and let the decision be where to go
+next.  That leaves us with states.  Imagine we chose the city we are
+in to be the state.  We could not make the decision where to go next,
+for we do not know where we have gone before.  Instead, the state has
+to include information about all the cities visited, plus the city we
+ended up in.  So a state is represented by a pair (<i>i</i>,<i>S</i>) where <i>S</i> is
+the set of <i>t</i> cities already visited and <i>i</i> is the last city
+visited (so <i>i</i> must be in <i>S</i>).  This turns out to be enough to get a
+recursion.
+</p><p>
+The stage 3 calculations are
+</p><ul><li>  <img alt="tex2html_wrap_inline1146" src="node8_arquivos/img73.gif" align="middle" height="29" width="174"> </li><li>  <img alt="tex2html_wrap_inline1148" src="node8_arquivos/img74.gif" align="middle" height="29" width="173"> </li><li>  <img alt="tex2html_wrap_inline1150" src="node8_arquivos/img75.gif" align="middle" height="29" width="169"> </li></ul>
+For other stages, the recursion is
+<p> <img alt="displaymath1152" src="node8_arquivos/img76.gif" align="bottom" height="33" width="421"> </p><p>
+You can continue with these calculations.  One important aspect of
+this problem is the so called <em>curse of dimensionality</em>.  The
+state space here is so large that it becomes impossible to solve even
+moderate size problems.  For instance, suppose there are 20 cities.
+The number of states in the 10th stage is more than a million.  For 30
+cities, the number of states in the 15th stage is more than a billion.
+And for 100 cities, the number of states at the 50th stage is more
+than 5,000,000,000,000,000,000,000,000,000,000.  This is not the sort
+of problem that will go away as computers get better.
+</p><p>
+</p><hr><a name="tex2html123" href="http://mat.gsia.cmu.edu/classes/dynamic/node9.html"><img alt="next" src="node8_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html121" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node8_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html115" href="http://mat.gsia.cmu.edu/classes/dynamic/node7.html"><img alt="previous" src="node8_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html125" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node8_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html124" href="http://mat.gsia.cmu.edu/classes/dynamic/node9.html">Nonadditive Recursions</a>
+<b>Up:</b> <a name="tex2html122" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html116" href="http://mat.gsia.cmu.edu/classes/dynamic/node7.html">Equipment Replacement</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

@@ -1,0 +1,166 @@
+<html><head><title>3704 - Cellular Automaton</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3704 - Cellular Automaton</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3704"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3704"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+A <SPAN  CLASS="textit">cellular automaton</SPAN> is a 
+collection of cells on a grid of specified shape that evolves through a 
+number of discrete time steps according to a set of rules that describe 
+the new state of a cell based on the states of neighboring cells. The 
+<SPAN  CLASS="textit">order of the cellular automaton</SPAN> is the number of cells it contains. 
+Cells of the automaton of order <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> are numbered from 1 to <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+The <SPAN  CLASS="textit">order of the cell</SPAN> is the number of different values it may contain. Usually, 
+values of a cell of order <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark> are considered to be integer numbers from 0 to 
+<SPAN CLASS="MATH"><I>m</I> - 1</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+One of the most fundamental properties of a cellular automaton 
+is the type of grid on which it is computed. In this problem we examine 
+the special kind of cellular automaton -- circular cellular automaton 
+of order <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> with cells of order <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark>. We will denote such kind of cellular 
+automaton as <!-- MATH
+ $n,m-automaton$
+ -->
+<SPAN CLASS="MATH"><I>n</I>, <I>m</I> - <I>automaton</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+A distance between cells <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>j</I></SPAN>
+<tex2html_verbatim_mark> in 
+<SPAN CLASS="MATH"><I>n</I>, <I>m</I></SPAN>
+<tex2html_verbatim_mark>-automaton is defined as min<!-- MATH
+ $(|i - j|, n - |i - j|)$
+ -->
+<SPAN CLASS="MATH">(| <I>i</I> - <I>j</I>|, <I>n</I> - | <I>i</I> - <I>j</I>|)</SPAN>
+<tex2html_verbatim_mark>. A <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>-<SPAN  CLASS="textit">environment 
+of a cell</SPAN> is the set of cells at a distance not greater than <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+On each <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>-<SPAN  CLASS="textit">step</SPAN> values of all cells are simultaneously replaced by new values. 
+The new value of cell <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> after <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>-step is computed as a sum of values of 
+cells belonging to the <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>-enviroment of the cell <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> modulo <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+The following picture shows 1-step of the 5,3-automaton.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3704.eps}$
+ -->
+<IMG
+ WIDTH="447" HEIGHT="191" ALIGN="BOTTOM" BORDER="0"
+ SRC="p3704.jpg"
+ ALT="\epsfbox{p3704.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+The problem is to calculate the state of the <SPAN CLASS="MATH"><I>n</I>, <I>m</I></SPAN>
+<tex2html_verbatim_mark>-automaton after <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>-steps.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input file contains several test cases, each of them consists of two lines,
+ as described below.
+
+<P>
+The first line of the input contains four integer numbers <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark>, 
+<SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>, and <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le n \le 500, 1 \le m \le 1 000 000, 0 \le d < {n \over 2} , 1 \le k
+\le 10 000 000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$">500, 1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$"><I>m</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$">1000000, 0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$"><I>d</I> &lt; <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img3.png"
+ ALT="$ {n \over 2}$">, 1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$"><I>k</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3704img2.png"
+ ALT="$ \le$">10000000)</SPAN>
+<tex2html_verbatim_mark>. The second line contains <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> integer numbers 2 from 0 to 
+<SPAN CLASS="MATH"><I>m</I> - 1</SPAN>
+<tex2html_verbatim_mark> -- initial values of the automaton's cells.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+For each test case, write to the output, on a line by itself,
+the values of the <SPAN CLASS="MATH"><I>n</I>, <I>m</I></SPAN>
+<tex2html_verbatim_mark>-automaton's cells after <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> <SPAN CLASS="MATH"><I>d</I></SPAN>
+<tex2html_verbatim_mark>-steps.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+5 3 1 1 
+1 2 2 1 2 
+5 3 1 10 
+1 2 2 1 2
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2 2 2 2 1 
+2 0 0 2 2
+</PRE> 
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

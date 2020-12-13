@@ -1,0 +1,68 @@
+<html><head><title>3596 - Surprising Strings</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3596 - Surprising Strings</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=mc&year=2006"><b>North America - Mid Central - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3596"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3596"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+The <SPAN  CLASS="textit">D-pairs</SPAN> of a string of letters are the ordered pairs of letters that are distance D from each other. A string is <SPAN  CLASS="textit">D-unique</SPAN> if all of its D-pairs are different. A string is <SPAN  CLASS="textit">surprising</SPAN> if it is D-unique for every possible distance D. 
+
+<P>
+Consider the string <TT>ZGBG</TT>. Its 0-pairs are <TT>ZG</TT>, <TT>GB</TT>, and <TT>BG</TT>. Since these three pairs are all different, <TT>ZGBG</TT> is 0-unique. Similarly, the 1-pairs of <TT>ZGBG</TT> are <TT>ZB</TT> and <TT>GG</TT>, and since these two pairs are different, <TT>ZGBG</TT> is 1-unique. Finally, the only 2-pair of <TT>ZGBG</TT> is <TT>ZG</TT>, so <TT>ZGBG</TT> is 2-unique. Thus <TT>ZGBG</TT> is surprising. (Note that the fact that <TT>ZG</TT> is both a 0-pair and a 2-pair of <TT>ZGBG</TT> is irrelevant, because 0 and 2 are different distances.) 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+The input consists of one or more nonempty strings of at most 79 uppercase letters, each string on a line by itself, followed by a line containing only an asterisk that signals the end of the input. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+For each string of letters, output whether or not it is surprising using the exact output format shown below. 
+
+<P>
+
+<P>
+<BR>
+
+<SPAN  CLASS="textbf">Acknowledgement:</SPAN> This problem is inspired by the ``Puzzling Adventures" column in the December 2003 issue of <SPAN  CLASS="textit">Scientific American</SPAN>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+ZGBG 
+X 
+EE 
+AAB 
+AABA
+AABB 
+BCBABCC 
+*
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+ZGBG is surprising. 
+X is surprising. 
+EE is surprising. 
+AAB is surprising. 
+AABA is surprising. 
+AABB is NOT surprising. 
+BCBABCC is NOT surprising.
+</PRE> 
+
+<P>
+<hr><ADDRESS>Mid Central 2006-2007</ADDRESS><p></body></html>

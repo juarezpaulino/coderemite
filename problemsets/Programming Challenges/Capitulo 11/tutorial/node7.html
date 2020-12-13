@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>Equipment Replacement</title>
+
+
+
+
+<meta name="description" content="Equipment Replacement">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node7_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html112" href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html"><img alt="next" src="node7_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html110" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node7_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html104" href="http://mat.gsia.cmu.edu/classes/dynamic/node6.html"><img alt="previous" src="node7_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html114" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node7_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html113" href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html">The Traveling Salesperson Problem</a>
+<b>Up:</b> <a name="tex2html111" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html105" href="http://mat.gsia.cmu.edu/classes/dynamic/node6.html">An Alternative Formulation</a>
+<br> <p>
+</p><h1><a name="SECTION00070000000000000000">Equipment Replacement</a></h1>
+<p>
+In the network homework, you already saw how to formulate and solve an
+equipment replacement problem using a shortest path algorithm.  Let's
+look at an alternative dynamic programming formulation.
+</p><p>
+Suppose a shop needs to have a certain machine over the next five year
+period.  Each new machine costs $1000.  The cost of maintaining the
+machine during its <i>i</i>th year of operation is as follows:  <img alt="tex2html_wrap_inline1070" src="node7_arquivos/img53.gif" align="middle" height="29" width="75"> ,  <img alt="tex2html_wrap_inline1072" src="node7_arquivos/img54.gif" align="middle" height="29" width="75"> , and  <img alt="tex2html_wrap_inline1074" src="node7_arquivos/img55.gif" align="middle" height="29" width="84"> .  A machine may be kept up to
+three years before being traded in.  The trade in value after <i>i</i>
+years is  <img alt="tex2html_wrap_inline1078" src="node7_arquivos/img56.gif" align="middle" height="29" width="77"> ,  <img alt="tex2html_wrap_inline1080" src="node7_arquivos/img57.gif" align="middle" height="29" width="77"> , and  <img alt="tex2html_wrap_inline1082" src="node7_arquivos/img58.gif" align="middle" height="29" width="77"> .  How can the
+shop minimize costs over the five year period?
+</p><p>
+Let the stages correspond to each year.  The state is the age of the
+machine for that year.  The decisions are whether to keep the machine
+or trade it in for a new one.  Let  <img alt="tex2html_wrap_inline1084" src="node7_arquivos/img59.gif" align="middle" height="29" width="38">  be the minimum cost
+incurred from time <i>t</i> to time 5, given the machine is <i>x</i> years old
+in time <i>t</i>.
+</p><p>
+Since we have to trade in at time 5,
+</p><p> <img alt="displaymath1092" src="node7_arquivos/img60.gif" align="bottom" height="19" width="301"> </p><p>
+</p><p>
+Now consider other time periods.  If you have a three year old machine
+in time <i>t</i>, you must trade in, so
+</p><p> <img alt="displaymath1096" src="node7_arquivos/img61.gif" align="bottom" height="19" width="429"> </p><p>
+</p><p>
+If you have a two year old machine, you can either trade or keep.
+</p><ul><li> Trade costs you  <img alt="tex2html_wrap_inline1098" src="node7_arquivos/img62.gif" align="middle" height="29" width="222"> .</li><li> Keep costs you  <img alt="tex2html_wrap_inline1100" src="node7_arquivos/img63.gif" align="middle" height="29" width="105"> .
+</li></ul>
+So the best thing to do with a two year old machine is the
+minimum of the two.
+<p>
+Similarly
+</p><p> <img alt="displaymath1102" src="node7_arquivos/img64.gif" align="bottom" height="19" width="473"> </p><p>
+</p><p>
+Finally, at time zero, we have to buy, so
+</p><p> <img alt="displaymath1104" src="node7_arquivos/img65.gif" align="bottom" height="19" width="355"> </p><p>
+</p><p>
+This is solved with backwards recursion as follows:
+</p><dl compact="compact"><dt><strong><em>Stage 5.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular484" src="node7_arquivos/img66.gif" align="bottom" height="97" width="130"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 4.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular489" src="node7_arquivos/img67.gif" align="bottom" height="97" width="348"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 3.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular494" src="node7_arquivos/img68.gif" align="bottom" height="97" width="348"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 2.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular499" src="node7_arquivos/img69.gif" align="bottom" height="74" width="397"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 1.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular504" src="node7_arquivos/img70.gif" align="bottom" height="51" width="397"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 0.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular509" src="node7_arquivos/img71.gif" align="bottom" height="51" width="348"> </p><p> 
+ </p></dd></dl>
+So the cost is 1280, and one solution is to trade in years 1 and 2.
+There are other optimal solutions.
+<p>
+</p><hr><a name="tex2html112" href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html"><img alt="next" src="node7_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html110" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node7_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html104" href="http://mat.gsia.cmu.edu/classes/dynamic/node6.html"><img alt="previous" src="node7_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html114" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node7_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html113" href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html">The Traveling Salesperson Problem</a>
+<b>Up:</b> <a name="tex2html111" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html105" href="http://mat.gsia.cmu.edu/classes/dynamic/node6.html">An Alternative Formulation</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

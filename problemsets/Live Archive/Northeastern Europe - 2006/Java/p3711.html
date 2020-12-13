@@ -1,0 +1,90 @@
+<html><head><title>3711 - Java vs C++</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3711 - Java vs C++</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3711"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3711"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+Apologists of Java and C++ can argue for hours proving each other that 
+their programming language is the best one. Java people will tell that 
+their programs are clearer and less prone to errors, while C++ people 
+will laugh at their inability to instantiate an array of generics or 
+tell them that their programs are slow and have long source code. 
+
+<P>
+Another issue that Java and C++ people could never agree on is identifier 
+naming. In Java a multiword identifier is constructed in the following 
+manner: the first word is written starting from the small letter, and the 
+following ones are written starting from the capital letter, no 
+separators are used. All other letters are small. Examples of a Java 
+identifier are <TT>javaIdentifier</TT>, <TT>longAndMnemonicIdentifier</TT>, <TT>name</TT>, <TT>nEERC</TT>. 
+
+<P>
+Unlike them, C++ people use only small letters in their identiï¬ers. To 
+separate words they use underscore character `<TT>-</TT>'. Examples of C++ 
+identifiers are <TT>c_identifier</TT>, <TT>long_and_mnemonic_identifier</TT>, <TT>name</TT> (you see 
+that when there is just one word Java and C++ people agree), <TT>n_e_e_r_c</TT>. 
+
+<P>
+You are writing a translator that is intended to translate C++ programs 
+to Java and vice versa. Of course, identifiers in the translated 
+program must be formatted due to its language rules -- otherwise people will 
+never like your translator. 
+
+<P>
+The first thing you would like to write is 
+an identifier translation routine. Given an identifier, it would 
+detect whether it is Java identifier or C++ identifier and translate it 
+to another dialect. If it is neither, then your routine should report an 
+error. Translation must preserve the order of words and must only 
+change the case of letters and/or add/remove underscores.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+The input file contains several test cases, each of them consists of one line that contains an identifier. It 
+consists of letters of the English alphabet and underscores. Its length 
+does not exceed 100.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+For each test case, and on a line by itself:
+
+<P>
+If the input identifier is Java identifier, output its C++ version. 
+
+<P>
+If it is C++ identifier, output its Java version. 
+
+<P>
+If it is none, output 
+``<TT>Error!</TT>" instead.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+<PRE>
+long_and_mnemonic_identifier 
+anotherExample 
+i 
+bad_Style
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+longAndMnemonicIdentifier 
+another_example 
+i 
+Error!
+</PRE> 
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

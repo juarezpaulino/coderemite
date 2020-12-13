@@ -1,0 +1,192 @@
+<html><head><title>2377 - Grand Prix</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2377 - Grand Prix</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=wfi&year=2006"><b>World Finals - Tokyo - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100>&nbsp;</td></tr></table><p>&nbsp;</p>
+<P>
+You are the chief designer of a road race that will be held in a hilly area. The racecourse consists of <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> connected straight line segments; that is, the end of the <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark>th segment coincides with the beginning of the <SPAN CLASS="MATH">(<I>k</I> + 1)</SPAN>
+<tex2html_verbatim_mark>st segment. During planning, these segments are laid out on a planar surface, so 2-dimensional Cartesian coordinates identify the endpoints. The first segment begins at the origin. Figure 1 shows the planar view of a racecourse with 6 segments.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p2377a.eps}$
+ -->
+<IMG
+  BORDER="0"
+ SRC="p2377a.jpg"
+ ALT="\epsfbox{p2377a.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+The actual race is run on the side of a hill. For simplicity, assume the hill makes an angle <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="2377img2.png"
+ ALT="$ \theta$"></SPAN>
+<tex2html_verbatim_mark> with the horizontal plane, as illustrated in Figure 2. 
+
+<P>
+The plane of the hill and the horizontal plane intersect in the <SPAN CLASS="MATH"><I>y</I></SPAN>
+<tex2html_verbatim_mark>-axis. Each 2-dimensional Cartesian coordinate <!-- MATH
+ $(x_{i}, y_{i})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>i</SUB>, <I>y</I><SUB>i</SUB>)</SPAN>
+<tex2html_verbatim_mark> corresponds to a 3-dimensional form <!-- MATH
+ $(x_{i}^{'}, y_{i}^{'}, z_{i}^{'})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>i</SUB><SUP>'</SUP>, <I>y</I><SUB>i</SUB><SUP>'</SUP>, <I>z</I><SUB>i</SUB><SUP>'</SUP>)</SPAN>
+<tex2html_verbatim_mark>, with <SPAN CLASS="MATH"><I>z</I><SUB>i</SUB><SUP>'</SUP></SPAN>
+<tex2html_verbatim_mark> representing the height of the endpoint of the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>th linear segment. The height of the origin is 0.
+
+<P>
+This particular race is intended for novice drivers, so the racecourse must not include any segments that require downhill travel. That is, if the height of the endpoint of segment <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> is <SPAN CLASS="MATH"><I>z</I><SUB>k</SUB><SUP>'</SUP></SPAN>
+<tex2html_verbatim_mark>, then the height of the endpoint of each segment after segment <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> must not be less than <SPAN CLASS="MATH"><I>z</I><SUB>k</SUB><SUP>'</SUP></SPAN>
+<tex2html_verbatim_mark>. Formally we can write <!-- MATH
+ $z_{k}^{'} \le z_{m}^{'}$
+ -->
+<SPAN CLASS="MATH"><I>z</I><SUB>k</SUB><SUP>'</SUP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$"><I>z</I><SUB>m</SUB><SUP>'</SUP></SPAN>
+<tex2html_verbatim_mark>, for <SPAN CLASS="MATH"><I>m</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img4.png"
+ ALT="$ \ge$"><I>k</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+If a proposed racecourse includes downhill segments, it might be possible to transform it into a racecourse with no downhill segments by rotating the planar view of the entire course about the origin, without changing the angle between consecutive pairs of segments. However there may be proposed racecourses that cannot be made acceptable by such a rotation. 
+
+<P>
+In this problem you must determine if a proposed racecourse is acceptable (that is, if it does not contain any downhill segments). If it is not acceptable, you must determine the minimum angle through which the racecourse must be rotated to make it acceptable, if that is possible. 
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p2377b.eps}$
+ -->
+<IMG
+  BORDER="0"
+ SRC="p2377b.jpg"
+ ALT="\epsfbox{p2377b.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input consists of multiple test cases. Each test case is a description of a proposed racecourse and the slope of the hillside on which it will be run. The first line of each description contains two integers <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le N \le 10000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$">10000)</SPAN>
+<tex2html_verbatim_mark> and <!-- MATH
+ $\theta (0^{o} \le \theta \le 45^{o})$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="2377img2.png"
+ ALT="$ \theta$">(0<SUP>o</SUP><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="2377img2.png"
+ ALT="$ \theta$"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$">45<SUP>o</SUP>)</SPAN>
+<tex2html_verbatim_mark>. <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> denotes the number of segments in the course and <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="2377img2.png"
+ ALT="$ \theta$"></SPAN>
+<tex2html_verbatim_mark> denotes the angle (in degrees) that the hillside makes with the horizontal plane. Each of the next <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> lines contains a pair of integers <!-- MATH
+ $(x_{i}, y_{i})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>i</SUB>, <I>y</I><SUB>i</SUB>)</SPAN>
+<tex2html_verbatim_mark>, <!-- MATH
+ $(1 \le i \le N)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2377img3.png"
+ ALT="$ \le$"><I>N</I>)</SPAN>
+<tex2html_verbatim_mark>, which are the endpoints of the linear segments comprising the racecourse. The first segment begins at the origin, and segment <SPAN CLASS="MATH"><I>k</I> + 1</SPAN>
+<tex2html_verbatim_mark> begins at the endpoint of segment <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark>. No segment has zero length. 
+
+<P>
+The last test case is followed by a line containing two zeroes.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, print a line containing the test case number (beginning with 1). If the proposed course is acceptable without rotation, print ``<TT>Acceptable as proposed</TT>". If the course is not acceptable as proposed, but can be made acceptable by rotating it about the origin, print ``<TT>Acceptable after clockwise rotation of <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> degrees</TT>" or ``<TT>Acceptable after counterclockwise rotation of <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> degrees</TT>". The value <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> should be an unsigned number. For our purposes, a clockwise rotation would rotate the positive <SPAN CLASS="MATH"><I>y</I></SPAN>
+<tex2html_verbatim_mark>-axis toward the positive <SPAN CLASS="MATH"><I>x</I></SPAN>
+<tex2html_verbatim_mark>-axis. If both a clockwise and a counterclockwise rotation can make the course acceptable, choose the one with the smaller angle. If both rotations have the same angle, then either a clockwise or counterclockwise rotation will be accepted. If the course cannot be made acceptable by any rotation, print ``<TT>Unacceptable</TT>". Display the angles of rotation rounded to two fractional digits. 
+
+<P>
+Print a blank line after the output for each test case. Use an output format similar to that shown in the sample output below.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2 45 
+10 10 
+0 1 
+2 0 
+1 1 
+2 0 
+3 45 
+10 10 
+1 10 
+5 6 
+0 0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Case 1: Acceptable after clockwise rotation of 131.99 degrees 
+
+Case 2: Acceptable as proposed Case 
+
+Case 3: Unacceptable
+</PRE> 
+
+<P>
+<hr><ADDRESS>Tokyo 2006-2007</ADDRESS><p></body></html>

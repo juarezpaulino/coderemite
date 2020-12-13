@@ -1,0 +1,118 @@
+<html><head><title>3574 - Margaritas on the River Walk</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3574 - Margaritas on the River Walk</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=gny&year=2006"><b>North America - Greater New York - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3574"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3574"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+One of the more popular activities in San Antonio is to enjoy margaritas in the park along the river know as the <SPAN  CLASS="textit">River Walk</SPAN>.  Margaritas may be purchased at many establishments along the River Walk from fancy hotels to <SPAN  CLASS="textit">Joe's Taco and Margarita stand</SPAN>.  (The problem is not to find out how Joe got a liquor license.  That involves Texas politics and thus is much too difficult for an ACM contest problem.)  The prices of the margaritas vary depending on the amount and quality of the ingredients and the ambience of the establishment.  You have allocated a certain amount of money to sampling different margaritas.
+
+<P>
+Given the price of a single margarita (including applicable taxes and gratuities) at each of the various establishments and the amount allocated to sampling the margaritas, find out how many different maximal combinations, choosing at most one margarita from each establishment, you can purchase.  A valid combination must have a total price no more than the allocated amount and the unused amount (<SPAN  CLASS="textit">allocated amount - total price</SPAN>) must be less than the price of any establishment that was not selected.  (Otherwise you could add that establishment to the combination.)
+
+<P>
+For example, suppose you have $25 to spend and the prices (whole dollar amounts) are:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE COLS=7 BORDER FRAME=BOX RULES=GROUPS>
+<COLGROUP><COL ALIGN=LEFT><COLGROUP><COL ALIGN=CENTER><COLGROUP><COL ALIGN=CENTER><COLGROUP><COL ALIGN=CENTER><COLGROUP><COL ALIGN=CENTER><COLGROUP><COL ALIGN=CENTER><COLGROUP><COL ALIGN=CENTER>
+<TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>
+Vendor </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> A </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> B </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> C </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> D </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> H </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> J </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>Price </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 8 </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 9 </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 8 </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 7 </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 16 </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 5 </TD></TR>
+</TBODY>
+</TABLE>
+
+</DIV>
+
+<P>
+Then possible combinations (with their prices) are:
+
+<P>
+
+<P>
+<BR>
+ABC(25), ABD(24), ABJ(22), ACD(23), ACJ(21), ADJ( 20), AH(24), BCD(24), BCJ(22), BDJ(21), BH(25), CDJ(20), CH(24), DH(23) and HJ(21).
+
+<P>
+
+<P>
+<BR>
+Thus the total number of combinations is 15.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input begins with a line containing an integer value specifying the number of datasets that follow, <SPAN CLASS="MATH"><I>N</I></SPAN>,  <!-- MATH
+ $(1 \le N \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3574img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3574img1.png"
+ ALT="$ \le$">1000)</SPAN>.   Each dataset starts with a line containing two integer values <SPAN CLASS="MATH"><I>V</I></SPAN> and <SPAN CLASS="MATH"><I>D</I></SPAN> representing the number of vendors <!-- MATH
+ $(1 \le V \le 30)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3574img1.png"
+ ALT="$ \le$"><I>V</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3574img1.png"
+ ALT="$ \le$">30)</SPAN> and the dollar amount to spend <!-- MATH
+ $(1 \le D \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3574img1.png"
+ ALT="$ \le$"><I>D</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3574img1.png"
+ ALT="$ \le$">1000)</SPAN> respectively.  The two values will be separated by one or more spaces.  The remainder of each dataset consists of one or more lines, each containing one or more integer values representing the cost of a margarita for each vendor.  There will be a total of <SPAN CLASS="MATH"><I>V</I></SPAN> cost values specified.  The cost of a margarita is always at least one (1).  Input values will be chosen so the result will fit in a 32 bit unsigned integer.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each problem instance, the output will be a single line containing the dataset number, followed by a single space and then the number of combinations for that problem instance.
+
+<P>
+
+<P>
+<BR>
+
+<SPAN  CLASS="textbf">Note:</SPAN> Some solution methods for this problem may be exponential in the number of vendors.  For these methods, the time limit may be exceeded on problem instances with a large number of vendors such as the second example below. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2
+6 25
+8 9 8 7 16 5
+30 250
+1 2 3 4 5 6 7 8 9 10 11
+12 13 14 15 16 17 18 19 20
+21 22 23 24 25 26 27 28 29 30
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+1 15
+2 16509438
+<hr><ADDRESS>Greater New York 2006-2007</ADDRESS><p></body></html>

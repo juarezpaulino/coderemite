@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>Common Characteristics</title>
+
+
+
+
+<meta name="description" content="Common Characteristics">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node4_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html79" href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html"><img alt="next" src="node4_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html77" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node4_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html71" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html"><img alt="previous" src="node4_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html81" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node4_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html80" href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html">The Knapsack Problem.</a>
+<b>Up:</b> <a name="tex2html78" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html72" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html">A second example</a>
+<br> <p>
+</p><h1><a name="SECTION00040000000000000000">Common Characteristics</a></h1>
+<p>
+There are a number of characteristics that are common to these two
+problems and to all dynamic programming problems.  These
+are:
+</p><ol><li> The problem can be divided into <em>stages</em> with a
+  <em>decision</em> required at each stage.
+<p>
+  In the capital budgeting problem the stages were the allocations to a
+  single plant.  The decision was how much to spend.  In the shortest
+  path problem, they were defined by the structure of the graph.  The
+  decision was were to go next.</p></li><li> Each stage has a number of <em>states</em> associated with it.
+<p>
+  The states for the capital budgeting problem corresponded to the
+  amount spent at that point in time.  The states for the shortest path
+  problem was the node reached.</p></li><li> The decision at one stage transforms one state into a state in
+  the next stage.
+<p>
+  The decision of how much to spend gave a total amount spent for the
+  next stage.  The decision of where to go next defined where you
+  arrived in the next stage.</p></li><li> Given the current state, the optimal decision for each of the
+  remaining states does not depend on the previous states or decisions.
+<p>
+  In the budgeting problem, it is not necessary to know how the money
+  was spent in previous stages, only how much was spent.  In the path
+  problem, it was not necessary to know how you got to a node, only that
+  you did.</p></li><li> There exists a recursive relationship that identifies the
+  optimal decision for stage <i>j</i>, given that stage <i>j</i>+1 has already
+  been solved.</li><li> The final stage must be solvable by itself.
+</li></ol>
+The last two properties are tied up in the recursive relationships
+given above.
+<p>
+The big skill in dynamic programming, and the art involved, is to take
+a problem and determine stages and states so that all of the above
+hold.  If you can, then the recursive relationship makes finding the
+values relatively easy.  Because of the difficulty in identifying
+stages and states, we will do a fair number of examples.
+</p><p>
+</p><hr><a name="tex2html79" href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html"><img alt="next" src="node4_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html77" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node4_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html71" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html"><img alt="previous" src="node4_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html81" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node4_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html80" href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html">The Knapsack Problem.</a>
+<b>Up:</b> <a name="tex2html78" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html72" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html">A second example</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

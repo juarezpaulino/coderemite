@@ -1,0 +1,253 @@
+<html><head><title>3475 - P-Networks</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3475 - P-Networks</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3475"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3475"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+Pretty Networks Inc. is a company that builds some curious artifacts whose purpose is to transform a set of input values in a given way. The transformation is determined by what they call a p-network. The following picture shows an example of a p-network. 
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3475.eps}$
+ -->
+<IMG
+ WIDTH="430" HEIGHT="103" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img1.png"
+ ALT="\epsfbox{p3475.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+In the general case, a <SPAN  CLASS="textit">p-network of order <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> and size <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark></SPAN> ,has <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> horizontal wires numbered <!-- MATH
+ $1, 2, \ldots N$
+ -->
+<SPAN CLASS="MATH">1, 2,...<I>N</I></SPAN>
+<tex2html_verbatim_mark>, and <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> vertical strokes. Each stroke connects two consecutive wires. There are no two different strokes touching the same point of any wire, and there is no stroke touching the leftmost or rightmost point of any wire. The above example is a p-network of order 5 and size 9. 
+
+<P>
+The transformation determined by a p-network can be explained using a set of rules that govern the way a p-network should be traversed: 
+
+<P>
+
+<OL>
+<LI>start at the leftmost point of one wire, and go to the right; 
+</LI>
+<LI>each time a stroke appears move to the connected wire, and keep going from left to right; 
+</LI>
+<LI>stop when the rightmost point of one wire is reached. 
+</LI>
+</OL>
+
+<P>
+If starting at wire <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> the traversing ends at wire <SPAN CLASS="MATH"><I>j</I></SPAN>
+<tex2html_verbatim_mark>, we say that the p-network transforms <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> into <SPAN CLASS="MATH"><I>j</I></SPAN>
+<tex2html_verbatim_mark>, and we denote this with <!-- MATH
+ $i \rightarrow j$
+ -->
+<SPAN CLASS="MATH"><I>i</I> <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>j</I></SPAN>
+<tex2html_verbatim_mark> . In the above example the p-network determines the set of transformations 
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+\{1 \rightarrow 3, 2 \rightarrow 5, 3 \rightarrow 4, 4 \rightarrow 1, 5 \rightarrow 2\}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+{1 <IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img3.png"
+ ALT="$\displaystyle \rightarrow$"> 3, 2 <IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img3.png"
+ ALT="$\displaystyle \rightarrow$"> 5, 3 <IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img3.png"
+ ALT="$\displaystyle \rightarrow$"> 4, 4 <IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img3.png"
+ ALT="$\displaystyle \rightarrow$"> 1, 5 <IMG
+ WIDTH="22" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img3.png"
+ ALT="$\displaystyle \rightarrow$"> 2}.
+</DIV><P>
+<tex2html_verbatim_mark></P> 
+
+<P>
+Pretty Networks Inc. hired you to solve the following p-network design problem: given a number <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> and a set of transformations <!-- MATH
+ $\{1 \rightarrow i_{1} , 2 \rightarrow i_{2} , \ldots N \rightarrow i_{N}\}$
+ -->
+<SPAN CLASS="MATH">{1 <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>i</I><SUB>1</SUB>, 2 <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>i</I><SUB>2</SUB>,...<I>N</I> <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>i</I><SUB>N</SUB>}</SPAN>
+<tex2html_verbatim_mark>, decide if a p-network of order <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> can be built to accomplish them and, in this case, give one that does it. 
+
+<P>
+When there exists a solution with a certain size, in many cases there is another solution with a greater size. Scientists at Pretty Networks Inc. have stated that if there exists a solution for a p-network design problem, then there is a solution with size less than <SPAN CLASS="MATH">4<I>N</I><SUP>2</SUP></SPAN>
+<tex2html_verbatim_mark> . Therefore, they are interested only in solutions having a size below this bound.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input has a certain number of p-network design problems. Each problem is described in just one line that contains the values <!-- MATH
+ $N , i_{1} , i_{2} , \ldots, i_{N}$
+ -->
+<SPAN CLASS="MATH"><I>N</I>, <I>i</I><SUB>1</SUB>, <I>i</I><SUB>2</SUB>,..., <I>i</I><SUB>N</SUB></SPAN>
+<tex2html_verbatim_mark> , separated by a single blank space. The value <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> is the order of the desired p-network, i.e., its number of wires <!-- MATH
+ $(1 \le N \le 20)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$">20)</SPAN>
+<tex2html_verbatim_mark>. The values <!-- MATH
+ $i_{1} , i_{2} , \ldots i_{N}$
+ -->
+<SPAN CLASS="MATH"><I>i</I><SUB>1</SUB>, <I>i</I><SUB>2</SUB>,...<I>i</I><SUB>N</SUB></SPAN>
+<tex2html_verbatim_mark> represent that the p-network should determine the set of transformations <!-- MATH
+ $\{1 \rightarrow i_{1} , 2 \rightarrow i_{2} , \ldots, N \rightarrow i_{N}\}$
+ -->
+<SPAN CLASS="MATH">{1 <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>i</I><SUB>1</SUB>, 2 <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>i</I><SUB>2</SUB>,..., <I>N</I> <IMG
+ WIDTH="22" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="3475img2.png"
+ ALT="$ \rightarrow$"> <I>i</I><SUB>N</SUB>}</SPAN>
+<tex2html_verbatim_mark> (<!-- MATH
+ $1 \le i_{j} \le N$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>i</I><SUB>j</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>N</I></SPAN>
+<tex2html_verbatim_mark>, for each <!-- MATH
+ $1 \le j \le N$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>j</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>N</I></SPAN>
+<tex2html_verbatim_mark>). The input ends with a line in which <SPAN CLASS="MATH"><I>N</I> = 0</SPAN>
+<tex2html_verbatim_mark>; this line must not be processed as a p-network design problem. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each p-network design problem in the input, the output must contain a single line. If the problem has no solution the line must be `<TT>No solution</TT>'. Otherwise the line must contain a description of any p-network (with <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> wires and less than <SPAN CLASS="MATH">4<I>N</I><SUP>2</SUP></SPAN>
+<tex2html_verbatim_mark> strokes) that accomplishes the requested set of transformation. This description is given by a set of values <!-- MATH
+ $M, s_{1}, s_{2}, \ldots, s_{M}$
+ -->
+<SPAN CLASS="MATH"><I>M</I>, <I>s</I><SUB>1</SUB>, <I>s</I><SUB>2</SUB>,..., <I>s</I><SUB>M</SUB></SPAN>
+<tex2html_verbatim_mark>, where consecutive values are separated by a single blank space. The value <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> is the size of the p-network, i.e., its number of strokes. The values <!-- MATH
+ $s_{1} , s_{2} , \ldots s_{M}$
+ -->
+<SPAN CLASS="MATH"><I>s</I><SUB>1</SUB>, <I>s</I><SUB>2</SUB>,...<I>s</I><SUB>M</SUB></SPAN>
+<tex2html_verbatim_mark> describe the strokes of the p-network; it should be understood that the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th stroke from left to right, connects the wires <SPAN CLASS="MATH"><I>s</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH">1 + <I>s</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> (<!-- MATH
+ $1 \le i \le M$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>M</I></SPAN>
+<tex2html_verbatim_mark>). Notice that <!-- MATH
+ $0 \le M < 4N^{2}$
+ -->
+<SPAN CLASS="MATH">0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>M</I> &lt; 4<I>N</I><SUP>2</SUP></SPAN>
+<tex2html_verbatim_mark>, while <!-- MATH
+ $1 \le s_{i} < N$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>s</I><SUB>i</SUB> &lt; <I>N</I></SPAN>
+<tex2html_verbatim_mark> for each <!-- MATH
+ $1 \le i \le M$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3475img4.png"
+ ALT="$ \le$"><I>M</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+5 3 5 4 1 2 
+3 1 1 3 
+2 1 2 
+2 1 2 
+0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+9 1 3 2 4 1 3 2 3 4 
+No solution 
+0 
+2 1 1
+</PRE> 
+
+<P>
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

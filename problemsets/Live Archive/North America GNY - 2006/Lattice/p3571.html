@@ -1,0 +1,99 @@
+<html><head><title>3571 - Visible Lattice Points</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3571 - Visible Lattice Points</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=gny&year=2006"><b>North America - Greater New York - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3571"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3571"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+A lattice point <SPAN CLASS="MATH">(<I>x</I>, <I>y</I>)</SPAN> in the first quadrant (<SPAN CLASS="MATH"><I>x</I></SPAN> and <SPAN CLASS="MATH"><I>y</I></SPAN> are integers greater than or equal to 0), other than the origin, is <SPAN  CLASS="textit">visible</SPAN> from the origin if the line from (0, 0) to <SPAN CLASS="MATH">(<I>x</I>, <I>y</I>)</SPAN> does not pass through any other lattice point.  For example, the point (4, 2) is not visible since the line from the origin passes through (2, 1). The figure below shows the points <SPAN CLASS="MATH">(<I>x</I>, <I>y</I>)</SPAN> with  <SPAN CLASS="MATH">0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$"><I>x</I></SPAN>, <SPAN CLASS="MATH"><I>y</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$">5</SPAN> with lines from the origin to the visible points.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3571.eps}$
+ -->
+<IMG
+ WIDTH="352" HEIGHT="340" ALIGN="BOTTOM" BORDER="0"
+ SRC="3571img2.png"
+ ALT="\epsfbox{p3571.eps}">
+</DIV>
+
+<P>
+Write a program which, given a value for the size, <SPAN CLASS="MATH"><I>N</I></SPAN>, computes the number of visible points <SPAN CLASS="MATH">(<I>x</I>, <I>y</I>)</SPAN> with <SPAN CLASS="MATH">0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$"><I>x</I></SPAN>, <SPAN CLASS="MATH"><I>y</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$"><I>N</I></SPAN>.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The first line of input contains a single integer <SPAN CLASS="MATH"><I>C</I></SPAN>, <!-- MATH
+ $(1 \le C \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$"><I>C</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$">1000)</SPAN> which is the number of datasets that follow.
+
+<P>
+Each dataset consists of a single line of input containing a single integer <SPAN CLASS="MATH"><I>N</I></SPAN>, <!-- MATH
+ $(1 \le N \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3571img1.png"
+ ALT="$ \le$">1000)</SPAN>, which is the size.  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each dataset, there is to be one line of output consisting of: the dataset number starting at 1, a single space, the size, a single space and the number of visible points for that size.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+4
+2
+4
+5
+231
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+1 2 5
+2 4 13
+3 5 21
+4 231 32549
+</PRE> 
+
+<P>
+<hr><ADDRESS>Greater New York 2006-2007</ADDRESS><p></body></html>

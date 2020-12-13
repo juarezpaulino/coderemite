@@ -1,0 +1,96 @@
+<html><head><title>3599 - Go Go Gorelians</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3599 - Go Go Gorelians</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=mc&year=2006"><b>North America - Mid Central - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3599"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3599"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+The Gorelians travel through space using warp links. Travel through a warp link is instantaneous, but for safety reasons, an individual can only warp once every 10 hours. Also, the cost of creating a warp link increases directly with the linear distance between the link endpoints. 
+
+<P>
+The Gorelians, being the dominant force in the known universe, are often bored, so they frequently conquer new regions of space in the following manner. 
+
+<P>
+
+<OL>
+<LI>The initial invasion force finds a suitable planet and conquers it, establishing a Regional Gorelian Galactic Government, hereafter referred to as the RGGG, that will govern all Gorelian matters in this region of space. 
+</LI>
+<LI>When the next planet is conquered, a single warp link is constructed between the new planet and the RGGG planet. Planets connected via warp links in this manner are said to be part of the Regional Gorelian Planetary Network, that is, the RGPN. 
+</LI>
+<LI>As additional planets are conquered, each new planet is connected with a single warp link to the nearest planet already in the RGPN, thus keeping the cost of connecting new planets to the network to a minimum. If two or more planets are equidistant from the new planet, the new planet is connected to whichever of them was conquered first. 
+</LI>
+</OL>
+
+<P>
+This causes a problem however. Since planets are conquered in a more-or-less random fashion, after a while, the RGGG will probably not be in an ideal location. Some Gorelians needing to consult with the RGGG might only have to make one or two warps, but others might require dozens--very inconvenient when one considers the 10-hour waiting period between warps. 
+
+<P>
+So, once each Gorelian year, the RGGG analyzes the RGPN and relocates itself to an optimal location. The optimal location is defined as a planet that minimizes the maximum number of warps required to reach the RGGG from any planet in the RGPN. As it turns out, there is always exactly one or two such planets. When there are two, they are always directly adjacent via a warp link, and the RGGG divides itself evenly between the two planets. 
+
+<P>
+Your job is to write a program that finds the optimal planets for the RGGG. For the purposes of this problem, the region of space conquered by the Gorelians is defined as a cube that ranges from (0,0,0) to (1000,1000,1000). 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+The input consists of a set of scenarios where the Gorelians conquer a region of space. Each scenario is independent. The first line of the scenario is an integer <SPAN CLASS="MATH"><I>N</I></SPAN> that specifies the total number of planets conquered by the Gorelians. The next <SPAN CLASS="MATH"><I>N</I></SPAN> lines of the input specify, in the order conquered, the <SPAN CLASS="MATH"><I>ID</I></SPAN>s and coordinates of the conquered planets to be added to the RGPN, in the format <!-- MATH
+ $ID \ X \ Y \ Z$
+ -->
+<SPAN CLASS="MATH"><I>ID</I>&nbsp;<I>X</I>&nbsp;<I>Y</I>&nbsp;<I>Z</I></SPAN>. An <SPAN CLASS="MATH"><I>ID</I></SPAN> is an integer from 1 to 1000. <SPAN CLASS="MATH"><I>X</I></SPAN>, <SPAN CLASS="MATH"><I>Y</I></SPAN>, and <SPAN CLASS="MATH"><I>Z</I></SPAN> are integers from 0 to 1000. A single space separates the numbers. A value of <SPAN CLASS="MATH"><I>N</I> = 0</SPAN> marks the end of the input. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+For each input scenario, output the <SPAN CLASS="MATH"><I>ID</I></SPAN>s of the optimal planet or planets where the RGGG should relocate. For a single planet, simply output the planet <SPAN CLASS="MATH"><I>ID</I></SPAN>. For two planets, output the planet <SPAN CLASS="MATH"><I>ID</I></SPAN>s, smallest <SPAN CLASS="MATH"><I>ID</I></SPAN> first, separated by a single space.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+5 
+1 0 0 0 
+2 0 0 1 
+3 0 0 2 
+4 0 0 3 
+5 0 0 4 
+5 
+1 0 0 0 
+2 1 1 0 
+3 3 2 0 
+4 2 1 0 
+5 3 0 0 
+10 
+21 71 76 4 
+97 32 5 69 
+70 33 19 35 
+3 79 81 8 
+31 91 17 67 
+52 31 48 75 
+48 90 14 4 
+41 73 2 21 
+83 74 41 69 
+26 32 30 24 
+0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+3 
+2 4 
+31 97
+</PRE> 
+
+<P>
+<hr><ADDRESS>Mid Central 2006-2007</ADDRESS><p></body></html>

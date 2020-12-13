@@ -1,0 +1,78 @@
+<html><head><title>2683 - Payment System</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2683 - Payment System</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sea&year=2006"><b>Europe - Southeastern - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p2683.pdf"><b>PDF</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2683"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2683"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+The payment system in the University of Mineral Water Production is completely automated (written entirely in Tomato Programming Language) and lets you input the amount of money you want to withdraw. Due to the high payment rates of the professors they may input the amounts in exponential forms. So if you want to withdraw 16 MWU (mineral water units) you can enter <TT>16</TT>, <code>2^4</code> or <code>2^2^2</code>. 
+
+<P>
+One day, Stanescu tried to withdraw some money from his account which had balance of 80MWU. He mistakenly entered <code>2^3^2</code> and for his surprise he got 512MWU, although he should not be able to take more than 80. The system was composed of two main modules - the first module checks whether the account has enough money to execute the transaction and the second module gives the money to the user. It turned out that the first module has a problem with the `<code>^</code>' operator. It evaluates it from left to right, while the second evaluates them from right to left (the correct way). Thus for the first module <code>2^3^2=(2^3)^2=64</code> while for the second it's <code>2^3^2=2^(3^2)=512</code>. 
+
+<P>
+You have to write program which helps Stanescu get as much as he can from the university system. If you think it's not legal or something, be sure that the University of Mineral Water Production is bad and evil. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+In the input file the amounts of the accounts of Stanescu will be given. Each amount is given on a separate line and is an integer between 2 and <!-- MATH
+ $10^{100}-1$
+ -->
+<SPAN CLASS="MATH">10<SUP>100</SUP> - 1</SPAN>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each given amount, your program should print to the standard output what Stanescu should enter to get maximal number of money. The output should: 
+
+<P>
+
+<UL>
+<LI>consists only of integers and the `<code>^</code>' operator between them. 
+</LI>
+<LI>pass the check of the first module and be as much as possible for the second. 
+</LI>
+<LI>not contain the number 1 (it is useless anyway). 
+</LI>
+</UL>
+
+<P>
+If more than one answers exist, output the one whose first number is minimal, if still more exist, choose the one whose second number is minimal and so on.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+16 
+80 
+49 
+1025 
+12341234 
+12345678901234567890
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2^2^2 
+2^3^2 
+7^2 
+2^2^5 
+2^2^2^5 
+2^2^2^2^3^2
+</PRE> 
+
+<P>
+<hr><ADDRESS>Southeastern 2006-2007</ADDRESS><p></body></html>

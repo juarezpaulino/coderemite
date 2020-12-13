@@ -1,0 +1,65 @@
+<html><head><title>3153 - Long Night of Museums</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3153 - Long Night of Museums</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2004"><b>Latin America - South America - 2004/2005</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p3153.pdf"><b>PDF</b></a></td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p3153.ps.gz"><b>PostScript</b></a></td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3153"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3153"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><p>The city of Vienna is called the “City of Culture” because (among other things) there are more
+than 100 museums in the city. As a consequence, it is very difficult (and very expensive) to
+visit all of them no matter how long you stay in the city. Fortunately, there is a special night,
+called the “Long Night of Museums”, when you can visit many museums with just one ticket,
+from 6:00 pm to 1:00 am of the next day.
+
+<p>Nevertheless, it is impossible to visit every museum of the city for two main reasons. First,
+some museums in Vienna don’t get involved into this event because they close at 5:00 pm.
+Second, there is not enough time in 7 hours to go to every museum, watch ALL their insides
+(otherwise, it would be a waste of time), and then go to the others.
+
+<p>Given the number of museums participating in the Long Night of Museums, the time needed
+to watch the insides of each museum, and the time that it will take to get from each museum
+to the others, you have to find the best tour to visit as many museums as you can during the
+Long Night of Museums.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>The input contains several test cases. The first line of a test case contains one integer N, which
+indicates the number of museums participating in the event (1 &le; N &le; 20). Each museum has
+a unique identification number ranging from 1 to N. The second line of a test case contains
+N integers indicating the time, in minutes, needed to visit each museum, from 1 to N. Then
+there are N lines describing the times to go from one museum to every other. The i-th line
+contains N integers Mk (1 &le; k &le; N) representing the time, in minutes, to go from museum i
+to museum k. You may assume that the i-th integer in the i-th line is equal to zero. The end
+of input is indicated by N = 0.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>For each test case in the input, your program must produce one line containing the maximum
+number of museums that can be visited during the Long Night of Museums.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+<PRE>
+2
+500 500
+0 120
+200 0
+2
+220 220
+0 30
+20 0
+2
+150 150
+0 120
+200 0
+0
+</PRE>
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+<PRE>
+0
+1
+2
+</PRE>
+
+<P>
+<hr><ADDRESS>South America 2004-2005</ADDRESS><p></body></html>

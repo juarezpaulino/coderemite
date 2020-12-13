@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>Nonadditive Recursions</title>
+
+
+
+
+<meta name="description" content="Nonadditive Recursions">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node9_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html134" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="next" src="node9_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html132" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node9_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html126" href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html"><img alt="previous" src="node9_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html136" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node9_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html135" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<b>Up:</b> <a name="tex2html133" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html127" href="http://mat.gsia.cmu.edu/classes/dynamic/node8.html">The Traveling Salesperson Problem</a>
+<br> <p>
+</p><h1><a name="SECTION00090000000000000000">Nonadditive Recursions</a></h1>
+<p>
+Not every recursion must be additive.  Here is one example where we
+multiply to get the recursion.
+</p><p>
+A student is currently taking three courses.  It is important that he
+not fail all of them.  If the probability of failing French is  <img alt="tex2html_wrap_inline1154" src="node9_arquivos/img77.gif" align="middle" height="17" width="17"> ,
+the probability of failing English is  <img alt="tex2html_wrap_inline1156" src="node9_arquivos/img78.gif" align="middle" height="17" width="17"> , and the probability of
+failing Statistics is  <img alt="tex2html_wrap_inline1158" src="node9_arquivos/img79.gif" align="middle" height="17" width="17"> , then the probability of failing all of
+them is  <img alt="tex2html_wrap_inline1160" src="node9_arquivos/img80.gif" align="middle" height="17" width="50"> .  He has left himself with four hours to study.
+How should he minimize his probability of failing all his courses?
+The following gives the probability of failing each course given he
+studies for a certain number of hours on that subject, as shown in
+Table&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node9.html#tblprob">6</a>.
+</p><p>
+</p><p><a name="536">&nbsp;</a><a name="tblprob">&nbsp;</a> <img alt="table530" src="node9_arquivos/img81.gif" align="bottom" height="144" width="320"> <br>
+<strong>Table 6:</strong> Student failure probabilities.<br>
+</p><p>
+</p><p>
+(What kind of student is this?)  We let stage 1 correspond to studying
+French, stage 2 for English, and stage 3 for Statistics.  The state
+will correspond to the number of hours studying for that stage and all
+following stages.  Let  <img alt="tex2html_wrap_inline1084" src="node9_arquivos/img59.gif" align="middle" height="29" width="38">  be the probability of failing <i>t</i> and
+all following courses, assuming <i>x</i> hours are available.  Denote the
+entries in the above table as  <img alt="tex2html_wrap_inline1168" src="node9_arquivos/img82.gif" align="middle" height="29" width="40"> , the probability of failing
+course <i>t</i> given <i>k</i> hours are spent on it.
+</p><p>
+The final stage is easy:
+</p><p> <img alt="displaymath1174" src="node9_arquivos/img83.gif" align="bottom" height="19" width="306"> </p><p>
+</p><p>
+The recursion is as follows:
+</p><p> <img alt="displaymath1176" src="node9_arquivos/img84.gif" align="bottom" height="29" width="377"> </p><p>
+</p><p>
+We can now solve this recursion:
+</p><dl compact="compact"><dt><strong><em>Stage 3.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular544" src="node9_arquivos/img85.gif" align="bottom" height="144" width="91"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 2.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular549" src="node9_arquivos/img86.gif" align="bottom" height="144" width="659"> </p><p>
+  So, the optimum way of dividing time between studying English and
+  Statistics is to spend it all on Statistics.
+</p><p>
+</p></dd><dt><strong><em>Stage 1.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular554" src="node9_arquivos/img87.gif" align="bottom" height="51" width="688"> </p><p>
+  The overall optimal strategy is to spend one hour on French, and three on
+  Statistics.  The probability of failing all three courses is about
+  29%.
+</p><p>
+ </p></dd></dl><br> <hr>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

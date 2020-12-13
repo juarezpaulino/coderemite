@@ -1,0 +1,136 @@
+<html><head><title>3807 - Marble Game</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3807 - Marble Game</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=wfi&year=2006"><b>World Finals - Tokyo - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3807"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3807"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+A Marble Game is played with <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> marbles on a square board. The board is divided into <!-- MATH
+ $N \times N$
+ -->
+<SPAN CLASS="MATH"><I>N</I>&#215;<I>N</I></SPAN>
+<tex2html_verbatim_mark> unit squares, and <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> of those unit squares contain holes. Marbles and holes are numbered from 1 to <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark>. The goal of the Marble game is to roll each marble into the hole that has the same number. 
+
+<P>
+A game board may contain walls. Each wall is one unit long and stands between two adjacent unit squares. Two squares are considered adjacent if and only if they share a side. 
+
+<P>
+At the beginning of the game, all marbles are placed on the board, each in a different square. A ``move" consists of slightly lifting a side of the game board. Then all marbles on the board roll downward toward the opposite side, each one rolling until it meets a wall or drops into an empty hole, or until the next square is already occupied by another marble. Marbles roll subject to the following restrictions: 
+
+<P>
+
+<UL>
+<LI>Marbles cannot jump over walls, other marbles, or empty holes. 
+</LI>
+<LI>Marbles cannot leave the board. (The edge of the board is a wall.) 
+</LI>
+<LI>A unit square can contain at most a single marble at any one time. 
+</LI>
+<LI>When a marble moves into a square with a hole, the marble drops into that hole. The hole is then filled, and other marbles can subsequently roll over the hole. A marble in a hole can never leave that hole.
+</LI>
+</UL>
+
+<P>
+The game is over when each marble has dropped into a hole with the corresponding number. 
+
+<P>
+The figure below illustrates a solution for a game played on a <!-- MATH
+ $4 \times 4$
+ -->
+<SPAN CLASS="MATH">4&#215;4</SPAN>
+<tex2html_verbatim_mark> board with three blue marbles, three holes and a wall. The solution has five moves: lift the east side, lift the north side, lift the south side, lift the west side, lift the north side. 
+
+<P>
+Your program should determine the fewest number of moves to drop all the marbles into the correct holes -- if such a move sequence is possible.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3807.eps}$
+ -->
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="p3807.jpg"
+ ALT="\epsfbox{p3807.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input file contains several test cases. The first line of each test case contains three numbers: the size <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(2 \le N \le 4)$
+ -->
+<SPAN CLASS="MATH">(2<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3807img2.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3807img2.png"
+ ALT="$ \le$">4)</SPAN>
+<tex2html_verbatim_mark> of the board, the number <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> <SPAN CLASS="MATH">(<I>M</I> &gt; 0)</SPAN>
+<tex2html_verbatim_mark> of marbles, and the number <SPAN CLASS="MATH"><I>W</I></SPAN>
+<tex2html_verbatim_mark> of walls. Each of the following <SPAN CLASS="MATH">2<I>M</I></SPAN>
+<tex2html_verbatim_mark> lines contains two integers. The first integer is a row location and the second is a column location. The first <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> of those lines represent the locations of the marbles, where marble#1 is on the first line, marble#2 on the second, and so on. The last <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> of those lines represent the locations of the holes, with the location of hole#1 coming first, hole#2 coming second, and so on. Finally, the next <SPAN CLASS="MATH"><I>W</I></SPAN>
+<tex2html_verbatim_mark> lines represent the wall locations. Each of those lines contains four integers: the first pair are the row and column of the square on one side of the wall and the second pair are the row and column of the square on the other side of the wall. Rows and columns are numbered <SPAN CLASS="MATH">0..<I>N</I> - 1</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+The input file ends with a line containing three zeroes.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, print the case number (beginning with 1) and the minimal number of moves to win the game. If the game cannot be won, print the word ``<TT>impossible</TT>". Put a blank line after each test case. Use the format of the sample output below.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+4 3 1
+0 1 
+1 0 
+1 2 
+2 3 
+2 1 
+3 2 
+1 1 1 2
+3 2 2
+0 0 
+0 1 
+0 2 
+2 0 
+2 0 1 0
+2 0 2 1
+0 0 0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Case 1: 5 moves 
+
+Case 2: impossible
+</PRE> 
+
+<P>
+<hr><ADDRESS>Tokyo 2006-2007</ADDRESS><p><b>Tests-Setter:</b> Derek Kisman<br></body></html>

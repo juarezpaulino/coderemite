@@ -1,0 +1,172 @@
+<html><head><title>3476 - Light Up</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3476 - Light Up</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3476"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3476"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+Light Up is a puzzle set in a rectangular board divided in smaller squares. Some squares in the board are ``empty" (white squares the figure below), some squares are ``barriers" (dark squares in the figure below). A barrier square may have an integer number i associated to it <!-- MATH
+ $(0 \le i \le 4)$
+ -->
+<SPAN CLASS="MATH">(0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$">4)</SPAN>
+<tex2html_verbatim_mark>.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3476.eps}$
+ -->
+<IMG
+ WIDTH="318" HEIGHT="143" ALIGN="BOTTOM" BORDER="0"
+ SRC="3476img2.png"
+ ALT="\epsfbox{p3476.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">Figure 2: (a) Puzzle with 6 rows, 7 columns and 7 barriers; (b) a solution to the puzzle. 
+
+</DIV>
+
+<P>
+In this puzzle the goal is to ``light up" all the empty squares by placing lamps in some of them (lamps are depicted as circles in the figure). Each lamp illuminates the square it is on, plus all squares in line with it, horizontally or vertically, up to a barrier square or the board end. 
+
+<P>
+A winning configuration satisfies the following conditions:  
+
+<P>
+
+<UL>
+<LI>all empty squares must be lit;  
+</LI>
+<LI>no lamp may be lit by another lamp;  
+</LI>
+<LI>all numbered barrier squares must have exactly that number of lamps adjacent to them (in the four squares above, below, and to the side);  
+</LI>
+<LI>non-numbered barrier squares may have any number of lamps adjacent to them. 
+</LI>
+</UL>
+
+<P>
+You must write a program to determine the smallest number of lamps that are needed to reach a winning configuration.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input contains several test cases. The first line of a test case contains two integers <SPAN CLASS="MATH"><I>N</I>, <I>M</I></SPAN>
+<tex2html_verbatim_mark> indicating respectively the number of rows and the number of columns of the board <!-- MATH
+ $(1 \le N \le 7, 1 \le M \le 7)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$">7, 1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>M</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$">7)</SPAN>
+<tex2html_verbatim_mark>. The second line contains one integer <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark> indicating the number of barrier squares <!-- MATH
+ $(0 \le B \le N \times M)$
+ -->
+<SPAN CLASS="MATH">(0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>B</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>N</I> <TT>x</TT> <I>M</I>)</SPAN>
+<tex2html_verbatim_mark>. Each of the next <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark> lines describe a barrier, containing three integers <SPAN CLASS="MATH"><I>R</I>, <I>C</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>K</I></SPAN>
+<tex2html_verbatim_mark> , representing respectively the row number <!-- MATH
+ $(1 \le R \le N )$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>R</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>N</I>)</SPAN>
+<tex2html_verbatim_mark>, the column number <!-- MATH
+ $(1 \le C \le M)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>C</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>M</I>)</SPAN>
+<tex2html_verbatim_mark> and the barrier number <!-- MATH
+ $(-1 \le K \le 4)$
+ -->
+<SPAN CLASS="MATH">(- 1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$"><I>K</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3476img1.png"
+ ALT="$ \le$">4)</SPAN>
+<tex2html_verbatim_mark>; <SPAN CLASS="MATH"><I>K</I> = - 1</SPAN>
+<tex2html_verbatim_mark> means the barrier is unnumbered. 
+The end of input is indicated by <SPAN CLASS="MATH"><I>N</I> = <I>M</I> = 0</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case in the input your program must produce one line of output, containing either an integer indicating the smallest number of lamps needed to reach a winning configuration, in case such a configuration exists, or the words `<TT>No solution</TT>'. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+2 2 
+0 
+2 2 
+1 
+2 2 1
+6 7 
+7 
+2 3 -1
+3 3 0 
+4 2 1 
+5 4 3 
+5 6 2 
+1 7 -1
+6 5 -1
+0 0
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2 
+No solution 
+8
+</PRE> 
+
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

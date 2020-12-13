@@ -1,0 +1,102 @@
+<html><head><title>3736 - Consanguine Calculations</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3736 - Consanguine Calculations</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=wfi&year=2006"><b>World Finals - Tokyo - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3736"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3736"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+Every person's blood has 2 markers called ABO <SPAN  CLASS="textit">alleles</SPAN>. Each of the markers is represented by one of three letters: <TT>A</TT>, <TT>B</TT>, or <TT>O</TT>. This gives six possible combinations of these alleles that a person can have, each of them resulting in a particular ABO <SPAN  CLASS="textit">blood type</SPAN> for that person.
+
+<P>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER">
+<TABLE COLS=2>
+<COL ALIGN=CENTER><COL ALIGN=CENTER>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>
+<SPAN  CLASS="textit"><SPAN  CLASS="textbf">Combination</SPAN></SPAN> </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> <SPAN  CLASS="textit"><SPAN  CLASS="textbf">ABO Blood Type</SPAN></SPAN> </TD></TR>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 
+AA  </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>    A  </TD></TR>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 
+AB  </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>    AB </TD></TR>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 
+AO  </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>    A  </TD></TR>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 
+BB  </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>    B  </TD></TR>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 
+BO  </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>    B  </TD></TR>
+<TR><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP> 
+OO  </TD><TD VALIGN=BASELINE ALIGN=CENTER NOWRAP>    O </TD></TR>
+</TABLE>
+
+</DIV>
+
+<P>
+
+<P>
+<BR>
+Likewise, every person has two alleles for the blood <SPAN  CLASS="textit">Rh factor</SPAN>, represented by the characters <TT>+</TT> and <TT>-</TT>. Someone who is ``Rh positive" or ``Rh+" has at least one <TT>+</TT> allele, but could have two. Someone who is ``Rh negative" always has two <TT>-</TT> alleles. 
+
+<P>
+The blood type of a person is a combination of ABO blood type and Rh factor. The blood type is written by suffixing the ABO blood type with the <TT>+</TT> or <TT>-</TT> representing the Rh factor. Examples include <TT>A+</TT>, <TT>AB-</TT>, and <TT>O-</TT>. 
+
+<P>
+Blood types are inherited: each biological parent donates one ABO allele (randomly chosen from their two) and one Rh factor allele to their child. Therefore 2 ABO alleles and 2 Rh factor alleles of the parents determine the child's blood type. For example, if both parents of a child have blood type <TT>A-</TT>, then the child could have either type <TT>A-</TT> or type <TT>O-</TT> blood. A child of parents with blood types <TT>A+</TT> and <TT>B+</TT> could have any blood type. 
+
+<P>
+In this problem, you will be given the blood type of either both parents or one parent and a child; you will then determine the (possibly empty) set of blood types that might characterize the child or the other parent. 
+
+<P>
+Note: an uppercase letter ``Oh" is used in this problem to denote blood types, <SPAN  CLASS="textit">not</SPAN> a digit (zero).
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input consists of multiple test cases. Each test case is on a single line in the format: the blood type of one parent, the blood type of the other parent, and finally the blood type of the child, except that the blood type of one parent or the child will be replaced by a question mark. To improve readability, whitespace may be included anywhere on the line except inside a single blood type specification. 
+
+<P>
+The last test case is followed by a line containing the letters <TT>E</TT>, <TT>N</TT>, and <TT>D</TT> separated by whitespace.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case in the input, print the case number (beginning with 1) and the blood type of the parents and the child. If no blood type for a parent is possible, print ``<TT>IMPOSSIBLE</TT>". If multiple blood types for parents or child are possible, print all possible values in a comma-separated list enclosed in curly braces. The order of the blood types inside the curly braces does not matter.
+
+<P>
+The sample output illustrates multiple output formats. Your output format should be similar.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+O+  O-  ? 
+O+  ?  O-
+AB-  AB+  ? 
+AB+  ?  O+ 
+E N D
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Case 1: O+ O- {O+, O-}
+Case 2: O+ {A-, A+, B-, B+, O-, O+} O-
+Case 3: AB- AB+ {A+, A-, B+, B-, AB+, AB-}
+Case 4: AB+ IMPOSSIBLE O+
+</PRE> 
+
+<P>
+<hr><ADDRESS>Tokyo 2006-2007</ADDRESS><p><b>Tests-Setter:</b> Derek Kisman<br></body></html>

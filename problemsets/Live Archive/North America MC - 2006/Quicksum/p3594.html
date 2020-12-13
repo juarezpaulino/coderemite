@@ -1,0 +1,84 @@
+<html><head><title>3594 - Quicksum</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3594 - Quicksum</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=mc&year=2006"><b>North America - Mid Central - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3594"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3594"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+A checksum is an algorithm that scans a packet of data and returns a single number. The idea is that if the packet is changed, the checksum will also change, so checksums are often used for detecting transmission errors, validating document contents, and in many other situations where it is necessary to detect undesirable changes in data. 
+
+<P>
+For this problem, you will implement a checksum algorithm called Quicksum. A Quicksum packet allows only uppercase letters and spaces. It always begins and ends with an uppercase letter. Otherwise, spaces and letters can occur in any combination, including consecutive spaces. 
+
+<P>
+A Quicksum is the sum of the products of each character's position in the packet times the character's value. A space has a value of zero, while letters have a value equal to their position in the alphabet. So, <TT>A</TT>=1, <TT>B</TT>=2, etc., through <TT>Z</TT>=26. Here are example Quicksum calculations for the packets ``<TT>ACM</TT>" and ``<TT>MID CENTRAL</TT>":
+
+<P>
+
+<P>
+<BR>
+
+<TT>ACM</TT>: <!-- MATH
+ $1 \ast 1 + 2 \ast 3 + 3 \ast 13 = 46$
+ -->
+<SPAN CLASS="MATH">1 <TT>*</TT> 1 + 2 <TT>*</TT> 3 + 3 <TT>*</TT> 13 = 46</SPAN>
+
+<P>
+
+<P>
+<BR>
+
+<TT>MID CENTRAL</TT>: <!-- MATH
+ $1 \ast 13 + 2 \ast 9 + 3 \ast 4 + 4 \ast 0 + 5 \ast 3 + 6 \ast 5 + 7 \ast 14 + 8 \ast 20 + 9 \ast 18 + 10 \ast 1 + 11 \ast 12 = 650$
+ -->
+<SPAN CLASS="MATH">1 <TT>*</TT> 13 + 2 <TT>*</TT> 9 + 3 <TT>*</TT> 4 + 4 <TT>*</TT> 0 + 5 <TT>*</TT> 3 + 6 <TT>*</TT> 5 + 7 <TT>*</TT> 14 + 8 <TT>*</TT> 20 + 9 <TT>*</TT> 18 + 10 <TT>*</TT> 1 + 11 <TT>*</TT> 12 = 650</SPAN>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+The input consists of one or more packets followed by a line containing only <TT>#</TT> that signals the end of the input. Each packet is on a line by itself, does not begin or end with a space, and contains from 1 to 255 characters. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+For each packet, output its Quicksum on a separate line in the output. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+ACM 
+MID CENTRAL 
+REGIONAL PROGRAMMING CONTEST 
+ACN 
+A C M 
+ABC 
+BBC 
+#
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+46 
+650 
+4690 
+49 
+75 
+14 
+15
+</PRE> 
+
+<P>
+<hr><ADDRESS>Mid Central 2006-2007</ADDRESS><p></body></html>

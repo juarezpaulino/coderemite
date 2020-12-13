@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>Uncertain States</title>
+
+
+
+
+<meta name="description" content="Uncertain States">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node12_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html170" href="http://mat.gsia.cmu.edu/classes/dynamic/node13.html"><img alt="next" src="node12_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html168" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="up" src="node12_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html162" href="http://mat.gsia.cmu.edu/classes/dynamic/node11.html"><img alt="previous" src="node12_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html172" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node12_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html171" href="http://mat.gsia.cmu.edu/classes/dynamic/node13.html">``Linear'' decision making</a>
+<b>Up:</b> <a name="tex2html169" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<b> Previous:</b> <a name="tex2html163" href="http://mat.gsia.cmu.edu/classes/dynamic/node11.html">Uncertain Payoffs</a>
+<br> <p>
+</p><h2><a name="SECTION000102000000000000000">Uncertain States</a></h2>
+<p>
+A more interesting use of uncertainty occurs when the state that
+results from a decision is uncertain.  For example, consider the
+following coin tossing game:  a coin will be tossed 4 times.  Before
+each toss, you can wager $0, $1, or $2 (provided you have
+sufficient funds).  You begin with $1, and your objective is to
+maximize the probability you have $5 at the end. of the coin tosses.
+</p><p>
+We can formulate this as a dynamic program as follows:  create a stage
+for the decision point before each flip of the coin, and a ``final''
+stage, representing the result of the final coin flip.  There is a
+state in each stage for each possible amount you can have.  For stage
+1, the only state is ``1'', for each of the others, you can set it to
+``0,1,2,3,4,5'' (of course, some of these states are not possible, but
+there is no sense in worrying too much about that).  Now, if we are in
+stage <i>i</i> and bet <i>k</i> and we have <i>x</i> dollars, then with probability
+.5, we will have <i>x</i>-<i>k</i> dollars, and with probability .5 we will have
+<i>x</i>+<i>k</i> dollars next period.  Let  <img alt="tex2html_wrap_inline1210" src="node12_arquivos/img94.gif" align="middle" height="29" width="38">  be the probability of ending
+up with at least $5 given we have $<i>x</i> before the <i>i</i>th coin flip.
+</p><p>
+This gives us the following recursion:
+</p><p>
+</p><p> <img alt="displaymath1216" src="node12_arquivos/img95.gif" align="bottom" height="29" width="435"> </p><p>
+</p><p> <img alt="displaymath1218" src="node12_arquivos/img96.gif" align="bottom" height="19" width="369"> </p><p>
+</p><p>
+Note that the next state is not known for certain, but is a
+probabilistic mixing of states.  We can still easily determine  <img alt="tex2html_wrap_inline1220" src="node12_arquivos/img97.gif" align="middle" height="29" width="15"> 
+from  <img alt="tex2html_wrap_inline1222" src="node12_arquivos/img98.gif" align="middle" height="29" width="15"> , and  <img alt="tex2html_wrap_inline1224" src="node12_arquivos/img99.gif" align="middle" height="29" width="15">  from  <img alt="tex2html_wrap_inline1220" src="node12_arquivos/img97.gif" align="middle" height="29" width="15">  and so on back to  <img alt="tex2html_wrap_inline1228" src="node12_arquivos/img100.gif" align="middle" height="29" width="39"> .
+</p><p>
+Another example comes from the pricing of stock options.  Suppose we
+have the option to buy Netscape stock at $150.  We can exercise this
+option anytime in the next 10 days (american option, rather than a
+european option that could only be exercised 10 days from now).  The
+current price of Netscape is $140.  We have a model of Netscape stock
+movement that predicts the following:  on each day, the stock will go
+up by $2 with probability .4, stay the same with probability .1 and
+go down by $2 with probability .4.  Note that the overall trend is
+downward (probably conterfactual, of course).  The value of the
+option if we exercise it at price <i>x</i> is <i>x</i>-150 (we will only
+exercise at prices above 150).
+</p><p>
+We can formulate this as a stochastic dynamic program as follows:  we
+will have stage <i>i</i> for each day <i>i</i>, just before the exercise or keep
+decision.  The state for each stage will be the stock price of
+Netscape on that day.   Let  <img alt="tex2html_wrap_inline1210" src="node12_arquivos/img94.gif" align="middle" height="29" width="38">  be the expected value of the
+option on day <i>i</i> given that the stock price is <i>x</i>.  Then, the
+optimal decision is given by:
+</p><p>
+</p><p> <img alt="displaymath1244" src="node12_arquivos/img101.gif" align="bottom" height="19" width="552"> </p><p>
+</p><p>
+and
+</p><p>
+</p><p> <img alt="displaymath1246" src="node12_arquivos/img102.gif" align="bottom" height="19" width="352"> </p><p>
+</p><p>
+Given the size of this problem, it is clear that we should use a
+spreadsheet to do the calculations.
+</p><p>
+There is one major difference between stochastic dynamic programs and
+deterministic dynamic programs:  in the latter, the complete decision
+path is known.  In a stochastic dynamic program, the actual decision
+path will depend on the way the random aspects play out.  Because of
+this, ``solving'' a stochastic dynamic program involves giving a
+decision rule for every possible state, not just along an optimal
+path.
+</p><p>
+</p><hr><a name="tex2html170" href="http://mat.gsia.cmu.edu/classes/dynamic/node13.html"><img alt="next" src="node12_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html168" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="up" src="node12_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html162" href="http://mat.gsia.cmu.edu/classes/dynamic/node11.html"><img alt="previous" src="node12_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html172" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node12_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html171" href="http://mat.gsia.cmu.edu/classes/dynamic/node13.html">``Linear'' decision making</a>
+<b>Up:</b> <a name="tex2html169" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<b> Previous:</b> <a name="tex2html163" href="http://mat.gsia.cmu.edu/classes/dynamic/node11.html">Uncertain Payoffs</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

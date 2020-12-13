@@ -1,0 +1,132 @@
+<html><head><title>3710 - Interconnect</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3710 - Interconnect</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3710"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3710"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+There are two serious problems in the Kingdom of Lipshire: the roads and the fools 
+who build them. Once upon a time, the King of Lipshire has decided to 
+improve the road system because some roads became completely impassable 
+-- it was easier to travel cross-country instead of using those roads. 
+
+<P>
+By King's decree, new roads are to be built in Lipshire. Of course, 
+the new road system must interconnect all towns, i. e. there must be a 
+path connecting any two towns of Lipshire. 
+
+<P>
+The road administration of 
+Lipshire has resources to build exactly one road per year. Unfortunately, 
+the fools who build these roads are completely out of control. So, 
+regardless of the orders given, the fools randomly select two different 
+towns <SPAN CLASS="MATH"><I>a</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>b</I></SPAN>
+<tex2html_verbatim_mark> and build a road between them, even when those towns are 
+already connected by a road. All possible choices are equiprobable. The 
+road is build in such a manner that the only points where a traveler can 
+leave it are the towns connected by this road. The only good thing is 
+that all roads are bidirectional. 
+
+<P>
+The King knows about the problem, but 
+he cannot do anything about it. The only thing King needs to know is 
+the expected number of years to wait before the road system of Lipshire 
+becomes interconnected. He asked you to provide this information.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<B>The input will contain several test cases, each of them as described below.
+Consecutive test cases are separated by a single blank line.
+</B>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+The first line of the input contains two integers <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(2 \le n \le 30, 0 \le m \le 1 000)$
+ -->
+<SPAN CLASS="MATH">(2<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img1.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img1.png"
+ ALT="$ \le$">30, 0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img1.png"
+ ALT="$ \le$"><I>m</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img1.png"
+ ALT="$ \le$">1000)</SPAN>
+<tex2html_verbatim_mark> --
+ the number of towns in Lipshire, and the 
+number of roads which are still good. The following <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark> lines describe 
+roads, one per line. Each road is described with two endpoints -- two 
+integer numbers <SPAN CLASS="MATH"><I>u</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>v</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le u_{i} , v_{i} \le n, u_{i} \neq v_{i})$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img1.png"
+ ALT="$ \le$"><I>u</I><SUB>i</SUB>, <I>v</I><SUB>i</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img1.png"
+ ALT="$ \le$"><I>n</I>, <I>u</I><SUB>i</SUB> <IMG
+ WIDTH="18" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="3710img2.png"
+ ALT="$ \neq$"> <I>v</I><SUB>i</SUB>)</SPAN>
+<tex2html_verbatim_mark>. There can be 
+multiple roads between two towns, but the road from a town to itself is not 
+allowed.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, output the expected number of years to wait for the interconnected road 
+system. If the system is already interconnected, output zero as an 
+answer. Output the number, on a line by itself, with at least six precise digits after the 
+decimal point.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2 1 
+1 2 
+
+4 2 
+1 2 
+3 4
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+0.0 
+1.5
+</PRE> 
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

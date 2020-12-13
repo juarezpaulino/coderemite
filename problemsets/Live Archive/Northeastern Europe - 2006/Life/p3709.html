@@ -1,0 +1,189 @@
+<html><head><title>3709 - Hard Life</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3709 - Hard Life</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3709"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3709"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+John is a Chief Executive Officer at a privately owned medium size company. The owner of the 
+company has decided to make his son Scott a manager in the company. John 
+fears that the owner will ultimately give CEO position to Scott if he does 
+well on his new manager position, so he decided to make Scott's life 
+as hard as possible by carefully selecting the team he is going to 
+manage in the company. 
+
+<P>
+John knows which pairs of his people work poorly in 
+the same team. John introduced a <SPAN  CLASS="textit">hardness factor</SPAN> of a team -- it is a 
+number of pairs of people from this team who work poorly in the same 
+team divided by the total number of people in the team. The larger is the 
+hardness factor, the harder is this team to manage. John wants to find 
+a group of people in the company that are harderst to manage and make 
+it Scott's team. Please, help him.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3709.eps}$
+ -->
+<IMG
+ WIDTH="230" HEIGHT="230" ALIGN="BOTTOM" BORDER="0"
+ SRC="p3709.jpg"
+ ALT="\epsfbox{p3709.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+In the example on the picture the hardest team consists of people 1, 2, 
+4, and 5. Among 4 of them 5 pairs work poorly in the same team, thus 
+hardness factor is equal to <!-- MATH
+ $\frac{5}{4}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img2.png"
+ ALT="$ {\frac{{5}}{{4}}}$"></SPAN>
+<tex2html_verbatim_mark> . If we add person number 3 to the team 
+then hardness factor decreases to <!-- MATH
+ $\frac{6}{5}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="15" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img3.png"
+ ALT="$ {\frac{{6}}{{5}}}$"></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<B>The input will contain several test cases, each of them as described below.
+Consecutive test cases are separated by a single blank line.
+</B>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+The first line of the input contains two integer numbers <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark> 
+<!-- MATH
+ $(1 \le n \le 100, 0 \le m \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$">100, 0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$"><I>m</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$">1000)</SPAN>
+<tex2html_verbatim_mark>. Here <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> is a total number of people 
+in the company (people are numbered from 1 to <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark>), and <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark> is the number 
+of pairs of people who work poorly in the same team. Next <SPAN CLASS="MATH"><I>m</I></SPAN>
+<tex2html_verbatim_mark> lines 
+describe those pairs with two integer numbers <SPAN CLASS="MATH"><I>a</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>b</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le a_{i} , b_{i} \le n,
+a_{i} \neq b_{i})$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$"><I>a</I><SUB>i</SUB>, <I>b</I><SUB>i</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$"><I>n</I>, <I>a</I><SUB>i</SUB> <IMG
+ WIDTH="18" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img5.png"
+ ALT="$ \neq$"> <I>b</I><SUB>i</SUB>)</SPAN>
+<tex2html_verbatim_mark> on a line. The order of people in a pair is arbitrary and no 
+pair is listed twice.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<B>For each test case, the output must follow the description below. 
+The outputs of two consecutive cases will be separated by a blank line.
+</B>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+Write to the output an integer number <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le k \le n)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$"><I>k</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3709img4.png"
+ ALT="$ \le$"><I>n</I>)</SPAN>
+<tex2html_verbatim_mark> -- the 
+number of people in the hardest team, followed by <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> lines listing people 
+from this team in ascending order. If there are multiple teams with the 
+same hardness factor then write any one.
+
+<P>
+Note, that in the last example any team has hardness factor of zero, 
+and any non-empty list of people is a valid answer. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+5 6 
+1 5 
+5 4 
+4 2 
+2 5 
+1 2 
+3 1 
+
+4 0
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+4 
+1 
+2 
+4 
+5 
+
+1 
+1
+</PRE> 
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

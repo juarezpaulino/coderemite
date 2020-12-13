@@ -1,0 +1,218 @@
+<html><head><title>3705 - Driving Directions</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3705 - Driving Directions</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3705"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3705"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+Contrary to the popular belief, alien flying saucers cannot fly 
+arbitrarily around our planet Earth. Their touch down and take off 
+maneuvers are extremely energy consuming, so they carefully plan their mission 
+to Earth to touch down in one particular place, then hover above the 
+ground carrying out their mission, then take off. It was all so easy 
+when human civilization was in its infancy, since flying saucers can 
+hover above all the trees and building, and their shortest path from one 
+mission point to the other was usually a simple straight line -- the 
+most efficient way to travel. However, modern cities have so tall 
+skyscrapers that flying saucers cannot hover above them and the task of 
+navigating modern city became quite a complex one. You were hired by an alien 
+spy to write a piece of software that will ultimately give flying 
+saucers driving directions throughout the city. As your first assignment 
+(to prove your worth to your alien masters) you should write a program 
+that computes the shortest distance for a flying saucer from one point 
+to another. This program will be used by aliens as an aid in planning 
+of mission energy requirements. 
+
+<P>
+The problem is simplified by several 
+facts. First of all, since flying saucer can hover above most of the 
+buildings, you are only concerned with locations of skyscrapers. Second, 
+the problem is actually twodimensional -- you can look at everything 
+``from above" and pretend that all objects are situated on <SPAN CLASS="MATH"><I>OXY</I></SPAN>
+<tex2html_verbatim_mark> 
+Cartesian plane. Flying saucer is represented by a circle of radius <SPAN CLASS="MATH"><I>r</I></SPAN>
+<tex2html_verbatim_mark>, and 
+since modern cities with skyscrapers tend to be regular, every skyscraper 
+is represented with a rectangle whose sides are parallel to <SPAN CLASS="MATH"><I>OX</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>OY</I></SPAN>
+<tex2html_verbatim_mark> 
+axes. 
+
+<P>
+By definition, the location of flying saucer is the location of 
+its center, and the length of the path it travels is the length of the 
+path its center travels. During its mission flying saucer can touch 
+skyscrapers but it cannot intersect them. 
+
+<P>
+At the first picture a flying 
+saucer of <SPAN CLASS="MATH"><I>r</I> = 1</SPAN>
+<tex2html_verbatim_mark> has to get from point <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> to point <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark>. The straight dashed 
+line would have been the shortest path if not for skyscraper 1. The 
+shortest way to avoid skyscraper 1 is going around its top right corner, 
+but skyscraper 2 is too close to fly there. Thus, the answer is to go 
+around the bottom left corner of skyscraper 1 for a total path length of 
+10.570796. 
+
+<P>
+In the second picture it is impossible for a flying saucer 
+of <SPAN CLASS="MATH"><I>r</I> = 2</SPAN>
+<tex2html_verbatim_mark> to get from point <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> to point <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark>, since all skyscrapers are too 
+close to fly in between them. 
+
+<P>
+In the third picture flying saucer of <SPAN CLASS="MATH"><I>r</I> = 1</SPAN>
+<tex2html_verbatim_mark> has to fly in a slalom-like way around two skyscrapers in order to 
+achieve the shortest path of length 11.652892 between <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark>.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3705.eps}$
+ -->
+<IMG
+ WIDTH="946" HEIGHT="307" ALIGN="BOTTOM" BORDER="0"
+ SRC="p3705.jpg"
+ ALT="\epsfbox{p3705.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input file contains several test cases, each of them as described below.
+
+<P>
+The first line of the input file contains integer numbers <SPAN CLASS="MATH"><I>r</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1
+\le r \le 100, 0 \le n \le 30)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$"><I>r</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$">100, 0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$">30)</SPAN>
+<tex2html_verbatim_mark>, where <SPAN CLASS="MATH"><I>r</I></SPAN>
+<tex2html_verbatim_mark> is the radius of the flying 
+saucer, and <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> is the number of skyscrapers. The next line contains four 
+integer numbers <SPAN CLASS="MATH"><I>x</I><SUB>A</SUB></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>y</I><SUB>A</SUB></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>x</I><SUB>B</SUB></SPAN>
+<tex2html_verbatim_mark>, and <SPAN CLASS="MATH"><I>y</I><SUB>B</SUB></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(-1000 \le x_{A}, y_{A}, x_{B}, y_{B} \le 1000)$
+ -->
+<SPAN CLASS="MATH">(- 1000<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$"><I>x</I><SUB>A</SUB>, <I>y</I><SUB>A</SUB>, <I>x</I><SUB>B</SUB>, <I>y</I><SUB>B</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$">1000)</SPAN>
+<tex2html_verbatim_mark>, where <!-- MATH
+ $(x_{A}
+, y_{A})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>A</SUB>, <I>y</I><SUB>A</SUB>)</SPAN>
+<tex2html_verbatim_mark> are the coordinates of the starting point of the flying 
+saucer's mission and <!-- MATH
+ $(x_{B}, y_{B})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>B</SUB>, <I>y</I><SUB>B</SUB>)</SPAN>
+<tex2html_verbatim_mark> are the coordinates of its finishing point. 
+
+<P>
+The following <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> lines describe skyscrapers. Each skyscraper is 
+represented by four integer numbers <SPAN CLASS="MATH"><I>x</I><SUB>1</SUB></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>y</I><SUB>1</SUB></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>x</I><SUB>2</SUB></SPAN>
+<tex2html_verbatim_mark>, and <!-- MATH
+ $y_{2} (-1000 \le x_{1}, y_{1}, x_{2}, y_{2} \le 1000, x_{1} < x_{2} , y_{1} < y_{2})$
+ -->
+<SPAN CLASS="MATH"><I>y</I><SUB>2</SUB>(- 1000<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$"><I>x</I><SUB>1</SUB>, <I>y</I><SUB>1</SUB>, <I>x</I><SUB>2</SUB>, <I>y</I><SUB>2</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3705img2.png"
+ ALT="$ \le$">1000, <I>x</I><SUB>1</SUB> &lt; <I>x</I><SUB>2</SUB>, <I>y</I><SUB>1</SUB> &lt; <I>y</I><SUB>2</SUB>)</SPAN>
+<tex2html_verbatim_mark> -- coordinates of the corners 
+of the corresponding rectangle. 
+
+<P>
+Skyscrapers neither intersect nor touch 
+each other. Starting and finishing points of the flying saucer's 
+mission are valid locations for flying saucer, that is, it does not 
+intersect any skyscraper in those points, but may touch some of them.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, write to the output a line with the text ``<TT>no solution</TT>" (without quotes) if 
+the flying saucer cannot reach its finishing point from the starting 
+one. Otherwise, write to the output a line with a single number -- the 
+shortest distance that the flying saucer needs to travel to get from the 
+starting point to the finishing point. Answer has to be precise to at 
+least 6 digits after the decimal point.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+1 3 
+2 7 7 1 
+3 2 6 4 
+7 5 9 8 
+1 8 5 9 
+2 4 
+0 0 5 6 
+8 3 10 6 
+5 9 9 10 
+1 4 2 8 
+3 1 5 3 
+1 2 
+0 5 10 5 
+2 2 4 5 
+6 5 8 8
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+10.570796 
+no solution 
+11.652892
+</PRE>  
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

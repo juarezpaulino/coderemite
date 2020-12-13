@@ -1,0 +1,121 @@
+<html><head><title>3653 - Jukebox</title></head><body><table align="center" border="1" cellpadding="3" cellspacing="0"><tbody><tr valign="center"><td rowspan="2" align="center" valign="center"><font color="#0000a0" size="5"><b><img src="first_data/icono.gif"></b></font></td><td colspan="5" align="center" width="500"><font color="#0000a0" size="5"><b>3653 - Jukebox</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&amp;year=2006"><b>Latin America - South America - 2006/2007</b></a></td></tr><tr valign="center"><td width="100">&nbsp;</td><td width="100">&nbsp;</td><td align="center" width="100"><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3653"><b>Submit</b></a></td><td width="100">&nbsp;</td><td align="center" width="100"><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3653"><b>Ranking</b></a></td></tr></tbody></table><p>&nbsp;</p><p>
+The ICPC judges are preparing a party for the opening ceremony. For the
+party, they intend to add a playlist with some songs to the jukebox
+software (a simple MP3 player). However, there are so many songs in the
+computer that it is diffcult to find the ones they want to add. As a
+consequence, they need to use the search feature many times. </p><p>
+In this jukebox, when you search for a string <span class="MATH"><i>s</i></span>, the software returns every music whose title or artist name contains <span class="MATH"><i>s</i></span> as a substring. String <span class="MATH"><i>s</i></span> is a substring of string <span class="MATH"><i>t</i></span> if <span class="MATH"><i>t</i></span> contains all characters of <span class="MATH"><i>s</i></span>
+as a contiguous sequence (for example, `bc' is a substring of `abcd',
+but `ac' is not). To save their precious time, while looking for a
+song, they always use one of the song's <span class="textit">golden string</span>, i.e. one of the shortest strings for which the search returns as a result only the song they want.
+
+</p><p>
+</p><div align="center">
+<!-- MATH
+ $\epsfbox{p3653a.eps}$
+ -->
+<img src="first_data/p3653a.jpg" alt="\epsfbox{p3653a.eps}" align="bottom" border="0" height="407" width="971">
+</div>
+
+<p>
+In the example above, a possible golden string for the song `johnnatan'
+is `ta'. Note that `ta' is not a substring of the name of another song
+nor a substring of the artist of another song. Note also that there is
+no string of size equal to 1 that could identify uniquely the song
+`johnnatan'.
+</p><p>
+</p><div align="center">
+<!-- MATH
+ $\epsfbox{p3653b.eps}$
+ -->
+<img src="first_data/p3653b.jpg" alt="\epsfbox{p3653b.eps}" align="bottom" border="0" height="422" width="971">
+</div>
+
+<p>They discovered that if they remove the artist fields from some of
+the songs they can get even smaller golden strings. For the song
+`john', there is no golden string. However, if one removes the artist
+field from all other songs, the string `c' becomes the golden string
+for the song `john'.
+</p><p>Given the song list (each song with name and artist), your job
+is to determine the minimum sum of the golden string sizes for all
+songs that can be obtained if one is allowed to remove some of the
+artist fields. In the figure above you can see a possible best result
+with the golden strings in bold. The minimum sum of the golden string
+sizes in this case is 10.
+</p><p>
+
+</p><h2><font color="#ff0000" size="4"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+
+<p>
+The input contains several test cases. The first line of each test case contains one integer <span class="MATH"><i>N</i></span> <!-- MATH
+ $(1 \le N \le 30)$
+ -->
+<span class="MATH">(1<img src="first_data/3653img3.png" alt="$ \le$" align="middle" border="0" height="31" width="18"><i>N</i><img src="first_data/3653img3.png" alt="$ \le$" align="middle" border="0" height="31" width="18">30)</span>, which indicates the number of songs. Following there will be <span class="MATH"><i>N</i></span> pairs of lines (<span class="MATH">2 <tt>*</tt> <i>N</i></span>
+lines), one pair for each song. The first line of a pair will contain
+the song name, the second line will contain the artist name. Both
+artist and song names are strings containing only lower case letters or
+underlines and having at least 1 and at most 30 characters. There will
+be at most 6 different artists in the list. The end of the input is
+given by <span class="MATH"><i>N</i> = 0</span>. 
+
+</p><p>
+
+</p><h2><font color="#ff0000" size="4"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+
+<p>
+For each test case your program must output one single line with the
+minimum sum of the golden string sizes. You may assume that there will
+always be a solution. </p><p>
+
+</p><h2><font color="#ff0000" size="4"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2> 
+
+<p>
+</p><pre>8 
+a_flor 
+los_hermanos 
+anna_julia 
+los_hermanos 
+quem_sabe 
+los_hermanos 
+pierrot 
+los_hermanos 
+azedume 
+los_hermanos 
+johnny 
+massacration 
+johnnatan 
+massacration 
+john 
+massacration 
+4 
+c 
+axc 
+b 
+axc 
+d 
+cc 
+xc 
+cc 
+0
+</pre> 
+
+<p>
+
+</p><h2><font color="#ff0000" size="4"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+
+<p>
+</p><pre>10 
+5
+</pre> 
+
+<p>
+</p><hr><address>South America 2006-2007</address><p>
+</p></body></html>

@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+const double EPS = 1E-10;
+
+inline int cmp(double x, double y = 0, double tol = EPS) {
+    return (x <= y + tol) ? (x + tol < y) ? -1 : 0 : 1;
+}
+
+
+using namespace std;
+
+
+int main() {
+
+    int TT;
+    scanf("%d", &TT);
+    for (int tt = 1; tt <= TT; tt++) {
+        printf("Case #%d:\n", tt);
+
+        double A;
+        cin >> A;
+
+        double lo = 0., hi = M_PI/2.;
+        for (int it = 0; it < 1000; it++) {
+            if (cmp(hi,lo)==0) break;
+            double m = (hi+lo)/2.;
+            int v = cmp(cos(m)+cos(M_PI/2.-m), A);
+            if (v > 0) lo = m;
+            else hi = m;
+        }
+        double t = (hi+lo)/2.;
+
+        printf("%.16lf %.16lf %.16lf\n", .5*cos(t), .5*sin(t), 0.);
+        printf("%.16lf %.16lf %.16lf\n", -.5*sin(t), .5*cos(t), 0.);
+        printf("%.16lf %.16lf %.16lf\n", 0., 0., 0.5);
+    }
+    return 0;
+}

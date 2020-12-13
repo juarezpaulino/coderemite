@@ -1,0 +1,109 @@
+<html><head><title>3468 - Tornado!</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3468 - Tornado!</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3468"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3468"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+Is this crazy weather the result of mankind's continuous interference in the environment? Or is it simply the normal cycle of climate changes through the ages? No one seems to know for sure, but the fact is that natural phenomena such as tornadoes and hurricanes have been hitting our country with more force and frequence than in past decades. 
+
+<P>
+One tornado has just hit Silverado Farm, a cattle and milk producer, and made havoc. The barn roof was torn, several trees were uprooted, the farm truck was overturned... But the worst thing is that the tornado destroyed several sections of the fence that surrounded the property. The fence was very well built, with concrete posts every two meters, and barbed wire enclosing the whole farm perimeter (the perimeter, in meters, is an even number, making the fence perfectly regular). 
+
+<P>
+Now several posts are broken or missing, and there are gaps in the fence. To prevent the cattle from getting out of the property, the fence must be restored as quickly as possible. Reconstructing the fence to its original form, with concrete posts, will take a long time. In the meantime, the farm owners decided to close the gaps with a temporary fence, made with wooden posts. Wooden posts will be placed in exactly the same spots where missing/broken concrete posts were/are. However, in order to make the temporary reconstruction faster and less expensive, the owners decided to use fewer posts: a wooden post will be used to replace a missing/broken concrete post only if the length of the barbed wired needed to close the distance to the next post (wooden or concrete) exceeds four meters.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3468.eps}$
+ -->
+<IMG
+ WIDTH="451" HEIGHT="159" ALIGN="BOTTOM" BORDER="0"
+ SRC="3468img1.png"
+ ALT="\epsfbox{p3468.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+Given the description of which posts are missing/broken, you must write a program to determine the smallest number of wooden posts needed to close all the gaps in the fence, according to the owners' decision.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input contains several test cases. The first line of a test case contains one integer <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> indicating the number of original concrete posts in the fence <!-- MATH
+ $(5 \le N \le 5000)$
+ -->
+<SPAN CLASS="MATH">(5<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3468img2.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3468img2.png"
+ ALT="$ \le$">5000)</SPAN>
+<tex2html_verbatim_mark>. The second line of a test case contains <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> integers <SPAN CLASS="MATH"><I>X</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> indicating the state of each concrete post after the tornado <!-- MATH
+ $(0 \le X_{i} \le 1 for 1 \le i \le N )$
+ -->
+<SPAN CLASS="MATH">(0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3468img2.png"
+ ALT="$ \le$"><I>X</I><SUB>i</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3468img2.png"
+ ALT="$ \le$">1<I>for</I>1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3468img2.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3468img2.png"
+ ALT="$ \le$"><I>N</I>)</SPAN>
+<tex2html_verbatim_mark>. If <SPAN CLASS="MATH"><I>X</I><SUB>i</SUB> = 1</SPAN>
+<tex2html_verbatim_mark> post <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> is in good condition, if <SPAN CLASS="MATH"><I>X</I><SUB>i</SUB> = 0</SPAN>
+<tex2html_verbatim_mark> post <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> is broken or missing. Note that post <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> is next to post 1. The end of input is indicated by <SPAN CLASS="MATH"><I>N</I> = 0</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case in the input your program must produce one line of output, containing an integer indicating the smallest number of wooden posts that are needed to restore the fence, according to the owners' decision. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+10
+1 0 0 1 0 0 1 0 1 1
+11
+1 0 0 1 0 0 0 1 1 0 1
+12
+0 0 0 0 0 1 1 0 0 0 1 1
+0
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2
+2
+3
+</PRE> 
+
+<P>
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

@@ -1,0 +1,107 @@
+<html><head><title>3811 - Tunnels</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3811 - Tunnels</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=wfi&year=2006"><b>World Finals - Tokyo - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3811"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3811"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+Curses! A handsome spy has somehow escaped from your elaborate deathtrap, overpowered your guards, and stolen your secret world domination plans. Now he is running loose in your volcano base, risking your entire evil operation. He must be stopped before he escapes! 
+
+<P>
+Fortunately, you are watching the spy's progress from your secret control room, and you have planned for just such an eventuality. Your base consists of a complicated network of rooms connected by non-intersecting tunnels. Every room has a closed-circuit camera in it (allowing you to track the spy wherever he goes), and every tunnel has a small explosive charge in it, powerful enough to permanently collapse it. The spy is too quick to be caught in a collapse, so you'll have to strategically collapse tunnels to prevent him from traveling from his initial room to the outside of your base. 
+
+<P>
+Damage to your base will be expensive to repair, so you'd like to ruin as few tunnels as possible. Find a strategy that minimizes the number of tunnels you'll need to collapse, no matter how clever the spy is. To be safe, you'll have to assume that the spy knows all about your tunnel system. Your main advantage is the fact that you can collapse tunnels whenever you like, based on your observations as the spy moves through the tunnels.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input consists of several test cases. Each test case begins with a line containing integers <SPAN CLASS="MATH"><I>R</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le R \le 50)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3811img1.png"
+ ALT="$ \le$"><I>R</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3811img1.png"
+ ALT="$ \le$">50)</SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le T \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3811img1.png"
+ ALT="$ \le$"><I>T</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3811img1.png"
+ ALT="$ \le$">1000)</SPAN>
+<tex2html_verbatim_mark>, which are the number of rooms and tunnels in your base respectively. Rooms are numbered from 1 to <SPAN CLASS="MATH"><I>R</I></SPAN>
+<tex2html_verbatim_mark>. <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> lines follow, each with two integers <SPAN CLASS="MATH"><I>x</I></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>y</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(0 \le x,y \le R)$
+ -->
+<SPAN CLASS="MATH">(0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3811img1.png"
+ ALT="$ \le$"><I>x</I>, <I>y</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3811img1.png"
+ ALT="$ \le$"><I>R</I>)</SPAN>
+<tex2html_verbatim_mark>, which are the room numbers on either end of a tunnel; a 0 indicates that the tunnel connects to the outside. More than one tunnel may connect a pair of rooms. 
+
+<P>
+The spy always starts out in room 1. Input is terminated by a line containing two zeros.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, print a line containing the test case number (beginning with 1) followed by the minimum number of tunnels that must be collapsed, in the worst case. Use the sample output format and print a blank line after each test case.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+4 6 
+1 2 
+1 3 
+2 4 
+3 4 
+4 0 
+4 0 
+4 6 
+1 2 
+1 3 
+1 4 
+2 0 
+3 0 
+4 0 
+0 0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Case 1: 2 
+
+Case 2: 2
+</pre>
+
+<p>
+<hr><ADDRESS>Tokyo 2006-2007</ADDRESS><p><b>Tests-Setter:</b> Derek Kisman<br></body></html>

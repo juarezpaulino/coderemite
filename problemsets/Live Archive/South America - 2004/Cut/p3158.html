@@ -1,0 +1,93 @@
+<html><head><title>3158 - Cutting Edge</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3158 - Cutting Edge</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2004"><b>Latin America - South America - 2004/2005</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p3158.pdf"><b>PDF</b></a></td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p3158.ps.gz"><b>PostScript</b></a></td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3158"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3158"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><p>Uncle Jeff owns a glass shop, which sells glass panes for windows and picture frames. As you
+probably know, a glass pane can only be cut if the cut goes from edge to edge of the pane in
+a straight line. The figure below shows how a glass pane can be cut into three smaller glass
+panes.
+
+<p align=center><img src=p3158a.gif>
+
+<p>Uncle Jeff normally operates as follows. He first collects various orders for small rectangular
+glass panes, for windows or picture frames. He then marks the position of each small rectangular
+pane onto a big rectangular glass pane, such that no two marked rectangles overlap. Finally,
+he performs a sequence of horizontal and vertical cuts, always from edge to edge of the pane
+being cut, so as to produce glass panes for all the customers.
+
+<p>Since the last phase (the actual cutting of the big glass pane into pieces) is the most boring
+thing one could ever imagine, uncle Jeff is asking you for help. He wants a program which
+given a big rectangular glass pane and lower-left and upper-right coordinates of each marked
+rectangle determines the order in which the edge-to-edge cuts can be performed. This list of
+cuts will be fed into a machine which will do the boring cuts for him!
+
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>The input contains several test cases. The first line of a test case contains an integer N
+indicating the number of windows and picture frames in the test (2 &le; N &le; 2000). Each of the
+next N lines contains four integers X<sub>1</sub>, Y<sub>1</sub>, X<sub>2</sub>, Y<sub>2</sub>,
+where (X<sub>1</sub>, Y<sub>1</sub>) and (X<sub>2</sub>, X<sub>2</sub>) represent the
+lower-left and upper-right coordinates marked by uncle Jeff on the big glass pane
+( - 5000 &le; X<sub>1</sub>, Y<sub>1</sub>, X<sub>2</sub>, Y<sub>2</sub> &le; 5000;
+X<sub>1</sub> &lt; X<sub>2</sub> and Y<sub>1</sub> &lt; Y<sub>2</sub>). You should assume the following of each test
+case:
+
+<blockquote>
+	<li>The marked rectangles do not overlap (but may intersect on the border points) and divide
+	the big glass pane completely into rectangular regions, so that no glass is wasted. This
+	means that the lower-left and upper-right coordinates of the big glass pane can be inferred
+	from the coordinates of the marked rectangles.
+
+	<li>It is possible to split up the big glass pane into the small marked rectangles through a
+	sequence of edge-to-edge cuts.
+</blockquote>
+
+<p>The end of input is indicated by N = 0.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>For each test case in the input your program must produce an ordered list of cuts that must
+be performed to separate the big glass pane into the desired smaller panes. Each cut must
+appear in a different line. A cut is described by four integers X<sub>1</sub>, Y<sub>1</sub>, X<sub>2</sub>, Y<sub>2</sub>,
+where (X<sub>1</sub>, Y<sub>1</sub>) and
+(X<sub>2</sub>, Y<sub>2</sub>) specify the endpoints of the cut, with X<sub>1</sub> &lt; X<sub>2</sub> and
+Y<sub>1</sub> = Y<sub>2</sub> for a horizontal cut and
+X<sub>1</sub> = X<sub>2</sub> and Y<sub>1</sub> &lt; Y<sub>2</sub> for a vertical cut. As more than one ordering of cuts may be possible,
+your program must print the list in a particular order. If at some point more than one cut is
+possible, print first the cut with smaller X<sub>1</sub>; if more than one cut is still possible, print first the
+one with smaller Y<sub>1</sub>. Print a blank line after each test case list.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+<PRE>
+3
+0 0 20 30
+20 0 40 20
+20 20 40 30
+6
+1 2 2 4
+2 3 3 5
+1 4 2 5
+2 2 3 3
+3 2 4 3
+3 3 4 5
+0
+</PRE>
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+<PRE>
+20 0 20 30
+20 20 40 20
+
+2 2 2 5
+1 4 2 4
+2 3 4 3
+3 2 3 3
+3 3 3 5
+</PRE>
+
+<P>
+<hr><ADDRESS>South America 2004-2005</ADDRESS><p></body></html>

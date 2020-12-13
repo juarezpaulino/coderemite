@@ -1,0 +1,60 @@
+<html><head><title>2927 - "Shortest" pair of paths</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2927 - "Shortest" pair of paths</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sea&year=2006"><b>Europe - Southeastern - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p2927.pdf"><b>PDF</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2927"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2927"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+A chemical company has an unusual shortest path problem. 
+
+<P>
+There are <SPAN CLASS="MATH"><I>N</I></SPAN> depots (vertices) where chemicals can be stored. There are <SPAN CLASS="MATH"><I>M</I></SPAN> individual shipping methods (edges) connecting pairs of depots. Each individual shipping method has a cost. In the usual problem, the company would need to find a way to route a single shipment from the first depot (0) to the last <SPAN CLASS="MATH">(<I>N</I> - 1)</SPAN>. That's easy. The problem they have seems harder. They have to ship two chemicals from the first depot (0) to the last <SPAN CLASS="MATH">(<I>N</I> - 1)</SPAN>. The chemicals are dangerous and cannot safely be placed together. The regulations say the company cannot use the same shipping method for both chemicals. Further, the company cannot place the two chemicals in same depot (for any length of time) without special storage handling -- available only at the first and last depots. To begin, they need to know if it's possible to ship both chemicals under these constraints. Next, they need to find the least cost of shipping both chemicals from first depot to the last depot. In brief, they need two completely separate paths (from the first depot to the last) where the overall cost of both is minimal. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input will consist of multiple cases. The first line of each input will contain <SPAN CLASS="MATH"><I>N</I></SPAN> and <SPAN CLASS="MATH"><I>M</I></SPAN> where <SPAN CLASS="MATH"><I>N</I></SPAN> is the number of depots and <SPAN CLASS="MATH"><I>M</I></SPAN> is the number of individual shipping methods. You may assume that <SPAN CLASS="MATH"><I>N</I></SPAN> is less than 64 and that <SPAN CLASS="MATH"><I>M</I></SPAN> is less than 10000. The next <SPAN CLASS="MATH"><I>M</I></SPAN> lines will contain three values, <SPAN CLASS="MATH"><I>i</I></SPAN>, <SPAN CLASS="MATH"><I>j</I></SPAN>, and <SPAN CLASS="MATH"><I>v</I></SPAN>. Each line corresponds a single, unique shipping method. The values <SPAN CLASS="MATH"><I>i</I></SPAN> and <SPAN CLASS="MATH"><I>j</I></SPAN> are the indices of two depots, and <SPAN CLASS="MATH"><I>v</I></SPAN> is the cost of getting from <SPAN CLASS="MATH"><I>i</I></SPAN> to <SPAN CLASS="MATH"><I>j</I></SPAN>. Note that these shipping methods are directed. If something can be shipped from <SPAN CLASS="MATH"><I>i</I></SPAN> to <SPAN CLASS="MATH"><I>j</I></SPAN> with cost 10, that says nothing about shipping from <SPAN CLASS="MATH"><I>j</I></SPAN> to <SPAN CLASS="MATH"><I>i</I></SPAN>. Also, there may be more than one way to ship between any pair of depots, and that may be important here. A line containing two zeroes signals the end of data and should not be processed.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+Your program must simply determine the minimum cost or, if it's not possible, conclusively state that the shipment cannot be made. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2 1 
+0 1 20 
+2 3 
+0 1 20 
+0 1 20 
+1 0 10 
+4 6 
+0 1 22 
+1 3 11 
+0 2 14 
+2 3 26 
+0 3 43 
+0 3 58 
+0 0
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Instance #1: Not possible 
+Instance #2: 40 
+Instance #3: 73
+<hr><ADDRESS>Southeastern 2006-2007</ADDRESS><p></body></html>

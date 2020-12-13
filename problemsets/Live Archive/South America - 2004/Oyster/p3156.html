@@ -1,0 +1,65 @@
+<html><head><title>3156 - Zing Zhu's Oyster Farm</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3156 - Zing Zhu's Oyster Farm</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2004"><b>Latin America - South America - 2004/2005</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p3156.pdf"><b>PDF</b></a></td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p3156.ps.gz"><b>PostScript</b></a></td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3156"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3156"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><p>Zing Zhu owns an island that is a piece of flat land. Everyday, when the tide rises, the island
+is flooded by sea water. After much thinking and asking advice from members of his family,
+Zing Zhu decided to set up an oyster farm in the island. Zing Zhu uses a sophisticated system
+of plastic watertight modular fences to control the areas that will be flooded and the areas that
+will not be flooded during the rise of the tide. The fences used by Zing Zhu are either horizontal
+or vertical and come in strips that have different lengths and heights. Two fences can intersect
+in at most one point, not necessarily in their ends.
+
+<p>You have been contacted by Zing Zhu to calculate, given the height the tide will reach and the
+position and height of all fence strips, the total area of land which will not be flooded during
+the high tide. You may assume that the widths of fence strips are so thin compared to the size
+
+<p align=center><img src=p3156a.gif>
+
+<p>of the land that, for the purpose of calculating the total area, fence strips may be considered
+as having widths equal to zero.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>The input contains several test cases. The first line of a test case contains an integer N
+indicating the number of fence strips in the island (1 &le; N &le; 2000). Each of the next N lines
+contains five integers X<sub>1</sub>, Y<sub>1</sub>, X<sub>2</sub>, Y<sub>2</sub> and H, representing respectively the start point of the strip
+(X<sub>1</sub>, Y<sub>1</sub>), the end point of the strip (X<sub>2</sub>, Y<sub>2</sub>) and the strip height (H). The last line of a test case
+contains an integer W representing the tide height. Coordinates are given in meters, heights in
+centimeters. Furthermore, X<sub>1</sub> = X<sub>2</sub> or Y<sub>1</sub> = Y<sub>2</sub> (but not both);
+- 500 &le; X<sub>1</sub>, Y<sub>1</sub>, X<sub>2</sub>, Y<sub>2</sub> &le; 500;
+and 1 &le; W, H &le; 1000. The end of input is indicated by N = 0.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>For each test case in the input your program must produce one line of output, containing one
+integer representing the total area (in m<sup>2</sup>) of the land which will not be flooded.
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+<PRE>
+4
+-20 20 20 20 200
+20 20 20 -20 200
+0 0 0 20 100
+-10 0 20 0 200
+100
+4
+-20 20 20 20 200
+20 20 20 -20 200
+0 0 0 20 100
+-10 0 20 0 200
+101
+0
+</PRE>
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+<PRE>
+400
+0
+</PRE>
+
+<P>
+<hr><ADDRESS>South America 2004-2005</ADDRESS><p></body></html>

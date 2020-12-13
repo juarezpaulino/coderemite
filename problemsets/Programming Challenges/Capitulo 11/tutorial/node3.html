@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>A second example</title>
+
+
+
+
+<meta name="description" content="A second example">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node3_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html68" href="http://mat.gsia.cmu.edu/classes/dynamic/node4.html"><img alt="next" src="node3_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html66" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node3_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html60" href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html"><img alt="previous" src="node3_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html70" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node3_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html69" href="http://mat.gsia.cmu.edu/classes/dynamic/node4.html">Common Characteristics</a>
+<b>Up:</b> <a name="tex2html67" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html61" href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html">First Example</a>
+<br> <p>
+</p><h1><a name="SECTION00030000000000000000">A second example</a></h1>
+<p>
+Dynamic programming may look somewhat familiar.  Both our shortest
+path algorithm and our method for CPM project scheduling have a lot in
+common with it.
+</p><p>
+Let's look at a particular type of shortest path problem.  Suppose
+we wish to get from A to J in  the road network of Figure&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html#dinfig2">2</a>.
+</p><p>
+</p><p><a name="407">&nbsp;</a><a name="dinfig2">&nbsp;</a> <img alt="figure156" src="node3_arquivos/img27.gif" align="bottom" height="292" width="579"> <br>
+<strong>Figure 2:</strong> Road Network<br>
+</p><p>
+</p><p>
+The numbers on the arcs represent distances.  Due to the special
+structure of this problem, we can break it up into stages.  Stage 1
+contains node A, stage 2 contains nodes B, C, and D, stage 3 contains
+node E, F, and G, stage 4 contains H and I, and stage 5 contains J.
+The states in each stage correspond just to the node names.  
+So stage 3 contains states E, F, and G.
+</p><p>
+If we let <i>S</i> denote a node in stage <i>j</i>
+and let  <img alt="tex2html_wrap_inline946" src="node3_arquivos/img28.gif" align="middle" height="30" width="42">  be the shortest distance from node <i>S</i> to the 
+destination <i>J</i>, we can write
+</p><p> <img alt="displaymath952" src="node3_arquivos/img29.gif" align="bottom" height="35" width="426"> </p><p>
+where  <img alt="tex2html_wrap_inline954" src="node3_arquivos/img30.gif" align="middle" height="17" width="26">  denotes the length of arc <i>SZ</i>.
+This gives the recursion needed to solve this problem.  We begin by
+setting  <img alt="tex2html_wrap_inline958" src="node3_arquivos/img31.gif" align="middle" height="29" width="76"> .  Here are the rest of the calculations:
+</p><p>
+</p><dl compact="compact"><dt><strong><em>Stage 4.</em></strong>
+</dt><dd> During stage 4, there are no real decisions to
+  make:  you simply go to your destination <i>J</i>.  So you get:
+  <ul><li>  <img alt="tex2html_wrap_inline962" src="node3_arquivos/img32.gif" align="middle" height="29" width="81">  by going to J,</li><li>  <img alt="tex2html_wrap_inline964" src="node3_arquivos/img33.gif" align="middle" height="29" width="75">  by going to J.
+  </li></ul>
+<p>
+</p></dd><dt><strong><em>Stage 3.</em></strong>
+</dt><dd> Here there are more choices.  Here's how to calculate
+   <img alt="tex2html_wrap_inline966" src="node3_arquivos/img34.gif" align="middle" height="29" width="45"> . From F you can either go to H or I.  The immediate cost of going
+  to H is 6.  The following cost is  <img alt="tex2html_wrap_inline962" src="node3_arquivos/img32.gif" align="middle" height="29" width="81"> .  The total is 9.  The
+  immediate cost of going to I is 3.  The following cost is  <img alt="tex2html_wrap_inline964" src="node3_arquivos/img33.gif" align="middle" height="29" width="75">  for a total of 7.  Therefore, if you are ever at F, the best
+  thing to do is to go to I.  The total cost is 7, so  <img alt="tex2html_wrap_inline972" src="node3_arquivos/img35.gif" align="middle" height="29" width="79"> .
+<p>
+  The next table gives all the calculations:
+  </p><p> <img alt="tabular421" src="node3_arquivos/img36.gif" align="bottom" height="120" width="330"> </p><p> 
+ </p></dd></dl>
+You now continue working back through the stages one by one, each time
+completely computing a stage before continuing to the preceding one.
+The results are:
+<dl compact="compact"><dt><strong><em>Stage 2.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular433" src="node3_arquivos/img37.gif" align="bottom" height="120" width="330"> </p><p>
+</p><p>
+</p></dd><dt><strong><em>Stage 1.</em></strong>
+</dt><dd>
+  <br> 
+  <p> <img alt="tabular442" src="node3_arquivos/img38.gif" align="bottom" height="74" width="330"> </p><p> 
+ </p></dd></dl><hr><a name="tex2html68" href="http://mat.gsia.cmu.edu/classes/dynamic/node4.html"><img alt="next" src="node3_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html66" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node3_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html60" href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html"><img alt="previous" src="node3_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html70" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node3_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html69" href="http://mat.gsia.cmu.edu/classes/dynamic/node4.html">Common Characteristics</a>
+<b>Up:</b> <a name="tex2html67" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html61" href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html">First Example</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

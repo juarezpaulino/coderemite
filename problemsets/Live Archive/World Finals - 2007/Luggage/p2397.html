@@ -1,0 +1,127 @@
+<html><head><title>2397 - Collecting Luggage</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2397 - Collecting Luggage</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=wfi&year=2006"><b>World Finals - Tokyo - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2397"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2397"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+Collecting your luggage after a flight can be far from trivial. Suitcases and bags appear on a conveyor belt, and hundreds of passengers fight for a good vantage point from which to find and retrieve their belongings. Recently, the Narita Airport Authority has decided to make this process more efficient. Before redesigning their baggage claim areas, they need a simulation program to determine how average passengers behave when collecting their luggage. This simulation assumes that passengers will always take a path of straight line segments to reach their luggage in the least amount of time. 
+
+<P>
+For this problem, a conveyor belt is modeled as a simple polygon. A luggage piece appears on some point of the conveyor belt, and then moves along the conveyor belt at a constant speed. A passenger is initially positioned at some point outside the conveyor belt polygon. As soon as the piece of luggage appears, the passenger moves at a constant speed (which is greater than the speed of the luggage piece) in order to pick up the luggage. The passenger's path, which may not cross over the conveyer belt but may touch it, puts the passenger in the same position as the moving piece of luggage in the least amount of time. 
+
+<P>
+In the following figure, the conveyor belt is depicted as a polygon ABCDEF. The luggage starts at the top-left corner (Point A) and moves in counterclockwise direction around the polygon as shown with the small arrows. The passenger begins at point P and moves on the path that puts him and the luggage into the same place (point M in the figure) in the shortest amount of time. The passenger's path is shown by a red arrow. This figure corresponds to the first sample input.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p2397.eps}$
+ -->
+<IMG
+ ALIGN="BOTTOM" BORDER="0"
+ SRC="p2397.jpg"
+ ALT="\epsfbox{p2397.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input consists of one or more test cases describing luggage pickup scenarios. A scenario description begins with a line containing a single integer <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(3 \le N \le 100)$
+ -->
+<SPAN CLASS="MATH">(3<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2397img2.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2397img2.png"
+ ALT="$ \le$">100)</SPAN>
+<tex2html_verbatim_mark>, the number of vertices of the conveyor belt polygon. This is followed by <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> lines, each containing a pair of integers <SPAN CLASS="MATH"><I>x</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>y</I><SUB>i</SUB></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(|x_{i}|, |y_{i}| \le 10000)$
+ -->
+<SPAN CLASS="MATH">(| <I>x</I><SUB>i</SUB>|,| <I>y</I><SUB>i</SUB>|<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2397img2.png"
+ ALT="$ \le$">10000)</SPAN>
+<tex2html_verbatim_mark> giving the coordinates of the vertices of the polygon in counterclockwise order. The polygon is simple, that is, it will not intersect itself and it will not touch itself. The polygon description is followed by a line containing two integers <SPAN CLASS="MATH"><I>p</I><SUB>x</SUB></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>p</I><SUB>y</SUB></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(|p_{x}|, |p_{y}| \le 10000)$
+ -->
+<SPAN CLASS="MATH">(| <I>p</I><SUB>x</SUB>|,| <I>p</I><SUB>y</SUB>|<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2397img2.png"
+ ALT="$ \le$">10000)</SPAN>
+<tex2html_verbatim_mark>, the coordinates of the starting position of the passenger. The last line of the description contains two positive integers <SPAN CLASS="MATH"><I>V</I><SUB>L</SUB></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>V</I><SUB>P</SUB></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(0 < V_{L} < V_{P} \le 10000)$
+ -->
+<SPAN CLASS="MATH">(0 &lt; <I>V</I><SUB>L</SUB> &lt; <I>V</I><SUB>P</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2397img2.png"
+ ALT="$ \le$">10000)</SPAN>
+<tex2html_verbatim_mark>, which are the speed of the luggage and the passenger respectively. All the coordinates are given in meters, and the speeds are given in meters per minute.
+
+<P>
+You can assume that the passenger is positioned outside the conveyor belt polygon. The luggage will move in counterclockwise direction around the conveyor belt, starting at the first vertex of the polygon. 
+
+<P>
+The input is terminated by a line containing a single integer zero.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, print a line containing the test case number (beginning with 1) followed by the minimum time that it takes the passenger to reach the luggage. Use the formatting shown in the sample output (with minutes and seconds separated by a colon), rounded to the nearest second. 
+The value for seconds should be printed in a field of width two (padded with leading zeroes if required).
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+6 
+0 40 
+0 0 
+20 0 
+20 20 
+40 20 
+40 40 
+120 40 
+70 100 
+4
+0 0 
+10 0 
+10 10 
+0 10 
+100 100 
+10 11 
+0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Case 1: Time = 1:02 
+Case 2: Time = 12:36
+</PRE> 
+
+<P>
+<hr><ADDRESS>Tokyo 2006-2007</ADDRESS><p><b>Tests-Setter:</b> Shahriar Manzoor<br></body></html>

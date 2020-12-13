@@ -1,0 +1,215 @@
+<html><head><title>3703 - Billing Tables</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3703 - Billing Tables</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3703"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3703"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+In the world of telecommunications phone calls to different phone 
+numbers have to be charged using different rate or different billing 
+plan. International Carrier of Phone Communications (ICPC) has an antique 
+billing table that determines which phone call has to be charged using 
+which billing plan. 
+
+<P>
+Each international phone number has 11 digits. The 
+billing table has <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> lines. Each line specifies a range of prefixes of 
+phone numbers like ``<TT>7919 - 921</TT>". This specification means that all 
+phone numbers starting from 7919, 7920, and 7921 match this line. A 
+billing plan name is specified for each prefix. To determine a billing 
+plan for a call, the table is scanned from top to bottom and the first 
+matching line determines the billing plan. If no match is found, the 
+phone number is invalid and no billing plan is needed. A special billing 
+plan named ``<TT>invalid</TT>" (without quotes) is used as an alternative way 
+to define invalid phone numbers. Some billing plans are used for quite 
+differently looking phone numbers and their names may be specified on 
+difffferent lines in different places of the table. 
+
+<P>
+ICPC's billing table is old and contains many entries. Some of those entries may not be 
+even used anymore. It is very hard to figure out which phone numbers 
+each billing plan is actually used for. The ICPC's management has 
+reached a decision to transform this billing table into a more legible 
+format. In this new format table consists of the lexicographically ordered 
+list of simple prefixes (without the ``-" range feature of the old 
+format) with a billing plan name for each prefix. No prefix of this 
+new billing table should be a prefix of any other prefix from the 
+table. Thus, a simple dictionary lookup (binary search, for example) will 
+be sufficient to figure out a billing plan for a given phone number. 
+Finding all phone numbers for a given billing plan will also become quite 
+a simple task. The number of lines in the new billing table should be 
+minimized. Billing plan named ``<TT>invalid</TT>" should not be present in the 
+new billing table at all, since invalid phone numbers will be denoted 
+by absence of the corresponding prefix in the new billing table.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<B>The input will contain several test cases, each of them as described below.
+Consecutive test cases are separated by a single blank line.
+</B>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+The first line of the input contains a single integer number <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> 
+<!-- MATH
+ $(1 \le n \le 100)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3703img1.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3703img1.png"
+ ALT="$ \le$">100)</SPAN>
+<tex2html_verbatim_mark> -- the number of lines in the old billing table. The 
+following <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> lines describe the old billing table with one rule on a 
+line. Each rule contains four tokens separated by spaces -- prefix <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark>, 
+minus sign (``<TT>-</TT>"), prefix <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark>, and billing plan name. Prefixes contain 
+from 1 to 11 digits each, and the billing plan name contains from 1 to 
+20 lower case letters. 
+
+<P>
+Further, let us denote with <SPAN CLASS="MATH">| <I>A</I>|</SPAN>
+<tex2html_verbatim_mark> the number of 
+digits in the prefix <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark>. It is true that <!-- MATH
+ $1 \le |B| \le |A| \le 11$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3703img1.png"
+ ALT="$ \le$">| <I>B</I>|<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3703img1.png"
+ ALT="$ \le$">| <I>A</I>|<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3703img1.png"
+ ALT="$ \le$">11</SPAN>
+<tex2html_verbatim_mark>. 
+Moreover, last <SPAN CLASS="MATH">| <I>B</I>|</SPAN>
+<tex2html_verbatim_mark> digits of prefix <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> form a string that is 
+lexicographically equal or precedes <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+Such pair of prefixes <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark> matches all phone 
+numbers with the first <SPAN CLASS="MATH">| <I>A</I>|</SPAN>
+<tex2html_verbatim_mark> - <SPAN CLASS="MATH">| <I>B</I>|</SPAN>
+<tex2html_verbatim_mark> digits matching the first digits 
+of <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> and with the following <SPAN CLASS="MATH">| <I>B</I>|</SPAN>
+<tex2html_verbatim_mark> digits being lexicographically between 
+the last <SPAN CLASS="MATH">| <I>B</I>|</SPAN>
+<tex2html_verbatim_mark> digits of <SPAN CLASS="MATH"><I>A</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark> (inclusive).
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<B>For each test case, the output must follow the description below. 
+The outputs of two consecutive cases will be separated by a blank line.
+</B>
+
+<P>
+
+<P><P>
+<BR>
+Write to the output file a single integer number <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> -- the minimal 
+number of lines that the new table should contain to describe the given 
+old billing table. Then write <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> lines with the lexicographically ordered 
+new billing table. Write two tokens separated by a space on each line 
+-- the prefix and the billing plan name. Note, that the prefix in the 
+new billing table shall contain at least one digit. 
+
+<P>
+If all phone 
+numbers are invalid (every phone number has no matching line or matches line 
+with billing plan ``<TT>invalid</TT>") then the output file should contain 
+just number zero.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+8 
+7919 - 921 cell 
+7921800 - 999 priv 
+1 - 1 usa 
+760 - 9 rsv 
+7928 - 29 rsv 
+7600 - 7899 spec 
+73 - 77 invalid 
+7 - 7 cis
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+35 
+1 usa 
+70 cis 
+71 cis 
+72 cis 
+76 rsv 
+77 spec 
+78 spec 
+790 cis 
+7910 cis 
+7911 cis 
+7912 cis 
+7913 cis 
+7914 cis 
+7915 cis 
+7916 cis 
+7917 cis 
+7918 cis 
+7919 cell 
+7920 cell 
+7921 cell 
+7922 cis 
+7923 cis 
+7924 cis 
+7925 cis 
+7926 cis 
+7927 cis 
+7928 rsv 
+7929 rsv 
+793 cis 
+794 cis 
+795 cis 
+796 cis 
+797 cis 
+798 cis 
+799 cis
+</PRE> 
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

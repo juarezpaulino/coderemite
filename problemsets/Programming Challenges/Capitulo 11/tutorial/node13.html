@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>``Linear'' decision making</title>
+
+
+
+
+<meta name="description" content="``Linear'' decision making">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node13_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html179" href="http://mat.gsia.cmu.edu/classes/dynamic/node14.html"><img alt="next" src="node13_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html177" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="up" src="node13_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html173" href="http://mat.gsia.cmu.edu/classes/dynamic/node12.html"><img alt="previous" src="node13_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html181" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node13_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html180" href="http://mat.gsia.cmu.edu/classes/dynamic/node14.html">  About this document </a>
+<b>Up:</b> <a name="tex2html178" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<b> Previous:</b> <a name="tex2html174" href="http://mat.gsia.cmu.edu/classes/dynamic/node12.html">Uncertain States</a>
+<br> <p>
+</p><h2><a name="SECTION000103000000000000000">``Linear'' decision making</a></h2>
+.  Many decision problems (and
+some of the most frustrating ones), involve choosing one out of a
+number of choices where future choices are uncertain.  For example,
+when getting (or not getting!) a series of job offers, you may have to
+make a decision on a job before knowing if another job is going to be
+offered to you.  Here is a simplification of these types of problems:
+<p>
+Suppose we are trying to find a parking space near a restaurant.  This
+restaurant is on a long stretch of road, and our goal is to park as
+close to the restaurant as possible.  There are <i>T</i> spaces leading up
+to the restaurant, one spot right in front of the restaurant, and <i>T</i>
+after the restaurant as follows:
+</p><p>
+</p><p> <img alt="tabular582" src="node13_arquivos/img103.gif" align="bottom" height="24" width="382"> </p><p>
+</p><p>
+Each spot can either be full (with probability, say, .9) or empty
+(.1).  As we pass a spot, we need to make a decision to take the spot
+or try for another (hopefully better) spot.  The value for parking in
+spot <i>t</i> is  <img alt="tex2html_wrap_inline1254" src="node13_arquivos/img104.gif" align="middle" height="29" width="14"> .  If we do not get a spot, then we slink
+away in embarrasment at large cost <i>M</i>.  What is our optimal decision
+rule?
+</p><p>
+We can have a stage for each spot <i>t</i>.  The states in each stage are
+either <i>e</i> (for empty) or <i>o</i> (for occupied).  The decision is whether to
+park in the spot or not (cannot if state is <i>o</i>).  If we let  <img alt="tex2html_wrap_inline1266" src="node13_arquivos/img105.gif" align="middle" height="29" width="37"> 
+and  <img alt="tex2html_wrap_inline1268" src="node13_arquivos/img106.gif" align="middle" height="29" width="37">  be the values for each state, then we have:
+</p><p>
+</p><p> <img alt="displaymath1270" src="node13_arquivos/img107.gif" align="bottom" height="19" width="290"> </p><p>
+</p><p> <img alt="displaymath1272" src="node13_arquivos/img108.gif" align="bottom" height="19" width="293"> </p><p>
+</p><p> <img alt="displaymath1274" src="node13_arquivos/img109.gif" align="bottom" height="19" width="401"> </p><p>
+</p><p> <img alt="displaymath1276" src="node13_arquivos/img110.gif" align="bottom" height="19" width="362"> </p><p>
+</p><p>
+In general, the optimal rule will look something like, take the first
+empty spot on or after spot <i>t</i> (where <i>t</i> will be negative).
+</p><p>
+<br> </p><hr>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

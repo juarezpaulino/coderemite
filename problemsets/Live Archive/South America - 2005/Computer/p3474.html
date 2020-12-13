@@ -1,0 +1,106 @@
+<html><head><title>3474 - Computer DJ</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3474 - Computer DJ</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3474"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3474"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+A very famous DJ has been recently invited to play in the closing party of a Computer Science conference. Trying to impress the participants of the event, he decided to use a program in order to choose the songs he would play at this party. However, the result was a disaster, since the way the program chose the songs was quite weird and repetitive. 
+
+<P>
+First of all, the DJ has selected <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> songs among the set of songs he had available. The program used by the DJ then labels each of the songs using one different character from `A' to `Z'. The <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th song is labeled using the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th character of the sequence `A'-`Z'. The program chooses the songs to be played in the party in the order that their labels appear in the following infinite sequence of characters: first come all the words with one character in lexicographical order; then all the words with two characters in lexicographical order; then all the words with three characters in lexicographical order; and so on. For <SPAN CLASS="MATH"><I>N</I> = 3</SPAN>
+<tex2html_verbatim_mark>, this sequence would be ABCAAABACBABBBCCACBCCAAAAABAACABAABBABC... 
+
+<P>
+At the end of the party, some people asked the DJ if he remembered which the first song played was. Others would like to know which the 25-th was, and so on. The DJ remembers nothing but the strange pattern of repetition of the songs, so he urges you to help him and write a program which answers such queries.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input contains several test cases. Each test case consists of three lines. The first line of a test case contains two integers <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>Q</I></SPAN>
+<tex2html_verbatim_mark> indicating respectively the number of songs chosen by the DJ and the number of queries made by the participants (<!-- MATH
+ $1 \le N \le 26$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3474img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3474img1.png"
+ ALT="$ \le$">26</SPAN>
+<tex2html_verbatim_mark> and <!-- MATH
+ $1 \le Q \le 1000$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3474img1.png"
+ ALT="$ \le$"><I>Q</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3474img1.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark>). In the second line, there will be the <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> titles of the songs (the title of a song is a chain of alphanumerical characters of at least one and at most 100 characters) separated by single spaces. The last line of a test case contains a sequence of queries. Each query is a number <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le k \le  100000000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3474img1.png"
+ ALT="$ \le$"><I>k</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3474img1.png"
+ ALT="$ \le$">100000000)</SPAN>
+<tex2html_verbatim_mark> corresponding to the <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark>-th song played in the party. The end of the input is indicated by <SPAN CLASS="MATH"><I>N</I> = <I>Q</I> = 0</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each query number k in a test case, you shall print a single line containing the name of the <SPAN CLASS="MATH"><I>k</I></SPAN>
+<tex2html_verbatim_mark>-th song played in the party. A blank line must follow each test case. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+10 3 
+S0 S1 S2 S3 S4 S5 S6 S7 S8 S9 
+3 6 10 
+3 5 
+Pathethique TurkishMarch Winter 
+1 2 3 4 16 
+0 0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+S2 
+S5 
+S9 
+
+Pathethique 
+TurkishMarch 
+Winter 
+Pathethique 
+Winter
+</PRE> 
+
+<P>
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

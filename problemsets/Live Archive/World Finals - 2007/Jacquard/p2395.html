@@ -1,0 +1,142 @@
+<html><head><title>2395 - Jacquard Circuits</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2395 - Jacquard Circuits</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=wfi&year=2006"><b>World Finals - Tokyo - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2395"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2395"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+The eccentric sculptor Albrecht Caravaggio Mondrian has been inspired by the history of the computer to create works of art that he calls ``Jacquard circuits." Each of his works of art consists of a series of polygonal circuit boards (defined below), all having the same shape but at different scales, joined together with wire or string into a three-dimensional tiered structure. Figure 1 below shows an example with two levels and a pentagonal shape.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p2395a.eps}$
+ -->
+<IMG
+ALIGN="BOTTOM" BORDER="0"
+ SRC="p2395a.jpg"
+ ALT="\epsfbox{p2395a.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+A.C.M. (as he is known to his friends) bases his art upon the punched hole cards of the Jacquard loom (that were later adapted by Charles Babbage for his analytical engine) and upon the regular grid layout approach often used in circuit interfacing (for instance, Pin Grid Arrays). 
+
+<P>
+The circuit boards used in the sculptures are in the shapes of lattice polygons. A lattice polygon is defined as any closed, non-self-intersecting cycle of straight line segments that join points with integer coordinates, with no two consecutive line segments parallel. For any given lattice polygon <SPAN CLASS="MATH"><I>P</I></SPAN>
+<tex2html_verbatim_mark>, there is a smallest lattice polygon with the same shape and orientation as <SPAN CLASS="MATH"><I>P</I></SPAN>
+<tex2html_verbatim_mark> -- call this the <SPAN  CLASS="textit">origin</SPAN>. Smaller polygons of the same shape and orientation as <SPAN CLASS="MATH"><I>P</I></SPAN>
+<tex2html_verbatim_mark> are called its predecessors and polygons larger than <SPAN CLASS="MATH"><I>P</I></SPAN>
+<tex2html_verbatim_mark> are its successors. (See Figure 2 on the following page.) 
+
+<P>
+To build one of his sculptures, A.C.M. begins by randomly selecting <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> lattice points and then drawing a pattern by connecting these points. (Note that not all of the <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> points are necessarily vertices of a lattice polygon. This may happen, for example, if three or more consecutive points are collinear.) Let <SPAN CLASS="MATH"><I>P</I></SPAN>
+<tex2html_verbatim_mark> be the lattice polygon determined by the pattern. Then he determines the origin corresponding to <SPAN CLASS="MATH"><I>P</I></SPAN>
+<tex2html_verbatim_mark>, selects the number of levels, <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark>, he wishes to use, and constructs the first <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> polygonal circuit boards in the series (that is, the origin and its first <SPAN CLASS="MATH"><I>M</I> - 1</SPAN>
+<tex2html_verbatim_mark> successors). Each lattice point lying strictly within the boundary of any of these polygons is a hole where strings or wires meet. 
+
+<P>
+The hard part of creating the sculpture is tying together all the strings or wires that meet at a given hole. Furthermore, some of A.C.M.'s famous miniaturized sculptures, built using nano-engineering techniques, involve hundreds of thousands of levels. Mondrian would like a way to determine, given a polygonal shape and the number of levels, how many holes there will be in the final sculpture. You must write a program to help him. (For example, the sculpture in Figure 1 above has 15 holes.) Assume holes have zero diameter.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p2395b.eps}$
+ -->
+<IMG
+ALIGN="BOTTOM" BORDER="0"
+ SRC="p2395b.jpg"
+ ALT="\epsfbox{p2395b.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input consists of one or more test cases. Each case begins with a line containing two positive integers <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(3 \le N \le 1000)$
+ -->
+<SPAN CLASS="MATH">(3<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2395img3.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2395img3.png"
+ ALT="$ \le$">1000)</SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le M \le 1000000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2395img3.png"
+ ALT="$ \le$"><I>M</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2395img3.png"
+ ALT="$ \le$">1000000)</SPAN>
+<tex2html_verbatim_mark>. <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> is the number of lattice points Mondrian selected and <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark> is the number of levels in the completed sculpture. Each of the next <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> lines contains two integers <SPAN CLASS="MATH"><I>x</I></SPAN>
+<tex2html_verbatim_mark>, <SPAN CLASS="MATH"><I>y</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(|x|, |y| \le 1000000)$
+ -->
+<SPAN CLASS="MATH">(| <I>x</I>|,| <I>y</I>|<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2395img3.png"
+ ALT="$ \le$">1000000)</SPAN>
+<tex2html_verbatim_mark> which denote the coordinates of one of Mondrian's points. Points are listed in either clockwise or counterclockwise order. 
+
+<P>
+The last test case is followed by a line containing two zeroes.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, print a line containing the test case number (beginning with 1) followed by the number of holes in an <SPAN CLASS="MATH"><I>M</I></SPAN>
+<tex2html_verbatim_mark>-level sculpture starting from the origin polygon of the given pattern. In no case will this value exceed the maximum possible value of a 64-bit signed integer.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+5 2 
+0 0 
+8 0 
+12 4 
+8 8 
+0 8 
+3 2 
+-1 -1 
+3 1 
+5 -1 
+0 0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Case 1: 15 
+Case 2: 2
+</PRE> 
+
+<P>
+<hr><ADDRESS>Tokyo 2006-2007</ADDRESS><p><b>Tests-Setter:</b> Shahriar Manzoor<br></body></html>

@@ -1,0 +1,114 @@
+<html><head><title>3712 - Kickdown</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3712 - Kickdown</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3712"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3712"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+A research laboratory of a world-leading automobile company has received an order to 
+create a special transmission mechanism, which allows for incredibly 
+efficient kickdown -- an operation of switching to lower gear. After several 
+months of research engineers found that the most efficient solution 
+requires special gears with teeth and cavities placed non-uniformly. They 
+calculated the optimal flanks of the gears. Now they want to perform 
+some experiments to prove their findings. 
+
+<P>
+The first phase of the experiment is done with planar toothed sections, not round-shaped gears. A 
+section of length <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> consists of <SPAN CLASS="MATH"><I>n</I></SPAN>
+<tex2html_verbatim_mark> units. The unit is either a cavity of 
+height <SPAN CLASS="MATH"><I>h</I></SPAN>
+<tex2html_verbatim_mark> or a tooth of height <SPAN CLASS="MATH">2<I>h</I></SPAN>
+<tex2html_verbatim_mark>. Two sections are required for the 
+experiment: one to emulate master gear (with teeth at the bottom) and one 
+for the driven gear (with teeth at the top).
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3712a.eps}$
+ -->
+<IMG
+ WIDTH="843" HEIGHT="179" ALIGN="BOTTOM" BORDER="0"
+ SRC="p3712a.jpg"
+ ALT="\epsfbox{p3712a.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+There is a long stripe of width <SPAN CLASS="MATH">3<I>h</I></SPAN>
+<tex2html_verbatim_mark> in the laboratory and its length is 
+enough for cutting two engaged sections together. The sections are 
+irregular but they may still be put together if shifted along each other.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3712b.eps}$
+ -->
+<IMG
+ WIDTH="842" HEIGHT="128" ALIGN="BOTTOM" BORDER="0"
+ SRC="p3712b.jpg"
+ ALT="\epsfbox{p3712b.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+
+<P>
+The stripe is made of an expensive alloy, so the engineers want to use 
+as little of it as possible. You need to ï¬nd the minimal length of 
+the stripe which is enough for cutting both sections simultaneously.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input file contains several test cases, each of them as described below.
+
+<P>
+There are two lines in the input, each contains a string to 
+describe a section. The first line describes master section (teeth at the 
+bottom) and the second line describes driven section (teeth at the top). 
+Each character in a string represents one section unit -- 1 for a 
+cavity and 2 for a tooth. The sections can not be flipped or rotated. 
+
+<P>
+Each string is non-empty and its length does not exceed 100.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case, write to the output a line containing
+a single integer number -- the minimal 
+length of the stripe required to cut off given sections.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+2112112112 
+2212112 
+12121212 
+21212121 
+2211221122 
+21212
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+10 
+8 
+15
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

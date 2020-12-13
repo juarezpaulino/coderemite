@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>First Example</title>
+
+
+
+
+<meta name="description" content="First Example">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node2_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html57" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html"><img alt="next" src="node2_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html55" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node2_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html49" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="previous" src="node2_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html59" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node2_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html58" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html">A second example</a>
+<b>Up:</b> <a name="tex2html56" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html50" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html">Contents</a>
+<br> <p>
+</p><h1><a name="SECTION00020000000000000000">First Example</a></h1>
+<p>
+Let's begin with a simple capital budgeting problem.  A corporation
+has $5 million to allocate to its three plants for possible
+expansion.  Each plant has submitted a number of proposals on how it
+intends to spend the money.  Each proposal gives the cost of the
+expansion (<i>c</i>) and the total revenue expected (<i>r</i>).  The following
+table gives the proposals generated:
+</p><p>
+</p><p><a name="28">&nbsp;</a> <img alt="table15" src="node2_arquivos/img1.gif" align="bottom" height="144" width="338"> <br>
+<strong>Table 1:</strong> Investment Possibilities<br>
+</p><p>
+</p><p>
+Each plant will only be permitted to enact one of its proposals.  The
+goal is to maximize the firm's revenues resulting from the allocation
+of the $5 million.  We will assume that any of the $5 million we
+don't spend is lost (you can work out how a more reasonable assumption
+will change the problem as an exercise).
+</p><p>
+A straightforward way to solve this is to try all possibilities and
+choose the best.  In this case, there are only  <img alt="tex2html_wrap_inline862" src="node2_arquivos/img2.gif" align="middle" height="25" width="118">  ways of allocating the money.  Many of these are infeasible (for
+instance, proposals 3, 4, and 1 for the three plants costs $6
+million).  Other proposals are feasible, but very poor (like proposals
+1, 1, and 2, which is feasible but returns only $4 million).
+</p><p>
+Here are some disadvantages of total enumeration:
+</p><ol><li> For larger problems the enumeration of all possible solutions
+  may not be computationally feasible.</li><li> Infeasible combinations cannot be detected <em>a priori</em>,
+  leading to inefficiency.</li><li> Information about previously investigated combinations is not
+  used to eliminate inferior, or infeasible, combinations.
+</li></ol>
+<p>
+Note also that this problem cannot be formulated as a linear program,
+for the revenues returned are not linear functions.
+</p><p>
+One method of calculating the solution is as follows:
+</p><p>
+Let's break the problem into three <em>stages</em>: each stage represents
+the money allocated to a single plant.  So stage 1 represents the
+money allocated to plant 1, stage 2 the money to plant 2, and stage 3
+the money to plant 3.  We will artificially place an ordering on the
+stages, saying that we will first allocate to plant 1, then plant 2,
+then plant 3.
+</p><p>
+Each stage is divided into <em>states</em>.  A state encompasses the
+information required to go from one stage to the next.  In this case
+the states for stages 1, 2, and 3 are
+</p><ul><li> {0,1,2,3,4,5}: the amount of money spent on plant 1,
+represented as  <img alt="tex2html_wrap_inline864" src="node2_arquivos/img3.gif" align="middle" height="17" width="16"> ,</li><li> {0,1,2,3,4,5}: the amount of money spent on plants 1 and 2
+( <img alt="tex2html_wrap_inline866" src="node2_arquivos/img4.gif" align="middle" height="17" width="16"> ), and</li><li> {5}: the amount of money spent on plants 1, 2, and 3 ( <img alt="tex2html_wrap_inline868" src="node2_arquivos/img5.gif" align="middle" height="17" width="16"> ).
+</li></ul>
+<p>
+Unlike linear programming, the  <img alt="tex2html_wrap_inline870" src="node2_arquivos/img6.gif" align="middle" height="17" width="14">  do not represent decision
+variables:  they are simply representations of a generic state in the
+stage.
+</p><p>
+Associated with each state is a revenue.  Note that to make a decision
+at stage 3, it is only necessary to know how much was spent on plants
+1 and 2, not how it was spent.  Also notice that we will want  <img alt="tex2html_wrap_inline868" src="node2_arquivos/img5.gif" align="middle" height="17" width="16"> 
+to be 5.
+</p><p>
+Let's try to figure out the revenues associated with each state.  The
+only easy possibility is in stage 1, the states  <img alt="tex2html_wrap_inline864" src="node2_arquivos/img3.gif" align="middle" height="17" width="16"> .
+Table&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html#tab2">2</a> gives the revenue associated with  <img alt="tex2html_wrap_inline864" src="node2_arquivos/img3.gif" align="middle" height="17" width="16"> .
+</p><p>
+</p><p><a name="42">&nbsp;</a><a name="tab2">&nbsp;</a> <img alt="table38" src="node2_arquivos/img7.gif" align="bottom" height="190" width="462"> <br>
+<strong>Table 2:</strong> Stage 1 computations.<br>
+</p><p>
+</p><p>
+We are now ready to tackle the computations for stage 2.  In this
+case, we want to find the best solution for both plants 1 and 2.  If
+we want to calculate the best revenue for a given  <img alt="tex2html_wrap_inline866" src="node2_arquivos/img4.gif" align="middle" height="17" width="16"> , we simply go
+through all the plant 2 proposals, allocate the given amount of funds
+to plant 2, and use the above table to see how plant 1 will spend the
+remainder.
+</p><p>
+For instance, suppose we want to determine the best allocation for state  <img alt="tex2html_wrap_inline882" src="node2_arquivos/img8.gif" align="middle" height="26" width="52"> .  In stage 2 we can do one of the following proposals:
+</p><ol><li> Proposal 1 gives revenue of 0, leaves 4 for stage 1, which returns 6.
+  Total: 6.</li><li> Proposal 2 gives revenue of 8, leaves 2 for stage 1, which returns 6.
+  Total: 14.</li><li> Proposal 3 gives revenue of 9, leaves 1 for stage 1, which returns 5.
+  Total: 14.</li><li> Proposal 4 gives revenue of 12, leaves 0 for stage 1, which returns 0.
+  Total: 12.
+</li></ol>
+The best thing to do with four units is proposal 1 for plant 2 and
+proposal 2 for plant 1, returning 14, or proposal 2 for plant 2 and
+proposal 1 for plant 1, also returning 14.  In either case, the
+revenue for being in state  <img alt="tex2html_wrap_inline882" src="node2_arquivos/img8.gif" align="middle" height="26" width="52">  is 14.  The rest of table <a href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html#tab3">3</a> can
+be filled out similarly.
+<p>
+</p><p><a name="52">&nbsp;</a><a name="tab3">&nbsp;</a> <img alt="table48" src="node2_arquivos/img9.gif" align="bottom" height="190" width="490"> <br>
+<strong>Table 3:</strong> Stage 2 computations.<br>
+</p><p>
+</p><p>
+We can now go on to stage 3.  The only value we are interested in is
+ <img alt="tex2html_wrap_inline888" src="node2_arquivos/img10.gif" align="middle" height="26" width="51"> .  Once again, we go through all the proposals for this stage,
+determine the amount of money remaining and use Table&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html#tab3">3</a> to
+decide the value for the previous stages.  So here we can do the
+following at plant 3:
+</p><ul><li> Proposal 1 gives revenue 0, leaves 5.  Previous stages give 17.
+  Total: 17.</li><li> Proposal 2 gives revenue 4, leaves 4.  Previous stages give 14.
+  Total: 18.
+</li></ul>
+Therefore, the optimal solution is to implement proposal 2 at plant 3,
+proposal 2 or 3 at plant 2, and proposal 3 or 2 (respectively) at
+plant 1.  This gives a revenue of 18.
+<p>
+If you study this procedure, you will find that the calculations are
+done <em>recursively</em>.  Stage 2 calculations are based on stage 1, 
+stage 3 only on stage 2.  Indeed, given you are at a state, all future
+decisions are made independent of how you got to the state.  This is
+the <em>principle of optimality</em> and all of dynamic programming rests
+on this assumption.
+</p><p>
+We can sum up these calculations in the following formulas:
+</p><blockquote> Denote by  <img alt="tex2html_wrap_inline890" src="node2_arquivos/img11.gif" align="middle" height="30" width="38">  the revenue for proposal  <img alt="tex2html_wrap_inline892" src="node2_arquivos/img12.gif" align="middle" height="29" width="14">  at stage <i>j</i>,
+  and by  <img alt="tex2html_wrap_inline896" src="node2_arquivos/img13.gif" align="middle" height="30" width="38">  the corresponding cost.  Let  <img alt="tex2html_wrap_inline898" src="node2_arquivos/img14.gif" align="middle" height="30" width="47">  be the
+  revenue of state  <img alt="tex2html_wrap_inline900" src="node2_arquivos/img15.gif" align="middle" height="17" width="15">  in stage <i>j</i>.
+  Then we have the following calculations
+  <p> <img alt="displaymath904" src="node2_arquivos/img16.gif" align="bottom" height="30" width="352"> </p><p>
+  and
+  </p><p> <img alt="displaymath906" src="node2_arquivos/img17.gif" align="bottom" height="30" width="476"> </p><p></p></blockquote>
+All we were doing with the above calculations was determining these
+functions.
+<p>
+The computations were carried out in a forward procedure.  It was also
+possible to calculate things from the ``last'' stage back to the first
+stage.  We could define
+</p><ul><li>  <img alt="tex2html_wrap_inline908" src="node2_arquivos/img18.gif" align="middle" height="17" width="15">  = amount allocated to stages 1, 2, and 3,</li><li>  <img alt="tex2html_wrap_inline910" src="node2_arquivos/img19.gif" align="middle" height="17" width="15">  = amount allocated to stages 2 and 3, and</li><li>  <img alt="tex2html_wrap_inline912" src="node2_arquivos/img20.gif" align="middle" height="17" width="15">  = amount allocated to stage 3.
+</li></ul>
+This defines a <em>backward recursion</em>.  Graphically, this is
+illustrated in Figure&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node2.html#figfwdback">1</a>.
+<p>
+</p><p><a name="146">&nbsp;</a><a name="figfwdback">&nbsp;</a> <img alt="figure70" src="node2_arquivos/img21.gif" align="bottom" height="365" width="584"> <br>
+<strong>Figure 1:</strong> Forward vs. Backward Recursion<br>
+</p><p>
+</p><p>
+Corresponding formulas are:
+</p><ul><li> Let  <img alt="tex2html_wrap_inline926" src="node2_arquivos/img22.gif" align="middle" height="29" width="46">  be the optimal revenue for stage 3, given  <img alt="tex2html_wrap_inline912" src="node2_arquivos/img20.gif" align="middle" height="17" width="15"> ,</li><li>  <img alt="tex2html_wrap_inline930" src="node2_arquivos/img23.gif" align="middle" height="29" width="46">  be the optimal revenue for stages 2 and 3, given  <img alt="tex2html_wrap_inline910" src="node2_arquivos/img19.gif" align="middle" height="17" width="15"> , and</li><li>  <img alt="tex2html_wrap_inline934" src="node2_arquivos/img24.gif" align="middle" height="29" width="46">  be the optimal revenue for stages 1, 2, and 3, given
+   <img alt="tex2html_wrap_inline908" src="node2_arquivos/img18.gif" align="middle" height="17" width="15"> .
+</li></ul>
+The recursion formulas are:
+<p> <img alt="displaymath938" src="node2_arquivos/img25.gif" align="bottom" height="30" width="350"> </p><p>
+and
+</p><p> <img alt="displaymath940" src="node2_arquivos/img26.gif" align="bottom" height="30" width="427"> </p><p>
+If you carry out the calculations, you will come up with the same
+answer.
+</p><p>
+You may wonder why I have introduced backward recursion, particularly
+since the forward recursion seems more natural.  In this particular
+case, the ordering of the stages made no difference.  In other cases,
+though, there may be computational advantages of choosing one over
+another.  In general, the backward recursion has been found to be more
+effective in most applications.  Therefore, in the future, I will be
+presenting only the backward recursion, except in cases where I wish
+to contrast the two recursions.
+</p><p>
+</p><hr><a name="tex2html57" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html"><img alt="next" src="node2_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html55" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node2_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html49" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="previous" src="node2_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html59" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node2_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html58" href="http://mat.gsia.cmu.edu/classes/dynamic/node3.html">A second example</a>
+<b>Up:</b> <a name="tex2html56" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html50" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html">Contents</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

@@ -1,0 +1,17 @@
+/**
+ *
+ * Author:  Juarez Paulino(coderemite)
+ * Email: juarez.paulino@gmail.com
+ *
+ */
+#include <cstdio>
+
+using namespace std;
+
+
+int main() {
+
+    for (int i = 2; i <= 100; i+=2) printf("%d\n", i);
+
+    return 0;
+}

@@ -1,0 +1,82 @@
+10 36
+S0 S1 S2 S3 S4 S5 S6 S7 S8 S9
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+3 36
+0 1 2
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+26 36
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+4 36
+A B C D   
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+2 36
+A B
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+5 1
+a b c d e
+100000000
+6 1
+a b c d e f
+100000000
+7 1
+a b c d e f g
+100000000
+8 1
+a b c d e f g h
+100000000
+9 1
+a b c d e f g h i
+100000000
+10 1
+a b c d e f g h i j
+100000000
+11 1
+a b c d e f g h i j k
+100000000
+12 1
+a b c d e f g h i j k l
+100000000
+13 1
+a b c d e f g h i j k l m
+100000000
+14 1
+a b c d e f g h i j k l m n
+100000000
+15 1
+a b c d e f g h i j k l m n o
+100000000
+16 1
+a b c d e f g h i j k l m n o p
+100000000
+17 1
+a b c d e f g h i j k l m n o p q
+100000000
+18 1
+a b c d e f g h i j k l m n o p q r
+100000000
+19 1
+a b c d e f g h i j k l m n o p q r s
+100000000
+20 1
+a b c d e f g h i j k l m n o p q r s t
+100000000
+21 1
+a b c d e f g h i j k l m n o p q r s t u
+100000000
+22 1
+a b c d e f g h i j k l m n o p q r s t u v
+100000000
+23 1
+a b c d e f g h i j k l m n o p q r s t u v w
+100000000
+24 1
+a b c d e f g h i j k l m n o p q r s t u v w x
+100000000
+25 1
+a b c d e f g h i j k l m n o p q r s t u v w x y
+100000000
+2 5
+       Juarez Paulino         
+1 100 1000 10000 100000000
+0 0

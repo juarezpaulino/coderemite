@@ -1,0 +1,81 @@
+<html><head><title>2682 - Sherlock Holmes</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2682 - Sherlock Holmes</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sea&year=2006"><b>Europe - Southeastern - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p2682.pdf"><b>PDF</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2682"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2682"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+Sherlock Holmes, the well known detective, must solve a puzzling situation. He has <SPAN CLASS="MATH"><I>n</I></SPAN> boxes <!-- MATH
+ $B_{1}, B_{2}, \ldots, B_{n}$
+ -->
+<SPAN CLASS="MATH"><I>B</I><SUB>1</SUB>, <I>B</I><SUB>2</SUB>,..., <I>B</I><SUB>n</SUB></SPAN> , where <SPAN CLASS="MATH"><I>n</I></SPAN> is even, each containing <SPAN CLASS="MATH"><I>m</I></SPAN> balls. The balls are white and black. Let <!-- MATH
+ $B_{i} = (W_{i}, B_{i})$
+ -->
+<SPAN CLASS="MATH"><I>B</I><SUB>i</SUB> = (<I>W</I><SUB>i</SUB>, <I>B</I><SUB>i</SUB>)</SPAN> denote a box with <SPAN CLASS="MATH"><I>W</I><SUB>i</SUB></SPAN> white balls and <SPAN CLASS="MATH"><I>B</I><SUB>i</SUB></SPAN> black balls. He must partition the boxes into two sets, each consisting of <SPAN CLASS="MATH"><I>n</I>/2</SPAN> boxes, such that either the white balls or the black balls hold a majority in both sets. If there is such a majority, let <SPAN CLASS="MATH"><I>m</I><SUB>1</SUB></SPAN> and <SPAN CLASS="MATH"><I>m</I><SUB>2</SUB></SPAN> denote the percentage of the majority balls in each set. Holmes must find very quickly the <SPAN  CLASS="textbf">maximum</SPAN> possible value of <!-- MATH
+ $\min(m_{1}, m_{2})$
+ -->
+<SPAN CLASS="MATH">min(<I>m</I><SUB>1</SUB>, <I>m</I><SUB>2</SUB>)</SPAN>. Can you help Holmes? 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The program input is from a text file. Each data set in the file stands for a particular set of boxes. A data set starts with the number <SPAN CLASS="MATH"><I>n</I></SPAN> <!-- MATH
+ $(n < 10000)$
+ -->
+<SPAN CLASS="MATH">(<I>n</I> &lt; 10000)</SPAN> of boxes. Follows the number <SPAN CLASS="MATH"><I>m</I></SPAN> <!-- MATH
+ $(m < 10000)$
+ -->
+<SPAN CLASS="MATH">(<I>m</I> &lt; 10000)</SPAN> of balls, and for each box the number <SPAN CLASS="MATH">( &lt; 10000)</SPAN> of white and black balls in this specific order. 
+
+<P>
+The program prints the color (<TT>W</TT> or <TT>B</TT>) of the balls that hold the majority followed by the maximum value - if there is such a majority, or ``<TT>No solution</TT>" if no majority can be obtained. 
+
+<P>
+White spaces can occur freely in the input. The input data are correct and terminate with an end of file. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each set of data the program prints the result to the standard output from the beginning of a line. 
+
+<P>
+An input/output sample is below. 
+There is a single data set that contains 4 boxes each containing 30 balls. The first box, for example, contains 17 white balls and 13 black balls. There is only one possible partition of the boxes <!-- MATH
+ $(B_{1}, B_{4})$
+ -->
+<SPAN CLASS="MATH">(<I>B</I><SUB>1</SUB>, <I>B</I><SUB>4</SUB>)</SPAN>, <!-- MATH
+ $(B_{2}, B_{3})$
+ -->
+<SPAN CLASS="MATH">(<I>B</I><SUB>2</SUB>, <I>B</I><SUB>3</SUB>)</SPAN>, the white balls holding majority. The result for the data set is the identifier <TT>W</TT> and the maximum value. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+4 
+30 
+17 13
+12 18
+20 10
+14 16
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+W 51.67
+</PRE> 
+
+<P>
+<hr><ADDRESS>Southeastern 2006-2007</ADDRESS><p></body></html>

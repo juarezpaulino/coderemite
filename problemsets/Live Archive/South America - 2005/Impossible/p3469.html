@@ -1,0 +1,213 @@
+<html><head><title>3469 - Mission Impossible</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3469 - Mission Impossible</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3469"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3469"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+You have been hired to explore enemy territory. It is risky business, you know that. So, you'd better be prepared! The enemy has placed a number of security points all over his country, from which radars are detecting any moving vehicle within their range of cover. Any such detected ob ject will be immediately destroyed. Fortunately enough, you have been given by your government a map of the enemy territory, consisting of coordinates and radius of coverage of each radar. You have also a list of local informers (together with their locations) that you should contact in order to obtain valuable information. Your mission is to try to contact one of these informers, preferably the one with highest <SPAN  CLASS="textit">insider-coefficient</SPAN>. The insider-coefficient of each informer is simply the distance from the informer to the border of the country, where such a distance is defined as the minimum over all distances from the location of the informer to each point of the border. In intuitive sense, the informer with highest insider-coefficient is that who is located as inside the country as possible, and will presumably have more valuable information about the country. 
+
+<P>
+Your first thought is then to design a computer program which will check if there is a path from your initial location, always the point (2000, 2000), to any of the informers' location, without crossing any region which is covered by radar. Whenever possible, the program should indicate which reachable informer is the one to be contacted, according to the insider-coefficient criteria described above.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfbox{p3469.eps}$
+ -->
+<IMG
+ WIDTH="491" HEIGHT="328" ALIGN="BOTTOM" BORDER="0"
+ SRC="3469img1.png"
+ ALT="\epsfbox{p3469.eps}">
+<tex2html_verbatim_mark>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">Figure 1: Possible Scenario 
+
+</DIV>
+
+<P>
+The enemy country has the shape of a <SPAN  CLASS="textit">simple polygon</SPAN> (<SPAN  CLASS="textit">not necessarily convex</SPAN>). Recall that a polygon is called simple if it is described by a single, non-intersecting boundary. The borders of the country will be given as a sequence of X,Y-coordinates corresponding to the sequence of vertexes of the polygon. You may assume that all the radar's centres and the informers' coordinates are located within the country's border. Notice, however, that the area covered by the radars might include regions outside the border.
+
+<P>
+In the sample scenario of Figure 1, informer <SPAN CLASS="MATH"><I>I</I></SPAN>
+<tex2html_verbatim_mark>1 cannot be contacted since he is inside the region covered by radars. The informer <SPAN CLASS="MATH"><I>I</I></SPAN>
+<tex2html_verbatim_mark>2, although outside the radar's region, can't be contacted either since any trip to his location would go through the deadly radar-covered regions. Both informers <SPAN CLASS="MATH"><I>I</I></SPAN>
+<tex2html_verbatim_mark>3 and <SPAN CLASS="MATH"><I>I</I></SPAN>
+<tex2html_verbatim_mark>4 could be contacted, so that informer <SPAN CLASS="MATH"><I>I</I></SPAN>
+<tex2html_verbatim_mark>4 is chosen since his insider-coefficient is greater than that of <SPAN CLASS="MATH"><I>I</I></SPAN>
+<tex2html_verbatim_mark>3.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input consists of several test cases. The first line of each test case describes the border of the enemy country, in the format 
+
+<P>
+
+<P>
+<BR>
+
+<!-- MATH
+ $B \ X1 \ Y1 \ X2 \ Y2 \dots XB \ YB$
+ -->
+<SPAN CLASS="MATH"><I>B</I>&nbsp;<I>X</I>1&nbsp;<I>Y</I>1&nbsp;<I>X</I>2&nbsp;<I>Y</I>2...<I>XB</I>&nbsp;<I>YB</I></SPAN>
+<tex2html_verbatim_mark>
+
+<P>
+
+<P>
+<BR>
+where <!-- MATH
+ $3 \le B \le 1000$
+ -->
+<SPAN CLASS="MATH">3<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$"><I>B</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark> is the number of border points, and each <!-- MATH
+ $X{i} \ Y{i}$
+ -->
+<SPAN CLASS="MATH"><I>Xi</I>&nbsp;<I>Yi</I></SPAN>
+<tex2html_verbatim_mark> is the coordinate of the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th point in the border. The border of the country consists of line segments between points <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>i</I> + 1</SPAN>
+<tex2html_verbatim_mark>, and between points <SPAN CLASS="MATH"><I>B</I></SPAN>
+<tex2html_verbatim_mark> and 1. The second line gives the number of informers and their respective positions, in the format 
+
+<P>
+
+<P>
+<BR>
+
+<!-- MATH
+ $N \ X1 \ Y1 \ X2 \ Y2 \dots XN \ YN$
+ -->
+<SPAN CLASS="MATH"><I>N</I>&nbsp;<I>X</I>1&nbsp;<I>Y</I>1&nbsp;<I>X</I>2&nbsp;<I>Y</I>2...<I>XN</I>&nbsp;<I>YN</I></SPAN>
+<tex2html_verbatim_mark>
+
+<P>
+
+<P>
+<BR>
+where <!-- MATH
+ $1 \le N \le 1000$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark> is the number of informers, and <!-- MATH
+ $X{i} \ Y{i}$
+ -->
+<SPAN CLASS="MATH"><I>Xi</I>&nbsp;<I>Yi</I></SPAN>
+<tex2html_verbatim_mark> is the coordinate of the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th informer. The third line describes the position and radius of the radars, in the format 
+
+<P>
+
+<P>
+<BR>
+
+<!-- MATH
+ $M \ X1 \ Y1 \ R1 \ X2 \ Y2 \ R2 \dots XM \ YM \ RM$
+ -->
+<SPAN CLASS="MATH"><I>M</I>&nbsp;<I>X</I>1&nbsp;<I>Y</I>1&nbsp;<I>R</I>1&nbsp;<I>X</I>2&nbsp;<I>Y</I>2&nbsp;<I>R</I>2...<I>XM</I>&nbsp;<I>YM</I>&nbsp;<I>RM</I></SPAN>
+<tex2html_verbatim_mark>
+
+<P>
+
+<P>
+<BR>
+where <!-- MATH
+ $1 \le M \le 30$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$"><I>M</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$">30</SPAN>
+<tex2html_verbatim_mark> is the number of radars, <!-- MATH
+ $X{i} \ Y{i}$
+ -->
+<SPAN CLASS="MATH"><I>Xi</I>&nbsp;<I>Yi</I></SPAN>
+<tex2html_verbatim_mark> is the coordinate of the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th radar, and <SPAN CLASS="MATH"><I>Ri</I></SPAN>
+<tex2html_verbatim_mark> is the radius of the <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>-th radar. All the coordinates are integers <!-- MATH
+ $0 \le X, Y \le 1000$
+ -->
+<SPAN CLASS="MATH">0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$"><I>X</I>, <I>Y</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark>. The radius of the radars are integers in the range <!-- MATH
+ $1 \le R \le 1000$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$"><I>R</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3469img2.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark>. A test case where <!-- MATH
+ $B = N = M = 0$
+ -->
+<SPAN CLASS="MATH"><I>B</I> = <I>N</I> = <I>M</I> = 0</SPAN>
+<tex2html_verbatim_mark> indicates the end of the input. This test case must not be processed. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case in the input, your program must produce one line containing either 
+`<TT>Mission impossible</TT>' or `<TT>Contact informer <SPAN CLASS="MATH"><I>K</I></SPAN>
+<tex2html_verbatim_mark></TT>', where `<SPAN CLASS="MATH"><I>K</I></SPAN>
+<tex2html_verbatim_mark>' is the index of the informer (as given in the input) with highest insider-coefficient which can be reached by the spy without going inside any radar coverage area. If there are more than one informer satisfying this condition, choose the one among them with lowest index. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+4 0 0 0 200 200 200 200 0 
+2 70 70 120 120 
+1 100 100 100 
+4 0 0 0 200 200 200 200 0 
+3 100 102 70 80 20 10 
+4 70 70 35 130 70 35 130 130 35 70 130 35
+0 
+0 
+0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+Mission impossible 
+Contact informer 3
+</PRE> 
+
+<P>
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

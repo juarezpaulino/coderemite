@@ -1,0 +1,239 @@
+<html><head><title>3526 - Sign Message Formatting</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3526 - Sign Message Formatting</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=gny&year=2006"><b>North America - Greater New York - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3526"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3526"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+The <SPAN  CLASS="textit">National Transportation Communications for ITS Protocol</SPAN> (NTCIP) for communicating with highway signs with dynamic messages describes the messages using <SPAN  CLASS="textit">Markup Language for Transportation Information</SPAN> (MULTI).  A MULTI string consists of text to be displayed together with embedded tags which describe formatting of the text and included dynamic elements.  Tags begin with the open bracket (`<TT>[</TT>') character and end with the close bracket (`<TT>]</TT>') character.  If an open bracket character is to appear in the text, it is represented as two open bracket characters. Similarly, if a close bracket character is to appear in the text, it is represented as two close bracket characters.  This problem is concerned with formatting for character cell displays, which are rectangular arrays of character cells each of which can display a single character.
+
+<P>
+The tags to be supported for this problem are:
+
+<P>
+
+<P>
+<BR>
+<TABLE COLS=2 BORDER FRAME=BOX RULES=GROUPS>
+<COLGROUP><COL ALIGN=LEFT><COLGROUP><COL ALIGN=LEFT>
+<TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>
+<SPAN  CLASS="textbf">Tag</SPAN> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> <SPAN  CLASS="textbf">Description</SPAN> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[nl]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Start a new row of the array </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[sc<SPAN CLASS="MATH">&lt; <I>digit</I> &gt;</SPAN>]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Insert <SPAN CLASS="MATH">&lt; <I>digit</I> &gt;</SPAN> blank character cells between each pair of text characters in </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> the following string until changed. </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[/sc]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Set inter-character spacing to zero (equivalent to <TT>[sc0]</TT>). </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl2]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Set left justified text (the first character of the text is the leftmost character  </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> of the line). </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl3]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Set center justified text (the number of character positions before and after  </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> the text on the line is the same or the number after is one more than the  </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> number before). </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl4]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Set right justified text (the final character of the string is the rightmost </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> character on the line). </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl5]</TT> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> Set fully justified text (an equal number of blank character spaces, as </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> large as possible for the line length, is placed between each pair of </TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> characters in the text; the resulting string is centered in the line as for</TD></TR>
+<TR><TD></TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> centered text). </TD></TR>
+</TBODY>
+</TABLE>
+
+<P>
+
+<P>
+<BR>
+For example, on a 24 character line (<code> </code> indicates a blank character cell):
+
+<P>
+
+<P>
+<BR>
+<DIV ALIGN="CENTER">
+<TABLE COLS=2 BORDER FRAME=BOX RULES=GROUPS>
+<COLGROUP><COL ALIGN=LEFT><COLGROUP><COL ALIGN=LEFT>
+<TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>
+<SPAN  CLASS="textbf">Format String</SPAN> </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP> <SPAN  CLASS="textbf">Generated Output</SPAN> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl2]MESSAGE</TT>  </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>                    <code>MESSAGE                 </code> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl3]MESSAGE</TT>   </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>                   <code>        MESSAGE         </code> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl4]MESSAGE</TT>  </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>                    <code>                 MESSAGE</code> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl2][sc2]MESSAGE</TT>  </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>               <code>M  E  S  S  A  G  E     </code> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl5]MESSAGE</TT>   </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>                   <code>  M  E  S  S  A  G  E   </code> </TD></TR>
+</TBODY><TBODY>
+<TR><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP><TT>[jl2]THIS[jl3]IS A[jl4]MESSAGE</TT>  </TD><TD VALIGN=BASELINE ALIGN=LEFT NOWRAP>  <code>THIS      IS A   MESSAGE</code> </TD></TR>
+</TBODY>
+</TABLE>
+
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+
+<P>
+
+<P>
+<BR>
+Letters within tags are case-insensitive. That is <TT>[nl] = [NL] = [Nl] = [nL]</TT>.
+
+<P>
+The default justification at the beginning of a message is left justification and the default character spacing is 0.
+
+<P>
+Justification and character spacing are maintained across <TT>[nl]</TT> tags.
+
+<P>
+The <TT>[jl2]</TT> and <TT>[jl5]</TT> tags may only be used before any text has been output on a line.  Otherwise it is an error  (<TT>TAG CONFLICT</TT>).
+
+<P>
+Once <TT>[jl5]</TT> text has been output on a line, no other justification tag may be set on that line.  Otherwise it is an error  (<TT>TAG CONFLICT</TT>).
+
+<P>
+The <TT>[jl3]</TT> tag may not be used after right justified text (<TT>[jl4]</TT>) has been output on a line.  Otherwise it is an error (<TT>TAG CONFLICT</TT>).
+
+<P>
+A justification tag <TT>[jl<SPAN CLASS="MATH">?</SPAN>]</TT> with the same value as the current value does not cause a <TT>TAG CONFLICT</TT> error.
+
+<P>
+Extra character spacing specified by the <TT>[sc<SPAN CLASS="MATH">?</SPAN>]</TT> tag is ignored on lines with fully justified text. The full justification rules determine the extra spaces.
+
+<P>
+If too many characters are required on a line or too many lines are required in a message, it is an error (<TT>TOO BIG</TT>). A <TT>[nl]</TT> tag does not begin a new line unless followed by text output.
+
+<P>
+If left justified text and center justified text appear on the same line, there must be at least one blank character cell between the last character of left justified text and the first character of center justified text.  Otherwise it is an error (<TT>TOO BIG</TT>).
+
+<P>
+If center justified text and right justified text appear on the same line, there must be at least one blank character cell between the last character of center justified text and the first character of right justified text.  Otherwise it is an error (<TT>TOO BIG</TT>).
+
+<P>
+If left justified text and right justified text appear on the same line, there must be at least one blank character cell between the last character of left justified text and the first character of right justified text.  Otherwise it is an error (<TT>TOO BIG</TT>).
+
+<P>
+The only tags allowed in a message are the seven tags listed above otherwise it is an error (<TT>BAD TAG</TT>). A malformed tag or an unmatched single open or closed bracket is a <TT>BAD TAG</TT> error.
+
+<P>
+
+<P>
+<BR>
+For this problem you will write a program which takes as input the dimensions of the character cell array and a MULTI string and either outputs an error string or a correctly formatted message.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The first line of input contains a single integer <SPAN CLASS="MATH"><I>N</I></SPAN>, <!-- MATH
+ $(1 \le N \le 100)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3528img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3528img1.png"
+ ALT="$ \le$">100)</SPAN>, which is the number of datasets that follow.   Each dataset consists of a single line containing an integer <SPAN CLASS="MATH"><I>R</I></SPAN>,  <!-- MATH
+ $(1 \le R \le 25)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3528img1.png"
+ ALT="$ \le$"><I>R</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3528img1.png"
+ ALT="$ \le$">25)</SPAN>, a blank, an integer <SPAN CLASS="MATH"><I>C</I></SPAN>, <!-- MATH
+ $(1 \le C \le 80)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3528img1.png"
+ ALT="$ \le$"><I>C</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3528img1.png"
+ ALT="$ \le$">80)</SPAN>, a blank, and the remainder of the line is a <SPAN  CLASS="textbf"><SPAN  CLASS="textit">MULTI-Text</SPAN></SPAN> string. <SPAN CLASS="MATH"><I>R</I></SPAN> is the number of rows in the character cell array, <SPAN CLASS="MATH"><I>C</I></SPAN> is the number of columns in the character cell array, and the <SPAN  CLASS="textbf"><SPAN  CLASS="textit">MULTI-Text</SPAN></SPAN>  is the text to be formatted.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each dataset, output the dataset number on a line by itself, followed by one of the error strings (<TT>TAG CONFLICT</TT>, <TT>TOO BIG</TT>, <TT>BAD TAG</TT>) on a line by itself in the case of an error, or, <SPAN CLASS="MATH"><I>R</I></SPAN> lines each of which has exactly <SPAN CLASS="MATH"><I>C</I></SPAN> characters (other than terminating newlines) representing the formatted message using space characters for empty character cells.   The last line of output for a dataset result should be a single blank line.
+
+<P>
+
+<P><P>
+<BR>
+
+<SPAN  CLASS="textbf">Note:</SPAN> For ease in grading, a dataset that contains an error will only contain one type of error.
+
+<P>
+
+<P>
+<BR>
+
+<SPAN  CLASS="textbf">Note for Sample Output:</SPAN>
+(<code>^</code> added after the last character of the lines for illustrative purposes.  It should NOT appear in program output.)
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+7
+4 24 [jl2]MESSAGE[nl][jl3]MESSAGE[nl][jl4]MESSAGE
+2 24 This[jl3]is a[jl4]message
+2 24 This is a very long message which will not fit
+4 24 This[nl]message[nl]has[nl]too[nl]many[nl]lines
+2 32 [jl3]This message has a [[ and a ]]
+2 32 This is a bad tag[xy34]
+2 32 [jl3]This message [jl5] has a tag conflict.
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+1
+MESSAGE                 ^
+        MESSAGE         ^
+                 MESSAGE^
+                        ^
+
+2
+This      is a   message^
+                        ^
+
+3
+TOO BIG
+
+4
+TOO BIG
+
+5
+  This message has a [ and a ]  ^
+                                ^
+
+6
+BAD TAG
+
+7
+TAG CONFLICT
+</PRE> 
+
+<P>
+<hr><ADDRESS>Greater New York 2006-2007</ADDRESS><p></body></html>

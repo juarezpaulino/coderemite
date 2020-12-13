@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>An Alternative Formulation</title>
+
+
+
+
+<meta name="description" content="An Alternative Formulation">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node6_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html101" href="http://mat.gsia.cmu.edu/classes/dynamic/node7.html"><img alt="next" src="node6_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html99" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node6_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html93" href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html"><img alt="previous" src="node6_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html103" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node6_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html102" href="http://mat.gsia.cmu.edu/classes/dynamic/node7.html">Equipment Replacement</a>
+<b>Up:</b> <a name="tex2html100" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html94" href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html">The Knapsack Problem.</a>
+<br> <p>
+</p><h1><a name="SECTION00060000000000000000">An Alternative Formulation</a></h1>
+<p>
+There is another formulation for the knapsack problem.  This
+illustrates how arbitrary our definitions of stages, states, and
+decisions are.  It also points out that there is some flexibility on
+the rules for dynamic programming.  Our definitions required a
+decision at a stage to take us to the next stage (which we would
+already have calculated through backwards recursion).  In fact, it
+could take us to any stage we have already calculated.  This gives us
+a bit more flexibility in our calculations.
+</p><p>
+The recursion I am about to present is a forward recursion.  For a
+knapsack problem, let the stages be indexed by <i>w</i>, the weight filled.
+The decision is to determine the last item added to bring the weight
+to <i>w</i>.  There is just one state per stage.  Let <i>g</i>(<i>w</i>) be the maximum
+benefit that can be gained from a <i>w</i> pound knapsack.  Continuing to
+use  <img alt="tex2html_wrap_inline1038" src="node6_arquivos/img45.gif" align="middle" height="29" width="13">  and  <img alt="tex2html_wrap_inline1040" src="node6_arquivos/img46.gif" align="middle" height="17" width="18">  as the weight and benefit, respectively, for item
+<i>j</i>, the following relates <i>g</i>(<i>w</i>) to previously calculated <i>g</i> values:
+</p><p> <img alt="displaymath1048" src="node6_arquivos/img47.gif" align="bottom" height="28" width="367"> </p><p>
+Intuitively, to fill a <i>w</i> pound knapsack, we must end off by adding
+some item.  If we add item <i>j</i>, we end up with a knapsack of size
+ <img alt="tex2html_wrap_inline1054" src="node6_arquivos/img48.gif" align="middle" height="19" width="55">  to fill.  To illustrate on the above example:
+</p><ul><li> <i>g</i>(0) = 0</li><li> <i>g</i>(1) = 30 add item 3.</li><li>  <img alt="tex2html_wrap_inline1060" src="node6_arquivos/img49.gif" align="middle" height="29" width="402">  add item 1.</li><li>  <img alt="tex2html_wrap_inline1062" src="node6_arquivos/img50.gif" align="middle" height="29" width="529">  add item 1 or 3.</li><li>  <img alt="tex2html_wrap_inline1064" src="node6_arquivos/img51.gif" align="middle" height="29" width="567">  add item 1.</li><li>  <img alt="tex2html_wrap_inline1066" src="node6_arquivos/img52.gif" align="middle" height="29" width="567">  add item 1 or
+  3.
+</li></ul>
+This gives a maximum of 160, which is gained by adding 2 of item 1 and
+1 of item 3.
+<p>
+<br> </p><hr>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

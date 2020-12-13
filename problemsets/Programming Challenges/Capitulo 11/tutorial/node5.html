@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>The Knapsack Problem.</title>
+
+
+
+
+<meta name="description" content="The Knapsack Problem.">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node5_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html90" href="http://mat.gsia.cmu.edu/classes/dynamic/node6.html"><img alt="next" src="node5_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html88" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html"><img alt="up" src="node5_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html82" href="http://mat.gsia.cmu.edu/classes/dynamic/node4.html"><img alt="previous" src="node5_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html92" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node5_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html91" href="http://mat.gsia.cmu.edu/classes/dynamic/node6.html">An Alternative Formulation</a>
+<b>Up:</b> <a name="tex2html89" href="http://mat.gsia.cmu.edu/classes/dynamic/dynamic.html">A Tutorial on Dynamic </a>
+<b> Previous:</b> <a name="tex2html83" href="http://mat.gsia.cmu.edu/classes/dynamic/node4.html">Common Characteristics</a>
+<br> <p>
+</p><h1><a name="SECTION00050000000000000000">The Knapsack Problem.</a></h1>
+<p>
+The knapsack problem is a particular type of integer program with just
+one constraint.  Each item that can go into the knapsack has a size
+and a benefit.  The knapsack has a certain capacity.  What should go
+into the knapsack so as to maximize the total benefit?  As an example,
+suppose we have three items as shown in Table&nbsp;<a href="http://mat.gsia.cmu.edu/classes/dynamic/node5.html#tblknap">4</a>, and
+suppose the capacity of the knapsack is 5.
+</p><p>
+</p><p><a name="462">&nbsp;</a><a name="tblknap">&nbsp;</a> <img alt="table458" src="node5_arquivos/img39.gif" align="bottom" height="97" width="316"> <br>
+<strong>Table 4:</strong> Knapsack Items<br>
+</p><p>
+</p><p>
+The stages represent the items: we have three stages <i>j</i>=1,2,3.
+The state  <img alt="tex2html_wrap_inline1004" src="node5_arquivos/img40.gif" align="middle" height="17" width="14">  at stage <i>j</i> represents the total weight of
+items <i>j</i> and all following items in the knapsack.
+The decision at stage <i>j</i> is how many items <i>j</i> to place in the
+knapsack.  Call this value  <img alt="tex2html_wrap_inline892" src="node5_arquivos/img12.gif" align="middle" height="29" width="14"> .
+</p><p>
+This leads to the following recursive formulas: Let  <img alt="tex2html_wrap_inline1016" src="node5_arquivos/img41.gif" align="middle" height="30" width="45">  be the
+value of using  <img alt="tex2html_wrap_inline1004" src="node5_arquivos/img40.gif" align="middle" height="17" width="14">  units of capacity for items <i>j</i> and following.
+Let  <img alt="tex2html_wrap_inline1022" src="node5_arquivos/img42.gif" align="middle" height="29" width="21">  represent the largest integer less than or
+equal to <i>a</i>.
+</p><ul><li>  <img alt="tex2html_wrap_inline1026" src="node5_arquivos/img43.gif" align="middle" height="30" width="105"> </li><li>  <img alt="tex2html_wrap_inline1028" src="node5_arquivos/img44.gif" align="middle" height="29" width="381"> </li></ul><br> <hr>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+</body></html>

@@ -1,0 +1,114 @@
+<html><head><title>2686 - Stargates</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2686 - Stargates</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sea&year=2006"><b>Europe - Southeastern - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p2686.pdf"><b>PDF</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2686"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2686"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+``A Long Time Ago, in a Galaxy Far, Far Away..." one advanced civilization discovered a manner of instant traveling between solar systems. Since that moment, they have devoted all their efforts to constructing pairs of stargates that connect distant planets. Soon enough communication network became so complex that they require help to maintain information about the connected worlds. 
+
+<P>
+Write a program that will help them maintain information about the connected systems and we will make sure that the best of your solutions will be forwarded to their space-time continuum. 
+
+<P>
+Planets A and B are connected if there is a direct stargate connection between them, or there is a planet sequence <!-- MATH
+ $P_{1}, P_{2}, \ldots P_{n}$
+ -->
+<SPAN CLASS="MATH"><I>P</I><SUB>1</SUB>, <I>P</I><SUB>2</SUB>,...<I>P</I><SUB>n</SUB></SPAN> where <SPAN CLASS="MATH"><I>P</I><SUB>1</SUB> = <I>A</I></SPAN>, <SPAN CLASS="MATH"><I>P</I><SUB>n</SUB> = <I>B</I></SPAN> and there is a direct stargate connection between <SPAN CLASS="MATH"><I>P</I><SUB>k</SUB></SPAN> and <!-- MATH
+ $P_{k-1}, k \in \{2 \ldots n\}$
+ -->
+<SPAN CLASS="MATH"><I>P</I><SUB>k-1</SUB>, <I>k</I> <IMG
+ WIDTH="16" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2686img1.png"
+ ALT="$ \in$"> {2...<I>n</I>}</SPAN> . Connections are bidirectional. There can be multiple connection paths between two planets. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+Input file consist of multiple data sets. Each data set occupies one or more lines. There are no empty lines in the input file. Each line starts with a single letter `<TT>D</TT>', `<TT>C</TT>' or `<TT>Q</TT>' (upper or lower case) followed by 1 to 5 integers with following meaning: 
+
+<P>
+`<TT>D</TT>' <SPAN  CLASS="textbf">(define)</SPAN> has only one argument which defines number of planets <SPAN CLASS="MATH"><I>N</I></SPAN> considered in following data set (<!-- MATH
+ $N \le 6000000$
+ -->
+<SPAN CLASS="MATH"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="2686img2.png"
+ ALT="$ \le$">6000000</SPAN>, planets are numerated from <SPAN CLASS="MATH">1..<I>N</I></SPAN>). 
+
+<P>
+`<TT>C</TT>' <SPAN  CLASS="textbf">(connect)</SPAN> creates a connection between a given pair(s) of planets. 
+
+<P>
+`<TT>Q</TT>' <SPAN  CLASS="textbf">(query)</SPAN> examines if a given pair(s) of planets are connected. 
+
+<P>
+Both `<TT>C</TT>' and `<TT>Q</TT>' command (`<SPAN CLASS="MATH"><I>X</I></SPAN>' in following text) share the same syntax: 
+
+<P>
+<SPAN CLASS="MATH"><I>X</I></SPAN> <SPAN CLASS="MATH"><I>src</I></SPAN> <SPAN CLASS="MATH"><I>dst</I></SPAN> - Creates a connection (or query) between given pair of planets <!-- MATH
+ $(src, dst)$
+ -->
+<SPAN CLASS="MATH">(<I>src</I>, <I>dst</I>)</SPAN>. 
+
+<P>
+<SPAN CLASS="MATH"><I>X</I></SPAN> <SPAN CLASS="MATH"><I>src</I></SPAN> <SPAN CLASS="MATH"><I>dst</I></SPAN> <SPAN CLASS="MATH"><I>nnn</I></SPAN> - Creates a connection (or query) between src planet and nnn consecutive planets numerated from <SPAN CLASS="MATH"><I>dst</I></SPAN>. 
+
+<P>
+<SPAN  CLASS="textbf">Example:</SPAN> <SPAN CLASS="MATH"><I>X</I></SPAN> <TT>1 100 3</TT> creates following links (1,100), (1,101), (1,102). 
+
+<P>
+<!-- MATH
+ $X \ src \ dst \ nnn \ step$
+ -->
+<SPAN CLASS="MATH"><I>X</I>&nbsp;<I>src</I>&nbsp;<I>dst</I>&nbsp;<I>nnn</I>&nbsp;<I>step</I></SPAN> - Creates a connection (or query) between <SPAN CLASS="MATH"><I>src</I></SPAN> planet and <SPAN CLASS="MATH"><I>nnn</I></SPAN> planets numerated from <SPAN CLASS="MATH"><I>dst</I></SPAN> with given step. 
+
+<P>
+<SPAN  CLASS="textbf">Example:</SPAN> <SPAN CLASS="MATH"><I>X</I></SPAN> <TT>1 100 3 5</TT> creates following links (1,100), (1,105), (1,110). 
+
+<P>
+<!-- MATH
+ $X \ src \ dst \ nnn \ dststep \ srcstep$
+ -->
+<SPAN CLASS="MATH"><I>X</I>&nbsp;<I>src</I>&nbsp;<I>dst</I>&nbsp;<I>nnn</I>&nbsp;<I>dststep</I>&nbsp;<I>srcstep</I></SPAN> - Creates a connection (or query) between <SPAN CLASS="MATH"><I>nnn</I></SPAN> pairs of planets numerated from <SPAN CLASS="MATH"><I>src</I></SPAN> with <SPAN CLASS="MATH"><I>srcstep</I></SPAN> and <SPAN CLASS="MATH"><I>dst</I></SPAN> with <SPAN CLASS="MATH"><I>dststep</I></SPAN> respectively. 
+
+<P>
+<SPAN  CLASS="textbf">Example:</SPAN> <SPAN CLASS="MATH"><I>X</I></SPAN> <TT>1 100 3 5 15</TT> creates following links (1,100), (16,105), (31,110). 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+Output file contains one line pre each query (`<TT>Q</TT>') line in the input file. Each line contains two numbers separated by space dash space sequence. First value represents number of connected planet pairs from appropriate query while second represents number of disconnected planet pairs. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+d 5 
+C 1 3 
+D 20 
+q 1 3 
+c 1 10 10 
+Q 1 2 18 1 1
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+0 - 1 
+9 - 9
+</PRE> 
+
+<P>
+<hr><ADDRESS>Southeastern 2006-2007</ADDRESS><p></body></html>

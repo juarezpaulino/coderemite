@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head><!--Converted with LaTeX2HTML 96.1 (Feb 5, 1996) by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds --><title>Uncertain Payoffs</title>
+
+
+
+
+<meta name="description" content="Uncertain Payoffs">
+<meta name="keywords" content="dynamic">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="node11_arquivos/dynamic.css"></head><body lang="EN">
+ <a name="tex2html159" href="http://mat.gsia.cmu.edu/classes/dynamic/node12.html"><img alt="next" src="node11_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html157" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="up" src="node11_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html151" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="previous" src="node11_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html161" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node11_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html160" href="http://mat.gsia.cmu.edu/classes/dynamic/node12.html">Uncertain States</a>
+<b>Up:</b> <a name="tex2html158" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<b> Previous:</b> <a name="tex2html152" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<br> <p>
+</p><h2><a name="SECTION000101000000000000000">Uncertain Payoffs</a></h2>
+<p>
+Consider a supermarket chain that has purchased 6 gallons of milk from
+a local dairy.  The chain must allocate the 6 gallons to its three
+stores.  If a store sells a gallon of milk, then the chain receives
+revenue of $2.  Any unsold milk is worth just $.50.  Unfortunately,
+the demand for milk is uncertain, and is given in the following table:
+</p><p>
+</p><p> <img alt="table560" src="node11_arquivos/img88.gif" align="bottom" height="231" width="260"> </p><p>
+</p><p>
+The goal of the chain is to maximize the expected revenue from these 6
+gallons.  (This is not the only possible objective, but a reasonable
+one.)
+</p><p>
+</p><p>
+Note that this is quite similar to some of our previous resource
+allocation problems:  the only difference is that the revenue is not
+known for certain.  We can, however, determine an expected revenue for
+each allocation of milk to a store.  For instance, the value of
+allocating 2 gallons to store 1 is:
+</p><p>
+</p><p> <img alt="displaymath1184" src="node11_arquivos/img89.gif" align="bottom" height="19" width="330"> </p><p>
+</p><p>
+We can do this for all allocations to get the following values:
+</p><p>
+</p><p> <img alt="table565" src="node11_arquivos/img90.gif" align="bottom" height="231" width="230"> </p><p>
+</p><p>
+We have changed what looked to be a stochastic problem into a
+deterministic one!  We simply use the above expected values.  The
+resulting problem is identical to our previous resource allocation
+problems.  We have a stage for each store.  The states for stage 3 are
+the number of gallons given to store 3 (0, 1, 2, 3); the states for
+stage 2 are the number of gallons given to stores 2 and 3 (0, 1, 2, 3,
+4, 5, 6) and the state for stage 1 is the number of gallons given to
+stores 1, 2, and 3 (6).  The decision at stage <i>i</i> is how many gallons
+to give to store <i>i</i>.  If we let the above table be represented by
+ <img alt="tex2html_wrap_inline1190" src="node11_arquivos/img91.gif" align="middle" height="29" width="37">  (the value of giving <i>k</i> gallons to store <i>i</i>, then the
+recursive formulae are
+</p><p>
+</p><p> <img alt="displaymath1196" src="node11_arquivos/img92.gif" align="bottom" height="19" width="303"> </p><p>
+</p><p> <img alt="displaymath1198" src="node11_arquivos/img93.gif" align="bottom" height="29" width="379"> </p><p>
+</p><p>
+If you would like to work out the values, you should get a valuation
+of $9.75, with one solution assigning 1 gallon to store 1, 3 gallons
+to store 2 and 2 gallons to store 3.
+</p><p>
+</p><hr><a name="tex2html159" href="http://mat.gsia.cmu.edu/classes/dynamic/node12.html"><img alt="next" src="node11_arquivos/next_motif.htm" align="bottom" height="24" width="37"></a> <a name="tex2html157" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="up" src="node11_arquivos/up_motif.htm" align="bottom" height="24" width="26"></a> <a name="tex2html151" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html"><img alt="previous" src="node11_arquivos/previous_motif.htm" align="bottom" height="24" width="63"></a> <a name="tex2html161" href="http://mat.gsia.cmu.edu/classes/dynamic/node1.html"><img alt="contents" src="node11_arquivos/contents_motif.htm" align="bottom" height="24" width="65"></a>  <br>
+<b> Next:</b> <a name="tex2html160" href="http://mat.gsia.cmu.edu/classes/dynamic/node12.html">Uncertain States</a>
+<b>Up:</b> <a name="tex2html158" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<b> Previous:</b> <a name="tex2html152" href="http://mat.gsia.cmu.edu/classes/dynamic/node10.html">Stochastic Dynamic Programming</a>
+<p></p><address>
+<i>Michael A. Trick <br>
+Sun Jun 14 13:05:46 EDT 1998</i>
+</address>
+
+</body></html>

@@ -1,0 +1,122 @@
+<html><head><title>3498 - Push Button Lock</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3498 - Push Button Lock</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=gny&year=2006"><b>North America - Greater New York - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3498"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3498"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+The <SPAN  CLASS="textit">Frobozz Magic Lock Company</SPAN> is in the business of manufacturing push button style combination door locks.  A <SPAN  CLASS="textit">push button</SPAN> door lock consists of a number of push buttons <SPAN CLASS="MATH"><I>B</I></SPAN>, <!-- MATH
+ $(1 \le B \le 11)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3498img1.png"
+ ALT="$ \le$"><I>B</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3498img1.png"
+ ALT="$ \le$">11)</SPAN>, labeled ``1" through ``<SPAN CLASS="MATH"><I>B</I></SPAN>".  The lock is opened by pressing the correct sequence of button combinations and then turning the doorknob.  If the sequence of presses is correct, the door <SPAN  CLASS="textit">magically</SPAN> opens.
+
+<P>
+A <SPAN  CLASS="textit">combination</SPAN> consists of 1 or more buttons being pressed simultaneously.  A <SPAN  CLASS="textit">sequence</SPAN> consists of a series of combinations.  A sequence must have at least one combination.  Once a button has been used in a combination, it may not be used again in the same sequence.  In addition, it is not necessary to use all the buttons in a sequence.  For example, for <SPAN CLASS="MATH"><I>B</I> = 8</SPAN>:
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+(1-2-3)(4)(7-8)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+(1 - 2 - 3)(4)(7 - 8)
+</DIV><P></P>
+is a valid sequence with 3 combinations <SPAN CLASS="MATH">(1 - 2 - 3)</SPAN>, <SPAN CLASS="MATH">(4)</SPAN>, and <SPAN CLASS="MATH">(7 - 8)</SPAN>.  Note that buttons 5 and 6 are not used in this sequence.
+
+<P>
+<P><!-- MATH
+ \begin{displaymath}
+(1-2-3)(2-4)(5-6)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+(1 - 2 - 3)(2 - 4)(5 - 6)
+</DIV><P></P>
+is not a valid sequence, since button 2 appears in 2 combinations <SPAN CLASS="MATH">(1 - 2 - 3)</SPAN> and <SPAN CLASS="MATH">(2 - 4)</SPAN>.
+
+<P>
+The CEO of Frobozz, <SPAN  CLASS="textit">J. Pierpont Flathead</SPAN>,  wants you to write a program that determines the number of valid sequences possible for given values of <SPAN CLASS="MATH"><I>B</I></SPAN>.   The program must be able to process a list of lock orders (datasets) from customers and generate a report showing the order number, the value of <SPAN CLASS="MATH"><I>B</I></SPAN>, and the number of valid sequences possible.  This list will always contain at least one dataset, but no more than 100 datasets.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The first line of input contains a single integer <SPAN CLASS="MATH"><I>N</I></SPAN>, <!-- MATH
+ $(1 \le N \le 100)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3498img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3498img1.png"
+ ALT="$ \le$">100)</SPAN>, representing the number of datasets that follow.  Each dataset consists of a single line of data containing a single integer <SPAN CLASS="MATH"><I>B</I></SPAN>, which is the number of buttons for the lock.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each dataset, display the dataset number, a blank, the value <SPAN CLASS="MATH"><I>B</I></SPAN>, a blank, and the number of valid sequences.
+
+<P>
+<DIV ALIGN="CENTER">
+J. Pierpont Flathead
+
+</DIV>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+3
+3
+4
+3
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+1 3 25
+2 4 149
+3 3 25
+</PRE> 
+
+<P>
+
+<P>
+<BR>
+Reference Materials:
+
+<P>
+<DIV ALIGN="CENTER">
+ =3in
+<!-- MATH
+ $\epsfbox{p3498.eps}$
+ -->
+<IMG
+ WIDTH="473" HEIGHT="608" ALIGN="BOTTOM" BORDER="0"
+ SRC="3498img2.png"
+ ALT="\epsfbox{p3498.eps}">
+</DIV>
+
+<P>
+<hr><ADDRESS>Greater New York 2006-2007</ADDRESS><p></body></html>

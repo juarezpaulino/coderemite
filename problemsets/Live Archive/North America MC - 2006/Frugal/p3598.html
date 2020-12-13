@@ -1,0 +1,72 @@
+<html><head><title>3598 - Frugal Search</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3598 - Frugal Search</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=mc&year=2006"><b>North America - Mid Central - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3598"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3598"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+For this problem you will write a search engine that takes a query, searches a collection of words, and finds the lexicographically smallest word that matches the query (i.e., the matching word that would appear first in an English dictionary). A <SPAN  CLASS="textit">query</SPAN> is a sequence of one or more terms separated by single vertical bars (``<TT>|</TT>"). A <SPAN  CLASS="textit">term</SPAN> is one or more letters followed by zero or more signed letters. A <SPAN  CLASS="textit">signed</SPAN> letter is either <TT>+</TT><SPAN CLASS="MATH"><I>s</I></SPAN> (`positive" <SPAN CLASS="MATH"><I>s</I></SPAN>) or <TT>-</TT><SPAN CLASS="MATH"><I>s</I></SPAN> (``negative" <SPAN CLASS="MATH"><I>s</I></SPAN>), where <SPAN CLASS="MATH"><I>s</I></SPAN> is a single letter. All letters are lowercase, and no letter will appear more than once within a term. A query will not contain spaces. A term matches a word if the word contains at least one of the unsigned letters, all of the positive letters, and none of the negative letters; a query matches a word if at least one of its terms matches the word. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+The input consists of one or more test cases followed by a line containing only ``<TT>#</TT>" that signals the end of the input. Each test case consists of 1–100 words, each on a line by itself, followed by a line containing only ``<TT><SPAN CLASS="MATH"><TT>*</TT></SPAN></TT>" that marks the end of the word list, followed by one or more queries, each on a line by itself, followed by a line containing only ``<TT><SPAN CLASS="MATH"><TT>*</TT> <TT>*</TT></SPAN></TT>" that marks the end of the test case. Each word will consist of 1-20 lowercase letters. All words within a test case will be unique. Each query will be as defined above and will be 1-79 characters long. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+For each query, output a single line containing the lexicographically smallest word <SPAN  CLASS="textit">within that test case</SPAN> that matches the query, or the word <TT>NONE</TT> if there is no matching word. At the end of each test case, output a dollar sign on a line by itself. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+elk 
+cow 
+bat 
+* 
+ea 
+acm+e 
+nm+o|jk+l 
+** 
+debian 
+slackware 
+gentoo 
+ubuntu 
+suse 
+fedora 
+mepis 
+* 
+yts 
+cab-e+n 
+r-e|zjq|i+t|vs-p+e-u-c 
+** 
+#
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+bat 
+NONE 
+elk 
+$ 
+gentoo 
+ubuntu 
+NONE 
+$
+</PRE> 
+
+<P>
+<hr><ADDRESS>Mid Central 2006-2007</ADDRESS><p></body></html>

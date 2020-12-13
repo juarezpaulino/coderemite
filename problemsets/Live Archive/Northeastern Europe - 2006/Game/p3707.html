@@ -1,0 +1,151 @@
+<html><head><title>3707 - Fool's Game</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3707 - Fool's Game</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=nea&year=2006"><b>Europe - Northeastern Europe & Russian Republic - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3707"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3707"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p>
+<P>
+A card game, often called ``Fool's Game", is quite popular in Russia. We will describe a game 
+for two players. A standard deck of 36 cards is used. One suit is declared to be a <SPAN  CLASS="textit">trump</SPAN>. 
+
+<P>
+A game consists of rounds. Before the round each 
+player has several cards, one of the players is <SPAN  CLASS="textit">starting</SPAN>, the other one is 
+<SPAN  CLASS="textit">covering</SPAN>. The starting player starts by laying one or several cards of 
+the same rank down on the table. The number of cards must not exceed 
+the number of cards the covering player has. The covering player must in 
+turn <SPAN  CLASS="textit">cover</SPAN> all the cards with some of her cards, laying them on the 
+table above the uncovered cards. A card can cover another if one of the 
+following is true: 
+
+<P>
+
+<UL>
+<LI>it has the same suit and higher rank (ranks are ordered as usually: 6, 7, 8, 9, 10, J, Q, K, A); 
+</LI>
+<LI>it is a trump and the card to cover is not a trump (a trump can only be covered by a higher trump). 
+</LI>
+</UL>
+
+<P>
+After the cards on the table are all covered, the starting 
+player can <SPAN  CLASS="textit">toss</SPAN> some more cards to be covered. The rank of each card tossed 
+must be among the ranks of the cards already on the table at the 
+moment. Now the newly added cards must be covered by the covering player, 
+after that the starting player can toss more cards, and so on. The 
+starting player cannot toss more cards than the covering player has at the 
+moment. 
+
+<P>
+The round ends when either the covering player cannot or does not 
+want to cover all uncovered cards on the table, or when the starting 
+player cannot or does not want to toss more cards. 
+
+<P>
+In the first case, when the covering player declares that she does not want to cover all 
+uncovered cards on the table, the starting player is given a chance to 
+toss in more cards. The ranks of the cards tossed must be among the ranks 
+of the cards already on the table. The number of uncovered cards on the 
+table cannot exceed the number of cards that the covering player has at 
+the moment. After that, the covering player loses the round and takes 
+all the cards from the table, adding them to her cards. Starting player 
+keeps her starting role and moves again in the next round. 
+
+<P>
+In the second case, when all cards on the table are covered and the starting player 
+cannot or does not want to toss more cards, the covering player wins 
+the round and the cards on the table are removed from the game. The 
+players' roles for the next round are swapped: the covering player becomes 
+the starting one and vice versa. 
+
+<P>
+If, after the end of the round, one of the players has no cards, and the other one has one or more cards, then 
+the player with no cards wins the game. If both players have no cards, 
+then the player who was starting in the last round wins the game. 
+
+<P>
+Given the trump suit and the cards the players initially have, find out who 
+wins the game if both play optimally. Both players have full 
+information about cards in the game.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+The input file contains several test cases, each of them consists of three lines as described below.
+
+<P>
+The first line of the input contains <SPAN CLASS="MATH"><I>n</I><SUB>1</SUB></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>n</I><SUB>2</SUB></SPAN>
+<tex2html_verbatim_mark> -- the number of 
+cards that each of the players has in the beginning of the round <!-- MATH
+ $(1 \le
+n_{1} , n_{2} \le 6)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3707img1.png"
+ ALT="$ \le$"><I>n</I><SUB>1</SUB>, <I>n</I><SUB>2</SUB><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3707img1.png"
+ ALT="$ \le$">6)</SPAN>
+<tex2html_verbatim_mark>, and the trump suit (suit is specified using one 
+letter: `<TT>S</TT>' for spades, `<TT>C</TT>' for clubs, `<TT>D</TT>' for diamonds, `<TT>H</TT>' 
+for hearts). 
+
+<P>
+The second line contains <SPAN CLASS="MATH"><I>n</I><SUB>1</SUB></SPAN>
+<tex2html_verbatim_mark> card descriptions -- the 
+cards of the first player. Each card is specified by its rank (`<TT>6</TT>' <SPAN CLASS="MATH">...</SPAN>
+<tex2html_verbatim_mark> 
+`<TT>9</TT>', `<TT>T</TT>' for 10, `<TT>J</TT>' for Jack, `<TT>Q</TT>' for Queen, `<TT>K</TT>' 
+for King, `<TT>A</TT>' for Ace) followed by its suit. The third line 
+contains <SPAN CLASS="MATH"><I>n</I><SUB>2</SUB></SPAN>
+<tex2html_verbatim_mark> card descriptions -- the cards of the covering player. The first 
+player is the starting player in the first round. 
+
+<P>
+All cards in players' hands are different.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+For each test case, write to the output, on a line by itself, ``<TT>FIRST</TT>" if the first player wins the game, or ``<TT>SECOND</TT>" 
+if the second player does. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+2 2 S 
+KC AD 
+6S 7S 
+2 2 D 
+KC AD 
+6S 7S 
+4 5 C 
+AS 6S 7S 8S 
+9S TS JS QS KS 
+3 2 C 
+6H JS 
+JD AD 6C
+</PRE>  
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+SECOND 
+FIRST
+SECOND
+FIRST
+</PRE> 
+
+<P>
+<hr><ADDRESS>Northeastern Europe & Russian Republic 2006-2007</ADDRESS><p></body></html>

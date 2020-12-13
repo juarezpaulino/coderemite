@@ -1,0 +1,53 @@
+<html><head><title>2681 - Celebrity jeopardy</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>2681 - Celebrity jeopardy</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sea&year=2006"><b>Europe - Southeastern - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/data/p2681.pdf"><b>PDF</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=2681"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=2681"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+It's hard to construct a problem that's so easy that everyone will get it, yet still difficult enough to be worthy of some respect. Usually, we err on one side or the other. How simple can a problem really be? 
+
+<P>
+Here, as in Celebrity Jepoardy, questions and answers are a bit confused, and, because the participants are celebrities, there's a real need to make the challenges simple. Your program needs to prepare a question to be solved -- an equation to be solved -- given the answer. Specifically, you have to write a program which finds the <SPAN  CLASS="textit">simplest</SPAN> possible equation to be solved given the answer, considering all possible equations using the standard mathematical symbols in the usual manner. In this context, simplest can be defined unambiguously several different ways leading to the same path of resolution. For now, find the equation whose transformation into the desired answer requires the least effort. 
+
+<P>
+For example, given the answer <TT>X = 2</TT>, you might create the equation <TT>9 - X = 7</TT>. Alternately, you could build the system <code>X &gt; 0; X^2 = 4</code>. These may not be the simplest possible equations. Solving these mind-scratchers might be hard for a celebrity. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+Each input line contains a solution in the form <SPAN CLASS="MATH">&lt; <I>symbol</I> &gt;</SPAN> <TT>=</TT> <SPAN CLASS="MATH">&lt; <I>value</I> &gt;</SPAN> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each input line, print the simplest system of equations which would to lead to the provided solution, respecting the use of space exactly as in the input. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Y = 3 
+X=9
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Y = 3 
+X=9
+</PRE> 
+
+<P>
+<hr><ADDRESS>Southeastern 2006-2007</ADDRESS><p></body></html>

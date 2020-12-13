@@ -1,0 +1,188 @@
+<html><head><title>3471 - ICPC Strikes Again</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3471 - ICPC Strikes Again</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3471"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3471"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+International Concrete Projects Company (ICPC) is a construction company which specializes in building houses for the high-end market. The company is the most profitable company in the world due to a very efficient land division method which has been used in its housing development pro jects since last year. Recently there was a chaos at ICPC, because employees refused to work arguing that they did not earn enough. Worried about the loss in profit due to the strike, the company board proposed a new method to calculate the salaries which was luckily accepted by everyone. 
+
+<P>
+The salary of a worker reflects the significance of the tasks that he/she has to perform and is influenced by the way tasks depend on each other. 
+
+<P>
+A task <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> <SPAN  CLASS="textit">depends</SPAN> on a task <SPAN CLASS="MATH"><I>Y</I></SPAN>
+<tex2html_verbatim_mark> if either (<SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>) <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> <SPAN  CLASS="textit">depends directly</SPAN> on <SPAN CLASS="MATH"><I>Y</I></SPAN>
+<tex2html_verbatim_mark> , or (<SPAN CLASS="MATH"><I>ii</I></SPAN>
+<tex2html_verbatim_mark>) there exists a task <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> such that <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> depends directly on <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> depends on <SPAN CLASS="MATH"><I>Y</I></SPAN>
+<tex2html_verbatim_mark> . Since in ICPC all tasks must be performed, there is no circularity in the task dependence relation. Also, a task may be performed by more than one worker. 
+
+<P>
+A <SPAN  CLASS="textit">basic significance</SPAN> is associated with each task reflecting its importance (for example, developing the efficient land division method is more important than building the houses themselves). The <SPAN  CLASS="textit">significance</SPAN> of a task <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> is then defined as the basic significance of <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> plus the significance of every task which depends directly on <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark>. Note that if no other tasks depend directly on task <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark>, the basic significance and the significance of <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> are the same. 
+
+<P>
+The salary of a worker is the sum of the significances of all the tasks he/she performs which do not depend on any other task performed by him/her. In other words, a value equal to the significance of task <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> will be added to the salary of a worker <SPAN CLASS="MATH"><I>W</I></SPAN>
+<tex2html_verbatim_mark> that works in task <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> if there is no other task <SPAN CLASS="MATH"><I>Y</I></SPAN>
+<tex2html_verbatim_mark> on which <SPAN CLASS="MATH"><I>X</I></SPAN>
+<tex2html_verbatim_mark> depends, and <SPAN CLASS="MATH"><I>W</I></SPAN>
+<tex2html_verbatim_mark> works also in <SPAN CLASS="MATH"><I>Y</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+ICPC wants you to help them to determine the salary of each of its employees.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input contains several test cases. 
+
+<P>
+The first line of a test case contains two integers <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>E</I></SPAN>
+<tex2html_verbatim_mark> indicating respectively the number of tasks and the number of employees (<!-- MATH
+ $1 \le T \le 1000$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$"><I>T</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark> and <!-- MATH
+ $1 \le E \le 1000$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$"><I>E</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$">1000</SPAN>
+<tex2html_verbatim_mark>). Tasks are numbered from 1 to <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> and employees from 1 to <SPAN CLASS="MATH"><I>E</I></SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+Then it will come a sequence of lines describing the tasks 1 to <SPAN CLASS="MATH"><I>T</I></SPAN>
+<tex2html_verbatim_mark> in ascending order. Each task is described by two lines. The first of these lines contains three integers <SPAN CLASS="MATH"><I>BS</I></SPAN>
+<tex2html_verbatim_mark> , <SPAN CLASS="MATH"><I>ND</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>NE</I></SPAN>
+<tex2html_verbatim_mark> , representing respectively the basic significance of the task, the number of tasks that depend directly on it, and the number of employees who perform it (<!-- MATH
+ $1 \le  BS \le 1000, 0 \le ND < T$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$"><I>BS</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$">1000, 0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$"><I>ND</I> &lt; <I>T</I></SPAN>
+<tex2html_verbatim_mark> and <!-- MATH
+ $1 \le NE \le E$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$"><I>NE</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3471img1.png"
+ ALT="$ \le$"><I>E</I></SPAN>
+<tex2html_verbatim_mark>). The second line contains <SPAN CLASS="MATH"><I>ND</I> + <I>NE</I></SPAN>
+<tex2html_verbatim_mark> integers corresponding first to the <SPAN CLASS="MATH"><I>ND</I></SPAN>
+<tex2html_verbatim_mark> directly dependent tasks and then the <SPAN CLASS="MATH"><I>NE</I></SPAN>
+<tex2html_verbatim_mark> employees who perform the task. 
+
+<P>
+The end of input is indicated by <SPAN CLASS="MATH"><I>T</I> = <I>E</I> = 0</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+Test cases must be answered in the order that they were presented. For each test case you must print:
+
+<P>
+
+<UL>
+<LI>a single line containing five stars `<TT>*****</TT>' indicating the beginning of the case  
+</LI>
+<LI>for each employee <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark>, one line with two integers <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> and <SPAN CLASS="MATH"><I>s</I></SPAN>
+<tex2html_verbatim_mark>, separated by a blank, meaning that <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> has a salary of <SPAN CLASS="MATH"><I>s</I></SPAN>
+<tex2html_verbatim_mark>. 
+</LI>
+</UL>
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+3 2 
+100 2 2 
+2 3 1 2 
+40 0 1 
+1 
+60 0 1 
+2 
+7 2 
+10 2 1 
+2 3 1 
+10 2 1 
+4 5 2 
+10 2 1 
+6 7 2 
+10 0 1 
+1 
+10 0 1 
+1 
+10 0 1 
+1 
+10 0 1 
+1 
+0 0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+***** 
+1 200 
+2 200 
+***** 
+1 70 
+2 60
+</PRE> 
+
+<P>
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

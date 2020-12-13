@@ -1,0 +1,128 @@
+<html><head><title>3597 - Falling Ice</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3597 - Falling Ice</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=mc&year=2006"><b>North America - Mid Central - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3597"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3597"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+<DIV ALIGN="CENTER">
+
+ =6in
+<!-- MATH
+ $\epsfbox{p3597.eps}$
+ -->
+<IMG
+ WIDTH="796" HEIGHT="248" ALIGN="BOTTOM" BORDER="0"
+ SRC="p3597.png"
+ ALT="\epsfbox{p3597.eps}">
+</DIV>
+
+<P>
+Imagine disks of ice falling, one at a time, into a box, each ending up at the lowest point it can reach without overlapping or moving previous disks. Each disk then freezes into place, so it cannot be moved by later disks. Your job is to find the overall height of the final combination of disks. 
+
+<P>
+So that the answer is unique, assume that any disk reaching the bottom of the box rolls as far to the left as possible. Also the data is chosen so there will be a unique lowest position for any disk that does not reach the bottom. The data is also such that there are no ``perfect fits": each disk that lands will be in contact with only two other points, on previous circles or the sides of the box. The illustrations above show white filled disks labeled with the order in which they fall into their boxes. The gray circle in the fourth illustration is not intended to be a disk that fell in. The gray disk is included to demonstrate a point: the gray disk is the same size as disk 2, so there is <SPAN  CLASS="textit">space</SPAN> for disk 2 on the very bottom of its box, but disk 2 cannot <SPAN  CLASS="textit">reach</SPAN> that position by falling from the top. It gets caught on disk 1 and the side of the box. 
+
+<P>
+One way to find the top intersection point of two intersecting circles is as follows. Suppose circle 1 has center <!-- MATH
+ $(x_{1}, y_{1})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>1</SUB>, <I>y</I><SUB>1</SUB>)</SPAN> and radius <SPAN CLASS="MATH"><I>r</I><SUB>1</SUB></SPAN>, and suppose circle 2 has center <!-- MATH
+ $(x_{2}, y_{2})$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>2</SUB>, <I>y</I><SUB>2</SUB>)</SPAN>, and radius <SPAN CLASS="MATH"><I>r</I><SUB>2</SUB></SPAN>. Also assume that circle 1 is to the left of circle 2, i.e., <!-- MATH
+ $x_{1} < x_{2}$
+ -->
+<SPAN CLASS="MATH"><I>x</I><SUB>1</SUB> &lt; <I>x</I><SUB>2</SUB></SPAN>. Let 
+
+<P>
+<DL COMPACT>
+<DT></DT>
+<DD><!-- MATH
+ $dx = x_2 - x_1$
+ -->
+<SPAN CLASS="MATH"><I>dx</I> = <I>x</I><SUB>2</SUB> - <I>x</I><SUB>1</SUB></SPAN>, 
+</DD>
+<DT></DT>
+<DD><!-- MATH
+ $dy = y_2 - y_1$
+ -->
+<SPAN CLASS="MATH"><I>dy</I> = <I>y</I><SUB>2</SUB> - <I>y</I><SUB>1</SUB></SPAN>, 
+</DD>
+<DT></DT>
+<DD><!-- MATH
+ $D = sqrt(dx \ast dx + dy \ast dy)$
+ -->
+<SPAN CLASS="MATH"><I>D</I> = <I>sqrt</I>(<I>dx</I> <TT>*</TT> <I>dx</I> + <I>dy</I> <TT>*</TT> <I>dy</I>)</SPAN>, 
+</DD>
+<DT></DT>
+<DD><!-- MATH
+ $E = (r1 \ast r1 - r2 \ast r2 + D \ast D)/(2 \ast D)$
+ -->
+<SPAN CLASS="MATH"><I>E</I> = (<I>r</I>1 <TT>*</TT> <I>r</I>1 - <I>r</I>2 <TT>*</TT> <I>r</I>2 + <I>D</I> <TT>*</TT> <I>D</I>)/(2 <TT>*</TT> <I>D</I>)</SPAN>, 
+</DD>
+<DT></DT>
+<DD><!-- MATH
+ $F = sqrt(r1 \ast r1 - E \ast E)$
+ -->
+<SPAN CLASS="MATH"><I>F</I> = <I>sqrt</I>(<I>r</I>1 <TT>*</TT> <I>r</I>1 - <I>E</I> <TT>*</TT> <I>E</I>)</SPAN>; 
+</DD>
+</DL>
+
+<P>
+then the upper intersection point is <!-- MATH
+ $(x_{1} + (E \ast dx - F \ast dy)/D, y_{1} + (F \ast dx + E \ast dy)/D)$
+ -->
+<SPAN CLASS="MATH">(<I>x</I><SUB>1</SUB> + (<I>E</I> <TT>*</TT> <I>dx</I> - <I>F</I> <TT>*</TT> <I>dy</I>)/<I>D</I>, <I>y</I><SUB>1</SUB> + (<I>F</I> <TT>*</TT> <I>dx</I> + <I>E</I> <TT>*</TT> <I>dy</I>)/<I>D</I>)</SPAN>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+The input consists of one or more data sets, followed by a line containing only 0 that signals the end of the input. Each data set is on a line by itself and contains a sequence of three or more blank-separated positive integers, in the format <!-- MATH
+ $w, n, d_{1}, d_{2}, d_{3}, \ldots , d_{n}$
+ -->
+<SPAN CLASS="MATH"><I>w</I>, <I>n</I>, <I>d</I><SUB>1</SUB>, <I>d</I><SUB>2</SUB>, <I>d</I><SUB>3</SUB>,..., <I>d</I><SUB>n</SUB></SPAN>, where <SPAN CLASS="MATH"><I>w</I></SPAN> is the width of the box, <SPAN CLASS="MATH"><I>n</I></SPAN> is the number of disks, and the remaining numbers are the diameters of the disks, in the order in which they fall into the box. You can assume that <SPAN CLASS="MATH"><I>w</I> &lt; 100</SPAN>, that <SPAN CLASS="MATH"><I>n</I> &lt; 10</SPAN>, and that each diameter is less than <SPAN CLASS="MATH"><I>w</I></SPAN>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+For each data set, output a single line containing the height of the pile of disks, rounded to two places beyond the decimal point.
+
+<P>
+The example data matches the illustrations above.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+10 3 5 2 3 
+8 2 5 5 
+11 3 10 2 4 
+9 3 4 4 6 
+10 6 5 4 6 3 5 2 
+0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+5.00 
+9.00 
+12.99 
+9.58 
+14.19
+</PRE> 
+
+<P>
+<hr><ADDRESS>Mid Central 2006-2007</ADDRESS><p></body></html>

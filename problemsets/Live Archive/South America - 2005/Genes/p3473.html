@@ -1,0 +1,155 @@
+<html><head><title>3473 - Where Are My Genes</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3473 - Where Are My Genes</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=sa&year=2005"><b>Latin America - South America - 2005/2006</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3473"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3473"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+One way that scientists try to measure how one species evolved into another is to find out how the ancestor's genome changed into the other's. Closely related species have several genes in common and it turns out that a good way to compare them is comparing how the common genes changed place. 
+
+<P>
+One of the most common mutations that change the order of a genomes' genes is the reversal. If we model a genome as a sequence of <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> genes with each gene being an integer from 1 to <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> , then a reversal is a mutation that changes the genome by reverting the order of a block of consecutive genes. A reversal can be described by two indexes <SPAN CLASS="MATH">(<I>i</I>, <I>j</I>)</SPAN>
+<tex2html_verbatim_mark>, <!-- MATH
+ $1 \le i \le j \le N$
+ -->
+<SPAN CLASS="MATH">1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>j</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>N</I></SPAN>
+<tex2html_verbatim_mark> , indicating that it reverts the order of the genes within indexes from <SPAN CLASS="MATH"><I>i</I></SPAN>
+<tex2html_verbatim_mark> to <SPAN CLASS="MATH"><I>j</I></SPAN>
+<tex2html_verbatim_mark>. So, when it is applied to a genome <!-- MATH
+ $[g_{1}, \cdot , g_{i-1} , g_{i} , g_{i+1} , \cdots , g_{j-1} , g_{j} , g_{j+1} , \cdots , g_{N}]$
+ -->
+<SPAN CLASS="MATH">[<I>g</I><SUB>1</SUB>,<SUP> . </SUP>, <I>g</I><SUB>i-1</SUB>, <I>g</I><SUB>i</SUB>, <I>g</I><SUB>i+1</SUB>,<SUP> ... </SUP>, <I>g</I><SUB>j-1</SUB>, <I>g</I><SUB>j</SUB>, <I>g</I><SUB>j+1</SUB>,<SUP> ... </SUP>, <I>g</I><SUB>N</SUB>]</SPAN>
+<tex2html_verbatim_mark>, we obtain the genome <!-- MATH
+ $[g_{1} , \cdots , g_{i-1} , g_{j} , g_{j-1} , \cdots , g_{i+1} , g_{i} , g_{j+1} , \cdots , g_{N}]$
+ -->
+<SPAN CLASS="MATH">[<I>g</I><SUB>1</SUB>,<SUP> ... </SUP>, <I>g</I><SUB>i-1</SUB>, <I>g</I><SUB>j</SUB>, <I>g</I><SUB>j-1</SUB>,<SUP> ... </SUP>, <I>g</I><SUB>i+1</SUB>, <I>g</I><SUB>i</SUB>, <I>g</I><SUB>j+1</SUB>,<SUP> ... </SUP>, <I>g</I><SUB>N</SUB>]</SPAN>
+<tex2html_verbatim_mark>. As an example, the reversal (3, 6) applied to the genome [1, 2, 3, 4, 5, 6, 7] gives [1, 2, 6, 5, 4, 3, 7]. If after that the reversal (1, 3) is applied, we obtain the genome [6, 2, 1, 5, 4, 3, 7]. 
+
+<P>
+A scientist studying the evolution of a species wants to try a series of reversals on its genome. Then he wants to query the final position of several genes. Would you take the challenge and help him?
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The input contains several test cases. The first line of a test case contains one integer <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> indicating the number of genes in the genome <!-- MATH
+ $(1 \le N \le 50000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$">50000)</SPAN>
+<tex2html_verbatim_mark>. You may assume that the initial order of the genes is the sequence of integers from 1 to <SPAN CLASS="MATH"><I>N</I></SPAN>
+<tex2html_verbatim_mark> in increasing order. The second line of a test case contains one integer <SPAN CLASS="MATH"><I>R</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(0 \le R \le 1000)$
+ -->
+<SPAN CLASS="MATH">(0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>R</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$">1000)</SPAN>
+<tex2html_verbatim_mark> indicating the number of reversals to be applied to the genome. Then <SPAN CLASS="MATH"><I>R</I></SPAN>
+<tex2html_verbatim_mark> lines follow, each containing two integers <SPAN CLASS="MATH"><I>i</I>, <I>j</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(1 \le i \le j \le N)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>i</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>j</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>N</I>)</SPAN>
+<tex2html_verbatim_mark>, separated by a single space, indicating the two indexes that define the corresponding reversal. After the description of the reversals there is a line containing one integer <SPAN CLASS="MATH"><I>Q</I></SPAN>
+<tex2html_verbatim_mark> <!-- MATH
+ $(0 \le Q \le 100)$
+ -->
+<SPAN CLASS="MATH">(0<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$"><I>Q</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3473img1.png"
+ ALT="$ \le$">100)</SPAN>
+<tex2html_verbatim_mark>, indicating the number of queries for genes, followed by <SPAN CLASS="MATH"><I>Q</I></SPAN>
+<tex2html_verbatim_mark> lines, where each line contains an integer representing a gene whose final position you must determine. 
+
+<P>
+The end of input is indicated by <SPAN CLASS="MATH"><I>N</I> = 0</SPAN>
+<tex2html_verbatim_mark>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each test case in the input your program must produce <SPAN CLASS="MATH"><I>Q</I> + 1</SPAN>
+<tex2html_verbatim_mark> lines of output. The first line must contain the string ``Genome" followed by the number of the test case. The following <SPAN CLASS="MATH"><I>Q</I></SPAN>
+<tex2html_verbatim_mark> lines must contain one integer each representing the answers of the queries. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2> 
+
+<P>
+<PRE>
+9 
+1 
+3 6 
+4 
+1 
+3 
+5 
+1 
+5 
+2 
+1 2 
+1 5 
+2 
+5 
+2 
+0
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+Genome 1 
+1 
+6 
+4 
+1 
+Genome 2 
+1 
+5
+</PRE> 
+
+<P>
+<hr><ADDRESS>South America 2005-2006</ADDRESS><p></body></html>

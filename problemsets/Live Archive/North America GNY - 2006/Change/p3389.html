@@ -1,0 +1,71 @@
+<html><head><title>3389 - Quick Change</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3389 - Quick Change</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=gny&year=2006"><b>North America - Greater New York - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3389"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3389"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+J.P. Flathead's Grocery Store hires cheap labor to man the checkout stations.  The people he hires (usually high school kids) often make mistakes making change for the customers.  Flathead, who's a bit of a tightwad, figures he loses more money from these mistakes than he makes; that is, the employees tend to give more change to the customers than they should get.
+
+<P>
+Flathead wants you to write a program that calculates the number of quarters ($0.25), dimes ($0.10), nickels ($0.05) and pennies ($0.01) that the customer should get back.  Flathead always wants to give the customer's change in coins if the amount due back is $5.00 or under.  He also wants to give the customers back the smallest total number of coins.  For example, if the change due back is $1.24, the customer should receive 4 quarters, 2 dimes, 0 nickels, and 4 pennies.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The first line of input contains an integer <SPAN CLASS="MATH"><I>N</I></SPAN> which is the number of datasets that follow. Each dataset consists of a single line containing a single integer which is the change due in cents, <SPAN CLASS="MATH"><I>C</I></SPAN>, <!-- MATH
+ $(1 \le C \le 500)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3389img1.png"
+ ALT="$ \le$"><I>C</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3389img1.png"
+ ALT="$ \le$">500)</SPAN>. 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each dataset, print out the dataset number, a space, and the string:
+
+<P>
+<DIV ALIGN="CENTER">
+<SPAN CLASS="MATH"><I>Q</I></SPAN> <TT>QUARTER(S),</TT> <SPAN CLASS="MATH"><I>D</I></SPAN> <TT>DIME(S),</TT> <SPAN CLASS="MATH"><I>n</I></SPAN> <TT>NICKEL(S),</TT> <SPAN CLASS="MATH"><I>P</I></SPAN> <TT>PENNY(S)</TT>
+
+</DIV>
+
+<P>
+Where <SPAN CLASS="MATH"><I>Q</I></SPAN> is he number of quarters, <SPAN CLASS="MATH"><I>D</I></SPAN> is the number of dimes, <SPAN CLASS="MATH"><I>n</I></SPAN> is the number of nickels and <SPAN CLASS="MATH"><I>P</I></SPAN> is the number of pennies.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+3
+124
+25
+194
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+1 4 QUARTER(S), 2 DIME(S), 0 NICKEL(S), 4 PENNY(S)
+2 1 QUARTER(S), 0 DIME(S), 0 NICKEL(S), 0 PENNY(S)
+3 7 QUARTER(S), 1 DIME(S), 1 NICKEL(S), 4 PENNY(S)
+</PRE> 
+
+<P>
+<hr><ADDRESS>Greater New York 2006-2007</ADDRESS><p></body></html>

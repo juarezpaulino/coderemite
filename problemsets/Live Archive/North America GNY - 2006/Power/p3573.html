@@ -1,0 +1,110 @@
+<html><head><title>3573 - Non-divisible 2-3 Power Sums</title></head><body><table cellpadding=3 cellspacing=0 border=1 align=center><tr valign=center><td ROWSPAN=2 align=center valign=center><font size=5 color=0000A0><b><img src="icono.gif"></b></font></td><td COLSPAN=5 width=500 align=center><font size=5 color=0000A0><b>3573 - Non-divisible 2-3 Power Sums</b></font><br><a href="http://acmicpc-live-archive.uva.es/nuevoportal/region.php?r=gny&year=2006"><b>North America - Greater New York - 2006/2007</b></a></font></td></tr><tr valign=center><td width=100>&nbsp;</td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/mailer.php?problem=3573"><b>Submit</b></a></td><td width=100>&nbsp;</td><td width=100 align=center><a href="http://acmicpc-live-archive.uva.es/nuevoportal/rankprob.php?p=3573"><b>Ranking</b></a></td></tr></table><p>&nbsp;</p><P>
+Every positive integer <SPAN CLASS="MATH"><I>N</I></SPAN> can be written in at least one way as a sum of terms of the form <!-- MATH
+ $(2^{a})(3^{b})$
+ -->
+<SPAN CLASS="MATH">(2<SUP>a</SUP>)(3<SUP>b</SUP>)</SPAN> where no term in the sum exactly divides any other term in the sum.  For example:
+
+<P>
+<TT>1 = (2<SPAN CLASS="MATH"><SUP>0</SUP></SPAN>)(3<SPAN CLASS="MATH"><SUP>0</SUP></SPAN>)</TT>
+
+<P>
+<TT>7 = (2<SPAN CLASS="MATH"><SUP>2</SUP></SPAN>)(3<SPAN CLASS="MATH"><SUP>0</SUP></SPAN>) + (2<SPAN CLASS="MATH"><SUP>0</SUP></SPAN>)(3<SPAN CLASS="MATH"><SUP>1</SUP></SPAN>)</TT>
+
+<P>
+<TT>31 = (2<SPAN CLASS="MATH"><SUP>4</SUP></SPAN>)(3<SPAN CLASS="MATH"><SUP>0</SUP></SPAN>) + (2<SPAN CLASS="MATH"><SUP>0</SUP></SPAN>)(3<SPAN CLASS="MATH"><SUP>2</SUP></SPAN>) + (2<SPAN CLASS="MATH"><SUP>1</SUP></SPAN>)(3<SPAN CLASS="MATH"><SUP>1</SUP></SPAN>) = (2<SPAN CLASS="MATH"><SUP>2</SUP></SPAN>) + (3<SPAN CLASS="MATH"><SUP>3</SUP></SPAN>)</TT>
+
+<P>
+Note from the example of 31 that the representation is not unique.
+
+<P>
+Write a program which takes as input a positive integer <SPAN CLASS="MATH"><I>N</I></SPAN> and outputs a representation of <SPAN CLASS="MATH"><I>N</I></SPAN> as a sum of terms of the form <!-- MATH
+ $(2^{a})(3^{b})$
+ -->
+<SPAN CLASS="MATH">(2<SUP>a</SUP>)(3<SUP>b</SUP>)</SPAN>.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001001000000000000000">
+Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+The first line of input contains a single integer <SPAN CLASS="MATH"><I>C</I></SPAN>, <!-- MATH
+ $(1 \le C \le 1000)$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3573img1.png"
+ ALT="$ \le$"><I>C</I><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3573img1.png"
+ ALT="$ \le$">1000)</SPAN> which is the number of datasets that follow.
+
+<P>
+Each dataset consists of a single line of input containing a single integer <SPAN CLASS="MATH"><I>N</I></SPAN>, <!-- MATH
+ $(1 \le N < 2^{31})$
+ -->
+<SPAN CLASS="MATH">(1<IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="3573img1.png"
+ ALT="$ \le$"><I>N</I> &lt; 2<SUP>31</SUP>)</SPAN>, which is the number to be represented as a sum of terms of the form <!-- MATH
+ $(2^{a})(3^{b})$
+ -->
+<SPAN CLASS="MATH">(2<SUP>a</SUP>)(3<SUP>b</SUP>)</SPAN>.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001002000000000000000">
+Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+For each dataset, the output will be a single line consisting of:  The dataset number, a single space, the number of terms in your sum as a decimal integer followed by a single space followed by representations of the terms in the form <TT>[<!-- MATH
+ $<2 \ exponent>$
+ -->
+<SPAN CLASS="MATH">&lt; 2&nbsp;<I>exponent</I> &gt;</SPAN>,<!-- MATH
+ $<3 \ exponent>$
+ -->
+<SPAN CLASS="MATH">&lt; 3&nbsp;<I>exponent</I> &gt;</SPAN>]</TT> with terms separated by a single space. <TT><!-- MATH
+ $<2 \ exponent>$
+ -->
+<SPAN CLASS="MATH">&lt; 2&nbsp;<I>exponent</I> &gt;</SPAN></TT> is the power of 2 in the term and <TT><!-- MATH
+ $<3 \ exponent>$
+ -->
+<SPAN CLASS="MATH">&lt; 3&nbsp;<I>exponent</I> &gt;</SPAN></TT> is the power of 3 in the term.
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001003000000000000000">
+Sample Input</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+6
+1
+7
+31
+7776
+531441
+123456789
+</PRE> 
+
+<P>
+
+<H2><FONT size=4 COLOR=#ff0000><A NAME="SECTION0001004000000000000000">
+Sample Output</A>&nbsp;</FONT>
+</H2>
+
+<P>
+<PRE>
+1 1 [0,0]
+2 2 [2,0] [0,1]
+3 3 [4,0] [0,2] [1,1]
+4 1 [5,5]
+5 1 [0,12]
+6 8 [3,13] [4,12] [2,15] [7,8] [9,6] [0,16] [10,5] [15,2]
+</PRE> 
+
+<P>
+<hr><ADDRESS>Greater New York 2006-2007</ADDRESS><p></body></html>
